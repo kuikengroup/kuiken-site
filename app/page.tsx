@@ -22,9 +22,12 @@ export default function KuikenGroupHomepageMockup() {
             <a href="#contact" className="transition hover:text-[#1a2230]">Contact</a>
           </nav>
 
-          <button className="rounded-full border border-[#1a2230] px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition hover:bg-[#1a2230] hover:text-white">
+          <a
+             href="#contact"
+            className="rounded-full border border-[#1a2230] px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition hover:bg-[#1a2230] hover:text-white inline-block"
+          >
             Schedule a Conversation
-          </button>
+          </a>
         </div>
       </header>
 
