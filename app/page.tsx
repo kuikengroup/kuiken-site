@@ -45,12 +45,12 @@ export default function KuikenGroupHomepageMockup() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <button className="rounded-full bg-[#1a2230] px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-white shadow-sm transition hover:opacity-90">
+              <a href="#contact" className="rounded-full bg-[#1a2230] px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-white shadow-sm transition hover:opacity-90">
                 Start a Conversation
-              </button>
-              <button className="rounded-full border border-[#1a2230]/15 bg-white px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition hover:border-[#1a2230]">
+              </a>
+              <a href="#services" className="rounded-full border border-[#1a2230]/15 bg-white px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition hover:border-[#1a2230]">
                 View Capabilities
-              </button>
+              </a>
             </div>
 
             <div className="mt-16 grid max-w-2xl grid-cols-1 gap-6 border-t border-black/8 pt-8 md:grid-cols-3">
