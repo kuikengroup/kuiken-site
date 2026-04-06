@@ -234,3 +234,7 @@ export default function KuikenGroupHomepageMockup() {
             </div>
           </div>
         </section>
+      </main>
+    </div>
+  );
+}
