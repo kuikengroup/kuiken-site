@@ -198,7 +198,7 @@ export default function KuikenGroupHomepageMockup() {
                 <div className="text-sm text-white/70">Brady Kuiken</div>
                 <div className="text-lg font-medium">President / CEO</div>
 
-                <form action="https://formspree.io/f/xkndwzqg" method="POST" className="space-y-3 pt-2">
+                <form action="https://formspree.io/f/mgoprpew" method="POST" className="space-y-3 pt-2">
                   <input
                     type="text"
                     name="name"
