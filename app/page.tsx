@@ -16,7 +16,7 @@ export default function KuikenGroupHomepageMockup() {
           </div>
 
           <nav className="hidden items-center gap-10 text-[12px] uppercase tracking-[0.22em] text-[#4a4f57] md:flex">
-            <a href="#about" className="transition hover:text-[#1a2230]">About</a>
+            <a href="/about" className="transition hover:text-[#1a2230]">About</a>
             <a href="#services" className="transition hover:text-[#1a2230]">Services</a>
             <a href="#approach" className="transition hover:text-[#1a2230]">Approach</a>
             <a href="#contact" className="transition hover:text-[#1a2230]">Contact</a>
