@@ -23,8 +23,8 @@ export default function KuikenGroupHomepageMockup() {
           </nav>
 
           <a
-             href="#contact"
-            className="rounded-full border border-[#1a2230] px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition hover:bg-[#1a2230] hover:text-white inline-block"
+            href="#contact"
+            className="rounded-full border border-[#1a2230] px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:bg-[#1a2230] hover:text-white inline-block"
           >
             Schedule a Conversation
           </a>
@@ -45,10 +45,16 @@ export default function KuikenGroupHomepageMockup() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href="#contact" className="rounded-full bg-[#1a2230] px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-white shadow-sm transition hover:opacity-90">
+              <a
+                href="#contact"
+                className="rounded-full bg-[#1a2230] px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:opacity-90 inline-block"
+              >
                 Start a Conversation
               </a>
-              <a href="#services" className="rounded-full border border-[#1a2230]/15 bg-white px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition hover:border-[#1a2230]">
+              <a
+                href="#services"
+                className="rounded-full border border-[#1a2230]/15 bg-white px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:border-[#1a2230] inline-block"
+              >
                 View Capabilities
               </a>
             </div>
@@ -225,7 +231,7 @@ export default function KuikenGroupHomepageMockup() {
                   />
                   <button
                     type="submit"
-                    className="w-full rounded-full bg-white px-6 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition hover:opacity-90"
+                    className="w-full rounded-full bg-white px-6 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:opacity-90"
                   >
                     Send Message
                   </button>
