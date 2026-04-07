@@ -16,22 +16,28 @@ export default function KuikenGroupHomepageMockup() {
           </div>
 
           <nav className="hidden items-center gap-10 text-[12px] uppercase tracking-[0.22em] text-[#4a4f57] md:flex">
-            <a href="/about" className="transition hover:text-[#1a2230]">About</a>
+            <a href="#about" className="transition hover:text-[#1a2230]">About</a>
             <a href="#services" className="transition hover:text-[#1a2230]">Services</a>
             <a href="#approach" className="transition hover:text-[#1a2230]">Approach</a>
-            <a href="#contact" className="transition hover:text-[#1a2230]">Contact</a>
+            <div className="flex items-center gap-3">
+              <a
+                href="/private"
+                className="rounded-full border border-[#1a2230]/15 bg-white px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:border-[#1a2230] inline-block"
+              >
+                Client Access
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-[#1a2230] px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:bg-[#1a2230] hover:text-white inline-block"
+              >
+                Schedule a Conversation
+              </a>
+            </div>
           </nav>
-
-          <a
-            href="#contact"
-            className="rounded-full border border-[#1a2230] px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:bg-[#1a2230] hover:text-white inline-block"
-          >
-            Schedule a Conversation
-          </a>
         </div>
       </header>
 
-      <main>
+      <main className="[&_section]:animate-in [&_section]:fade-in-0 [&_section]:slide-in-from-bottom-4 [&_section]:duration-700">
         <section className="mx-auto grid max-w-7xl gap-14 px-8 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-12 lg:py-28">
           <div className="max-w-3xl">
             <div className="mb-6 text-[11px] uppercase tracking-[0.34em] text-[#8f7750]">
@@ -45,16 +51,10 @@ export default function KuikenGroupHomepageMockup() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="rounded-full bg-[#1a2230] px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:opacity-90 inline-block"
-              >
+              <a href="#contact" className="rounded-full bg-[#1a2230] px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:opacity-90 inline-block">
                 Start a Conversation
               </a>
-              <a
-                href="#services"
-                className="rounded-full border border-[#1a2230]/15 bg-white px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:border-[#1a2230] inline-block"
-              >
+              <a href="#services" className="rounded-full border border-[#1a2230]/15 bg-white px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:border-[#1a2230] inline-block">
                 View Capabilities
               </a>
             </div>
@@ -191,58 +191,58 @@ export default function KuikenGroupHomepageMockup() {
         </section>
 
         <section id="contact" className="mx-auto max-w-7xl px-8 py-20 lg:px-12">
-          <div className="rounded-[2rem] bg-[#1a2230] px-8 py-12 text-white shadow-[0_24px_70px_rgba(17,24,39,0.18)] md:px-12 md:py-14">
-            <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-end">
-              <div>
-                <div className="text-[11px] uppercase tracking-[0.3em] text-[#c1ab84]">Contact</div>
-                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] md:text-5xl">
-                  Ready for a more elevated digital presence?
-                </h2>
-                <p className="mt-5 max-w-2xl text-base leading-8 text-white/72">
-                  This section can become your live inquiry area, a founder note, or a high-trust call to action with direct contact information.
-                </p>
-              </div>
+  <div className="rounded-[2rem] bg-[#1a2230] px-8 py-12 text-white shadow-[0_24px_70px_rgba(17,24,39,0.18)] md:px-12 md:py-14">
+    <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-end">
+      <div>
+        <div className="text-[11px] uppercase tracking-[0.3em] text-[#c1ab84]">Contact</div>
+        <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] md:text-5xl">
+          Ready for a more elevated digital presence?
+        </h2>
+        <p className="mt-5 max-w-2xl text-base leading-8 text-white/72">
+          This section can become your live inquiry area, a founder note, or a high-trust call to action with direct contact information.
+        </p>
+      </div>
 
-              <div className="space-y-4 rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                <div className="text-sm text-white/70">Brady Kuiken</div>
-                <div className="text-lg font-medium">President / CEO</div>
+      <div className="space-y-4 rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+        <div className="text-sm text-white/70">Brady Kuiken</div>
+        <div className="text-lg font-medium">President / CEO</div>
 
-                <form action="https://formspree.io/f/mgoprpew" method="POST" className="space-y-3 pt-2">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    required
-                    className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    required
-                    className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
-                  />
-                  <textarea
-                    name="message"
-                    placeholder="How can we help?"
-                    rows={3}
-                    required
-                    className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
-                  />
-                  <button
-                    type="submit"
-                    className="w-full rounded-full bg-white px-6 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:opacity-90"
-                  >
-                    Send Message
-                  </button>
-                </form>
+        <form action="https://formspree.io/f/xkndwzqg" method="POST" className="space-y-3 pt-2">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
+          />
+          <textarea
+            name="message"
+            placeholder="How can we help?"
+            rows={3}
+            required
+            className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
+          />
+          <button
+            type="submit"
+            className="w-full rounded-full bg-white px-6 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:opacity-90"
+          >
+            Send Message
+          </button>
+        </form>
 
-                <div className="pt-2 text-sm text-white/80">brady@kuikengroup.com</div>
-                <div className="text-sm text-white/80">712-541-7694</div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="pt-2 text-sm text-white/80">brady@kuikengroup.com</div>
+        <div className="text-sm text-white/80">712-541-7694</div>
+      </div>
+    </div>
+  </div>
+</section>
       </main>
     </div>
   );
