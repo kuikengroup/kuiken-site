@@ -1,6 +1,6 @@
 export default function KuikenGroupHomepageMockup() {
   return (
-    <div className="min-h-screen bg-[#f7f5f1] text-[#16181d]">
+    <div className="min-h-screen bg-[#f7f5f1] text-[#16181d] scroll-smooth">
       <header className="sticky top-0 z-20 border-b border-black/5 bg-[#f7f5f1]/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5 lg:px-12">
           <div className="flex items-center gap-3">
