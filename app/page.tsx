@@ -10,30 +10,37 @@ export default function KuikenGroupHomepageMockup() {
               className="h-11 w-auto object-contain"
             />
             <div>
-              <div className="text-[11px] uppercase tracking-[0.32em] text-[#8f7750]">Private Advisory</div>
-              <div className="text-sm font-semibold tracking-[0.22em] text-[#1a2230]">KUIKEN GROUP</div>
+              <div className="text-[11px] uppercase tracking-[0.32em] text-[#8f7750]">
+                Private Advisory
+              </div>
+              <div className="text-sm font-semibold tracking-[0.22em] text-[#1a2230]">
+                KUIKEN GROUP
+              </div>
             </div>
           </div>
 
           <nav className="hidden items-center gap-10 text-[12px] uppercase tracking-[0.22em] text-[#4a4f57] md:flex">
-            <a href="#about" className="transition hover:text-[#1a2230]">About</a>
+            <a href="/about" className="transition hover:text-[#1a2230]">About</a>
             <a href="#services" className="transition hover:text-[#1a2230]">Services</a>
             <a href="#approach" className="transition hover:text-[#1a2230]">Approach</a>
-            <div className="flex items-center gap-3">
-              <a
-                href="/private"
-                className="rounded-full border border-[#1a2230]/15 bg-white px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:border-[#1a2230] inline-block"
-              >
-                Client Access
-              </a>
-              <a
-                href="#contact"
-                className="rounded-full border border-[#1a2230] px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:bg-[#1a2230] hover:text-white inline-block"
-              >
-                Schedule a Conversation
-              </a>
-            </div>
+            <a href="#contact" className="transition hover:text-[#1a2230]">Contact</a>
           </nav>
+
+          <div className="flex items-center gap-3">
+            <a
+              href="/private"
+              className="rounded-full border border-[#1a2230]/15 bg-white px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:border-[#1a2230] inline-block"
+            >
+              Client Access
+            </a>
+            <a
+              href="https://cal.com/kuikengroup/initial-conversation"
+              target="_blank"
+              className="rounded-full border border-[#1a2230] px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:bg-[#1a2230] hover:text-white inline-block"
+            >
+              Schedule a Conversation
+            </a>
+          </div>
         </div>
       </header>
 
@@ -51,7 +58,9 @@ export default function KuikenGroupHomepageMockup() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href="#contact" className="rounded-full bg-[#1a2230] px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:opacity-90 inline-block">
+              <a href="https://cal.com/kuikengroup/initial-conversation"
+              target="_blank"
+              className="rounded-full bg-[#1a2230] px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:opacity-90 inline-block">
                 Start a Conversation
               </a>
               <a href="#services" className="rounded-full border border-[#1a2230]/15 bg-white px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:border-[#1a2230] inline-block">
@@ -116,10 +125,10 @@ export default function KuikenGroupHomepageMockup() {
             </div>
             <div className="grid gap-8 md:grid-cols-2">
               <p className="text-base leading-8 text-[#525963]">
-                This mockup leans into disciplined spacing, confident typography, and a muted executive palette so the brand feels established without looking dated.
+                We work with a limited number of clients, prioritizing clarity, alignment, and long-term value over volume.
               </p>
               <p className="text-base leading-8 text-[#525963]">
-                Every section is intentionally sparse. The site is meant to communicate trust, selectivity, and strategic depth rather than volume or noise.
+                Our role is not to add noise, but to bring disciplined thinking to moments that matter.
               </p>
             </div>
           </div>
