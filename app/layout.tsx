@@ -52,7 +52,7 @@ export default function RootLayout({
 
               <div className="flex items-center gap-3">
                 <a
-                  href="/private"
+                  href="/client-access"
                   className="rounded-full border border-[#1a2230]/15 bg-white px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:border-[#1a2230] inline-block"
                 >
                   Client Access
