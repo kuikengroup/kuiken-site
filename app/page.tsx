@@ -3,8 +3,7 @@ export default function KuikenGroupHomepageMockup() {
     <div className="min-h-screen bg-[#f7f5f1] text-[#16181d] scroll-smooth">
 
       <main className="[&_section]:animate-in [&_section]:fade-in-0 [&_section]:slide-in-from-bottom-4 [&_section]:duration-700">
-        <section className="mx-auto grid max-w-7xl gap-14 px-8 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-12 lg:py-28">
-          <div className="max-w-3xl">
+        <section className="mx-auto grid max-w-7xl gap-14 px-8 pt-4 pb-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-12 lg:pt-6 lg:pb-28">          <div className="max-w-3xl">
             <div className="mb-6 text-[11px] uppercase tracking-[0.34em] text-[#8f7750]">
               Strategic Advisory • Capital • Long-Term Value
             </div>
