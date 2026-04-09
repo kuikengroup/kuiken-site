@@ -1,48 +1,6 @@
 export default function KuikenGroupHomepageMockup() {
   return (
     <div className="min-h-screen bg-[#f7f5f1] text-[#16181d] scroll-smooth">
-      <header className="sticky top-0 z-20 border-b border-black/5 bg-[#f7f5f1]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5 lg:px-12">
-          <div className="flex items-center gap-3">
-            <img
-              src="/kuiken-logo.png"
-              alt="Kuiken Group Logo"
-              className="h-11 w-auto object-contain"
-            />
-            <div>
-              <div className="text-[11px] uppercase tracking-[0.32em] text-[#8f7750]">
-                Private Advisory
-              </div>
-              <div className="text-sm font-semibold tracking-[0.22em] text-[#1a2230]">
-                KUIKEN GROUP
-              </div>
-            </div>
-          </div>
-
-          <nav className="hidden items-center gap-10 text-[12px] uppercase tracking-[0.22em] text-[#4a4f57] md:flex">
-            <a href="/about" className="transition hover:text-[#1a2230]">About</a>
-            <a href="#services" className="transition hover:text-[#1a2230]">Services</a>
-            <a href="#approach" className="transition hover:text-[#1a2230]">Approach</a>
-            <a href="#contact" className="transition hover:text-[#1a2230]">Contact</a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="/private"
-              className="rounded-full border border-[#1a2230]/15 bg-white px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:border-[#1a2230] inline-block"
-            >
-              Client Access
-            </a>
-            <a
-              href="https://cal.com/kuikengroup/initial-conversation"
-              target="_blank"
-              className="rounded-full border border-[#1a2230] px-5 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:bg-[#1a2230] hover:text-white inline-block"
-            >
-              Schedule a Conversation
-            </a>
-          </div>
-        </div>
-      </header>
 
       <main className="[&_section]:animate-in [&_section]:fade-in-0 [&_section]:slide-in-from-bottom-4 [&_section]:duration-700">
         <section className="mx-auto grid max-w-7xl gap-14 px-8 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-12 lg:py-28">
