@@ -12,7 +12,7 @@ export default function ClientAccessPage() {
     e.preventDefault();
 
     // Replace this with your chosen fallback password
-    const correctPassword = "kuikenprivate";
+    const correctPassword = "Bk51031!";
 
     if (password === correctPassword) {
       setError("");
@@ -91,7 +91,7 @@ export default function ClientAccessPage() {
                   <input
                     id="portal-password"
                     type="password"
-                    value={BK51031!}
+                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter access password"
                     className="mt-3 w-full rounded-xl border border-black/8 bg-white px-4 py-3 text-sm text-[#1a2230] outline-none transition focus:border-[#1a2230]/30"
