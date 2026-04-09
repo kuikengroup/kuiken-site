@@ -156,59 +156,62 @@ export default function KuikenGroupHomepageMockup() {
           </div>
         </section>
 
-        <section id="contact" className="mx-auto max-w-7xl px-8 py-20 lg:px-12">
-  <div className="rounded-[2rem] bg-[#1a2230] px-8 py-12 text-white shadow-[0_24px_70px_rgba(17,24,39,0.18)] md:px-12 md:py-14">
-    <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-end">
-      <div>
-        <div className="text-[11px] uppercase tracking-[0.3em] text-[#c1ab84]">Contact</div>
-        <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] md:text-5xl">
-          Ready for a more elevated digital presence?
-        </h2>
-        <p className="mt-5 max-w-2xl text-base leading-8 text-white/72">
-          This section can become your live inquiry area, a founder note, or a high-trust call to action with direct contact information.
-        </p>
-      </div>
+        <section id="contact" className="mx-auto max-w-7xl px-8 pt-12 pb-20 lg:px-12 lg:pt-16">
+          <div className="rounded-[2rem] bg-[#1a2230] px-8 py-12 text-white shadow-[0_24px_70px_rgba(17,24,39,0.18)] md:px-12 md:py-14">
+            <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-start">
+              <div>
+                <div className="text-[11px] uppercase tracking-[0.3em] text-[#c1ab84]">
+                  Contact
+                </div>
+                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] md:text-5xl">
+                  Ready for a more disciplined strategic partner?
+                </h2>
+                <p className="mt-5 max-w-2xl text-base leading-8 text-white/72">
+                  Start a conversation with Kuiken Group to discuss your priorities,
+                  current situation, or next decision point.
+                </p>
+              </div>
 
-      <div className="space-y-4 rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-        <div className="text-sm text-white/70">Brady Kuiken</div>
-        <div className="text-lg font-medium">President / CEO</div>
+              <div className="space-y-4 rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                <div className="text-sm text-white/70">Brady Kuiken</div>
+                <div className="text-lg font-medium">President / CEO</div>
 
-        <form action="https://formspree.io/f/mgoprpew" method="POST" className="space-y-3 pt-2">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
-            className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-            className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
-          />
-          <textarea
-            name="message"
-            placeholder="How can we help?"
-            rows={3}
-            required
-            className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
-          />
-          <button
-            type="submit"
-            className="w-full rounded-full bg-white px-6 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:opacity-90"
-          >
-            Send Message
-          </button>
-        </form>
+                <form action="https://formspree.io/f/mgoprpew" method="POST" className="space-y-3 pt-2">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                    className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                    className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
+                  />
+                  <textarea
+                    name="message"
+                    placeholder="Briefly describe your situation or objective"
+                    rows={3}
+                    required
+                    className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm text-white placeholder-white/50 outline-none"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full rounded-full bg-white px-6 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#1a2230] transition duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                  >
+                    Send Message
+                  </button>
+                </form>
 
-        <div className="pt-2 text-sm text-white/80">brady@kuikengroup.com</div>
-        <div className="text-sm text-white/80">712-541-7694</div>
-      </div>
-    </div>
-  </div>
-</section>
+                <div className="pt-2 text-sm text-white/80">brady@kuikengroup.com</div>
+                <div className="text-sm text-white/80">712-541-7694</div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
