@@ -98,7 +98,7 @@ export default function RootLayout({
                     <a href="/#approach" className="block hover:text-[#1a2230]">
                       Approach
                     </a>
-                    <a href="/private" className="block hover:text-[#1a2230]">
+                    <a href="/client-access" className="block hover:text-[#1a2230]">
                       Client Access
                     </a>
                   </div>

@@ -5,13 +5,13 @@ export default function KuikenGroupHomepageMockup() {
       <main className="[&_section]:animate-in [&_section]:fade-in-0 [&_section]:slide-in-from-bottom-4 [&_section]:duration-700">
         <section className="mx-auto grid max-w-7xl gap-14 px-8 pt-4 pb-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-12 lg:pt-6 lg:pb-28">          <div className="max-w-3xl">
             <div className="mb-6 text-[11px] uppercase tracking-[0.34em] text-[#8f7750]">
-              Strategic Advisory • Capital • Long-Term Value
+              Brand Strategy • Digital Marketing • Lead Generation
             </div>
             <h1 className="max-w-4xl text-5xl font-semibold leading-[1.03] tracking-[-0.04em] text-[#151922] md:text-7xl">
-              A restrained, high-trust brand presence for a modern advisory firm.
+              Premium marketing for brands built to grow.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[#515863] md:text-xl">
-              Kuiken Group partners with leaders, investors, and operators who value discretion, clarity, and disciplined execution.
+              Kuiken Group helps businesses sharpen their brand, strengthen their digital presence, and turn attention into measurable growth.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -27,9 +27,9 @@ export default function KuikenGroupHomepageMockup() {
 
             <div className="mt-16 grid max-w-2xl grid-cols-1 gap-6 border-t border-black/8 pt-8 md:grid-cols-3">
               {[
-                ['Strategic Positioning', 'Focused market and growth strategy for high-value opportunities.'],
-                ['Capital Advisory', 'Measured guidance for investment, structure, and long-term alignment.'],
-                ['Executive Counsel', 'Clear thinking for pivotal decisions, transactions, and transitions.'],
+                ['Brand Strategy', 'Clear positioning, refined messaging, and visual direction that help businesses stand out with confidence.'],
+                ['Digital Marketing', 'Campaigns, content, and digital systems designed to attract attention and convert interest into action.'],
+                ['Website & Lead Generation', 'Modern websites, landing pages, and conversion-focused funnels built to create real business opportunities.'],
               ].map(([title, copy]) => (
                 <div key={title}>
                   <div className="text-[11px] uppercase tracking-[0.22em] text-[#8f7750]">{title}</div>
@@ -47,7 +47,7 @@ export default function KuikenGroupHomepageMockup() {
                   <div>
                     <div className="text-[11px] uppercase tracking-[0.3em] text-[#8f7750]">Featured Perspective</div>
                     <div className="mt-4 max-w-sm text-3xl font-semibold leading-tight tracking-[-0.03em] text-[#1a2230]">
-                      Thoughtful structure. Quiet confidence. Lasting trust.
+                      Sharper brands. Stronger websites. Smarter growth.
                     </div>
                   </div>
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#1a2230]/10 bg-white shadow-sm overflow-hidden">
@@ -57,9 +57,9 @@ export default function KuikenGroupHomepageMockup() {
 
                 <div className="mt-10 space-y-4">
                   {[
-                    'Independent advisory for complex decisions',
-                    'Premium positioning with understated design language',
-                    'Built to feel institutional, modern, and timeless',
+                    'Brand systems built for credibility and trust',
+                    'Marketing assets designed to convert attention into action',
+                    'Clean websites, clear messaging, and stronger digital presence',
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/80 px-4 py-4">
                       <div className="h-2.5 w-2.5 rounded-full bg-[#8f7750]" />
@@ -77,15 +77,15 @@ export default function KuikenGroupHomepageMockup() {
             <div>
               <div className="text-[11px] uppercase tracking-[0.32em] text-[#8f7750]">About</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#151922] md:text-4xl">
-                Built for credibility at first glance.
+                Built to help businesses look sharper, communicate clearly, and grow with confidence.
               </h2>
             </div>
             <div className="grid gap-8 md:grid-cols-2">
               <p className="text-base leading-8 text-[#525963]">
-                We work with a limited number of clients, prioritizing clarity, alignment, and long-term value over volume.
+                Kuiken Group is a marketing firm focused on helping businesses build stronger brands, sharper websites, and clearer paths to growth.
               </p>
               <p className="text-base leading-8 text-[#525963]">
-                Our role is not to add noise, but to bring disciplined thinking to moments that matter.
+                We combine strategy, design, content, and execution to help companies look more credible, communicate more clearly, and generate better opportunities.
               </p>
             </div>
           </div>
@@ -96,11 +96,11 @@ export default function KuikenGroupHomepageMockup() {
             <div>
               <div className="text-[11px] uppercase tracking-[0.32em] text-[#8f7750]">Services</div>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#151922] md:text-4xl">
-                Clear offers, presented with restraint.
+                Marketing services built around clarity, credibility, and growth.
               </h2>
             </div>
             <div className="max-w-xl text-sm leading-7 text-[#59606a]">
-              Swap these with your actual offers, but keep the structure simple and the wording sharp.
+              A focused set of services designed to help businesses improve their brand, digital presence, and lead generation.
             </div>
           </div>
 
@@ -108,18 +108,18 @@ export default function KuikenGroupHomepageMockup() {
             {[
               {
                 label: '01',
-                title: 'Strategic Advisory',
-                copy: 'Executive-level guidance on growth, positioning, partnerships, and high-consequence decisions.',
+                title: 'Brand Strategy',
+                copy: 'Clear positioning, refined messaging, and visual direction that help businesses stand out with confidence.',
               },
               {
                 label: '02',
-                title: 'Investment & Capital Counsel',
-                copy: 'Support across capital readiness, investor communication, transaction framing, and long-term alignment.',
+                title: 'Digital Marketing',
+                copy: 'Campaigns, content, and digital systems designed to attract attention and convert interest into action.',
               },
               {
                 label: '03',
-                title: 'Special Situations',
-                copy: 'A discreet partner for transitions, restructures, complex initiatives, and critical moments of change.',
+                title: 'Websites & Lead Generation',
+                copy: 'Modern websites, landing pages, and conversion-focused funnels built to create real business opportunities.',
               },
             ].map((item) => (
               <div key={item.title} className="rounded-[2rem] border border-black/8 bg-white p-8 shadow-[0_10px_35px_rgba(17,24,39,0.05)]">
@@ -137,14 +137,14 @@ export default function KuikenGroupHomepageMockup() {
               <div>
                 <div className="text-[11px] uppercase tracking-[0.32em] text-[#8f7750]">Approach</div>
                 <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#151922] md:text-4xl">
-                  Designed to feel composed, selective, and deeply capable.
+                  Designed to turn attention into trust, and trust into action.
                 </h2>
               </div>
               <div className="grid gap-5">
                 {[
-                  ['Strategic Clarity', 'Concise messaging, disciplined offers, and a brand voice that feels measured rather than promotional.'],
-                  ['Visual Restraint', 'Minimal color, sharp spacing, and elegant proportions that read as premium across devices.'],
-                  ['Institutional Confidence', 'A structure that helps a smaller firm present with the gravity of an established platform.'],
+                  ['Brand Clarity', 'We define the message, positioning, and visual direction needed to make a business feel credible and distinct.'],
+                  ['Digital Execution', 'We turn strategy into websites, campaigns, content, and systems that create visibility and momentum.'],
+                  ['Growth Focus', 'Every asset is built with a purpose: to help the business attract attention, earn trust, and convert interest.'],
                 ].map(([title, copy]) => (
                   <div key={title} className="rounded-[1.75rem] border border-black/6 bg-white px-6 py-6">
                     <div className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#1a2230]">{title}</div>
@@ -164,11 +164,10 @@ export default function KuikenGroupHomepageMockup() {
                   Contact
                 </div>
                 <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] md:text-5xl">
-                  Ready for a more disciplined strategic partner?
+                  Ready to build a stronger brand and digital presence?
                 </h2>
                 <p className="mt-5 max-w-2xl text-base leading-8 text-white/72">
-                  Start a conversation with Kuiken Group to discuss your priorities,
-                  current situation, or next decision point.
+                  Start a conversation with Kuiken Group to discuss your brand, website, marketing goals, or growth priorities.
                 </p>
               </div>
 
