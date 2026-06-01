@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Kuiken Group | Strategic Advisory",
+  title: "Kuiken Group | Marketing Firm",
   description:
-    "Kuiken Group partners with business owners, investors, and operators to navigate growth, capital, and complex transitions with clarity, discipline, and discretion.",
+    "Kuiken Group helps businesses build stronger brands, sharper websites, and clearer paths to growth through strategy, design, and digital marketing.",
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
                   />
                   <div>
                     <div className="text-[11px] uppercase tracking-[0.32em] text-[#8f7750]">
-                      Private Advisory
+                      Marketing Firm
                     </div>
                     <div className="text-sm font-semibold tracking-[0.22em] text-[#1a2230]">
                       KUIKEN GROUP
@@ -79,8 +79,7 @@ export default function RootLayout({
                     className="h-10 w-auto"
                   />
                   <p className="mt-5 max-w-xs text-sm leading-6 text-[#5a616b]">
-                    Kuiken Group is a private advisory firm focused on strategic decisions
-                    involving growth, capital, and complex transitions.
+                    Kuiken Group is a marketing firm helping businesses build stronger brands, sharper websites, and clearer paths to growth.
                   </p>
                 </div>
 
@@ -119,7 +118,7 @@ export default function RootLayout({
 
               <div className="mt-12 border-t border-black/6 pt-6 text-xs text-[#6b7280] flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                 <div>© {new Date().getFullYear()} Kuiken Group. All rights reserved.</div>
-                <div>Private Advisory • Discretion • Long-Term Value</div>
+                <div>Brand Strategy • Digital Marketing • Lead Generation</div>
               </div>
             </div>
           </footer>
