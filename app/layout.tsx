@@ -34,7 +34,7 @@ export default function RootLayout({
               </a>
 
               <nav className="hidden items-center gap-10 text-[12px] uppercase tracking-[0.22em] text-[#E7DCC1]/70 md:flex">
-                <a href="/about" className="transition hover:text-[#C6A972]">
+                <a href="/#about" className="transition hover:text-[#C6A972]">
                   About
                 </a>
                 <a href="/#services" className="transition hover:text-[#C6A972]">
@@ -86,7 +86,7 @@ export default function RootLayout({
                     Navigation
                   </div>
                   <div className="mt-5 space-y-3 text-sm text-[#E7DCC1]/65">
-                    <a href="/about" className="block hover:text-[#C6A972]">
+                    <a href="/#about" className="block hover:text-[#C6A972]">
                       About
                     </a>
                     <a href="/#services" className="block hover:text-[#C6A972]">
