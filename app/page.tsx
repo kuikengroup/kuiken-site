@@ -50,8 +50,12 @@ export default function KuikenGroupHomepageMockup() {
                       Sharper brands. Stronger websites. Smarter growth.
                     </div>
                   </div>
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#1a2230]/10 bg-white shadow-sm overflow-hidden">
-                    <img src="/kuiken-logo.png" alt="KG" className="h-8 w-auto object-contain" />
+                  <div className="flex items-center justify-center">
+                    <img
+                      src="/kuiken-logo.png"
+                      alt="Kuiken Group"
+                      className="h-20 w-auto object-contain"
+                    />
                   </div>
                 </div>
 
