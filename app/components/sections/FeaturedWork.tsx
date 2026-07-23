@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ParallaxMedia from "../animations/ParallaxMedia";
 import Container from "../layout/Container";
 import Reveal from "../Reveal";
 
@@ -18,7 +19,13 @@ function ProjectMeta({
       <div className="flex items-center gap-4">
         <span className="text-[10px] font-semibold tracking-[0.28em] text-[#C6A972]">{number}</span>
         <span className="h-px w-10 bg-[#E7DCC1]/16" />
-        <span className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/38">{category}</span>
+        <div className="flex flex-wrap gap-2">
+          {category.split(" · ").map((tag) => (
+            <span key={tag} className="rounded-full border border-[#E7DCC1]/10 px-3 py-1.5 text-[8px] uppercase tracking-[0.2em] text-[#E7DCC1]/46">
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
       <h3 className="mt-6 text-[clamp(2.75rem,5.5vw,5.75rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-[#E7DCC1]">
         {title}
@@ -27,7 +34,7 @@ function ProjectMeta({
         {description}
       </p>
       <div className="mt-8 inline-flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
-        Explore the work
+        View case study
         <span className="project-link-line h-px w-10 bg-[#C6A972]" />
       </div>
     </div>
@@ -43,19 +50,14 @@ function LawnFadezLaptop() {
         <div className="macbook-lid">
           <div className="macbook-camera" />
           <div className="macbook-screen">
-            <div className="lawn-site">
-              <div className="lawn-nav">
-                <strong>LAWN FADEZ</strong>
-                <span>Services&nbsp;&nbsp;&nbsp; Work&nbsp;&nbsp;&nbsp; Contact</span>
-              </div>
-              <div className="lawn-copy">
-                <small>LE MARS, IOWA</small>
-                <h4>Clean lines.<br />Fresh lawns.</h4>
-                <p>Reliable lawn care with a sharper finish.</p>
-                <span className="lawn-button">REQUEST A QUOTE</span>
-              </div>
-              <div className="lawn-stripes" />
-            </div>
+            <ParallaxMedia
+              src="/work/lawn-fadez-homepage-v2.jpg"
+              alt="Lawn Fadez website featuring a premium striped lawn"
+              sizes="(max-width: 768px) 75vw, 62vw"
+              priority
+              strength={10}
+              className="lawn-site"
+            />
           </div>
         </div>
         <div className="macbook-base"><span /></div>
@@ -68,29 +70,19 @@ function LawnFadezLaptop() {
   );
 }
 
-function KuikenPhone() {
+function KuikenIdentity() {
   return (
-    <div className="device-stage device-stage-kuiken" aria-label="Kuiken Group mobile experience and brand system">
-      <div className="brand-wordmark" aria-hidden="true">KUIKEN</div>
-      <div className="editorial-note">
-        <span>01 / POSITION</span>
-        <p>Strategy made visible.</p>
-      </div>
-      <div className="iphone">
-        <div className="iphone-screen">
-          <div className="iphone-island" />
-          <div className="phone-nav"><span>KG</span><i /></div>
-          <div className="phone-copy">
-            <small>INDEPENDENT CREATIVE PARTNER</small>
-            <h4>Quiet confidence.<br />Clear growth.</h4>
-            <span className="phone-cta">START A CONVERSATION</span>
-          </div>
-          <div className="phone-footer">STRATEGY · IDENTITY · DIGITAL</div>
-        </div>
-      </div>
-      <div className="brand-specimen">
-        <span>COLOUR / 03</span>
-        <div><i /><i /><i /></div>
+    <div className="device-stage device-stage-kuiken" aria-label="Kuiken Group identity and digital system">
+      <ParallaxMedia
+        src="/work/kuiken-identity-logo-v3.jpg"
+        alt="Kuiken Group identity system with embossed stationery, tablet, and brand materials"
+        sizes="(max-width: 1024px) 100vw, 58vw"
+        strength={24}
+        className="identity-media"
+      />
+      <div className="identity-index">
+        <span>Identity system</span>
+        <span>02 / 04</span>
       </div>
     </div>
   );
@@ -144,7 +136,7 @@ export default function FeaturedWork() {
                     category="Positioning · Identity · Digital"
                     description="A premium brand system designed to establish credibility quickly and give the firm a clear, flexible foundation for its next stage of growth."
                   />
-                  <KuikenPhone />
+                  <KuikenIdentity />
                 </div>
               </Link>
             </article>

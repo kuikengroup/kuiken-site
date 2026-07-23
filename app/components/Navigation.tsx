@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const links = [
   { label: "About", href: "/#about" },
@@ -15,13 +15,20 @@ const links = [
 export default function Navigation() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const previousScroll = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 18);
+    const onScroll = () => {
+      const currentScroll = window.scrollY;
+      setScrolled(currentScroll > 18);
+      setHidden(currentScroll > 180 && currentScroll > previousScroll.current && !open);
+      previousScroll.current = currentScroll;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [open]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -32,15 +39,15 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${hidden ? "-translate-y-full" : "translate-y-0"} ${
         scrolled
-          ? "border-b border-[#E7DCC1]/10 bg-[#0D0D0D]/88 shadow-[0_12px_40px_rgba(0,0,0,0.25)] backdrop-blur-xl"
+          ? "border-b border-[#E7DCC1]/7 bg-[#0D0D0D]/72 backdrop-blur-2xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
       <div
         className={`mx-auto flex max-w-[90rem] items-center justify-between px-6 transition-all duration-500 sm:px-8 lg:px-12 ${
-          scrolled ? "py-3" : "py-5"
+          scrolled ? "py-2.5" : "py-5"
         }`}
       >
         <Link href="/" className="group flex items-center gap-3" aria-label="Kuiken Group home">
@@ -50,19 +57,19 @@ export default function Navigation() {
             width={75}
             height={63}
             priority
-            className={`w-auto transition-all duration-500 ${scrolled ? "h-9" : "h-11"}`}
+            className={`w-auto transition-all duration-500 ${scrolled ? "h-8 opacity-80" : "h-11"}`}
           />
           <div>
-            <div className="text-[9px] uppercase tracking-[0.34em] text-[#C6A972] sm:text-[10px]">
+            <div className={`text-[9px] uppercase tracking-[0.34em] text-[#C6A972] transition-all duration-500 sm:text-[10px] ${scrolled ? "h-0 -translate-y-1 overflow-hidden opacity-0" : "h-3 opacity-100"}`}>
               Marketing Firm
             </div>
-            <div className="mt-0.5 text-xs font-semibold tracking-[0.23em] text-[#E7DCC1] sm:text-sm">
+            <div className={`text-xs font-semibold tracking-[0.23em] text-[#E7DCC1] transition-all duration-500 sm:text-sm ${scrolled ? "mt-0 opacity-75" : "mt-0.5"}`}>
               KUIKEN GROUP
             </div>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-[11px] uppercase tracking-[0.22em] text-[#E7DCC1]/65 lg:flex">
+        <nav className="hidden items-center gap-9 text-[10px] uppercase tracking-[0.22em] text-[#E7DCC1]/52 lg:flex">
           {links.map((link) => (
             <Link key={link.href} href={link.href} className="nav-link py-2 hover:text-[#C6A972]">
               {link.label}
@@ -73,7 +80,7 @@ export default function Navigation() {
         <div className="hidden items-center gap-3 md:flex">
           <Link
             href="/client-access"
-            className="rounded-full border border-[#C6A972]/30 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#E7DCC1] transition hover:border-[#C6A972] hover:text-[#C6A972]"
+            className="px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#E7DCC1]/52 transition hover:text-[#C6A972]"
           >
             Client Access
           </Link>

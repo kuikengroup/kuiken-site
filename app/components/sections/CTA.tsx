@@ -4,7 +4,7 @@ import Reveal from "../Reveal";
 
 export default function CTA() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[#0D0D0D] py-20 lg:py-28">
+    <section id="contact" className="relative overflow-hidden bg-[#0D0D0D] py-28 sm:py-36 lg:py-48">
       <Container>
         <Reveal>
           <div className="cta-panel relative isolate overflow-hidden rounded-[2rem] border border-[#C6A972]/20 px-7 py-14 sm:px-10 lg:px-14 lg:py-20">

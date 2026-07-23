@@ -7,7 +7,7 @@ const capabilities = ["Brand Strategy", "Digital Marketing", "Web Design"];
 
 export default function Hero() {
   return (
-    <section className="hero-grid relative isolate flex min-h-[100svh] items-center overflow-hidden border-b border-[#E7DCC1]/10 pt-28">
+    <section className="hero-grid relative isolate flex min-h-[100svh] items-center overflow-hidden pt-28">
       <BackgroundGlow className="-left-40 top-20 h-[34rem] w-[34rem]" />
       <BackgroundGlow className="-right-32 bottom-0 h-[30rem] w-[30rem] opacity-60" />
       <div aria-hidden="true" className="grain-overlay absolute inset-0 opacity-[0.17]" />
@@ -22,13 +22,13 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={90}>
-            <h1 className="text-balance text-[clamp(3.4rem,7.2vw,7.6rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-[#E7DCC1]">
+            <h1 className="text-balance text-[clamp(3.75rem,7.75vw,8.25rem)] font-semibold leading-[0.84] tracking-[-0.072em] text-[#E7DCC1]">
               Premium marketing for brands built to grow.
             </h1>
           </Reveal>
 
           <Reveal delay={180}>
-            <p className="mt-8 max-w-2xl text-base leading-8 text-[#E7DCC1]/66 sm:text-lg lg:text-xl lg:leading-9">
+            <p className="mt-9 max-w-xl text-sm leading-7 text-[#E7DCC1]/58 sm:text-base sm:leading-8 lg:text-lg">
               Kuiken Group combines strategy, design, and digital execution to help ambitious businesses look sharper, communicate clearly, and turn attention into measurable growth.
             </p>
           </Reveal>

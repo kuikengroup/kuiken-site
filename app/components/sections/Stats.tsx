@@ -1,5 +1,6 @@
 import Container from "../layout/Container";
 import Reveal from "../Reveal";
+import CountUp from "../animations/CountUp";
 
 const principles = [
   ["01", "Independent", "Senior-level thinking without layers of agency overhead."],
@@ -17,7 +18,9 @@ export default function Stats() {
             <Reveal key={title} delay={index * 70} className="h-full">
               <div className="group h-full px-2 py-8 sm:px-5 lg:min-h-52 lg:px-8 lg:py-10 first:lg:pl-0 last:lg:pr-0">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-semibold tracking-[0.24em] text-[#C6A972]">{number}</span>
+                  <span className="text-[10px] font-semibold tracking-[0.24em] text-[#C6A972]" aria-label={number}>
+                    <CountUp value={index + 1} />
+                  </span>
                   <span className="h-1.5 w-1.5 rounded-full bg-[#C6A972]/35 transition group-hover:bg-[#C6A972]" />
                 </div>
                 <h3 className="mt-10 text-2xl font-semibold tracking-[-0.035em] text-[#E7DCC1]">{title}</h3>

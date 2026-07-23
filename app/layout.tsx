@@ -5,12 +5,29 @@ import "./globals.css";
 import Navigation from "./components/Navigation";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kuikengroup.com"),
   title: {
     default: "Kuiken Group | Premium Marketing & Web Design",
     template: "%s | Kuiken Group",
   },
   description:
     "Kuiken Group helps growing businesses sharpen their brand, strengthen their digital presence, and turn attention into measurable growth.",
+  keywords: ["brand strategy", "website design", "digital marketing", "lead generation", "creative agency"],
+  openGraph: {
+    title: "Kuiken Group | Premium Marketing & Web Design",
+    description: "Strategy, identity, and digital experiences for ambitious businesses ready to grow.",
+    url: "/",
+    siteName: "Kuiken Group",
+    type: "website",
+    images: [{ url: "/work/kuiken-identity-logo-v3.jpg", width: 1448, height: 1086, alt: "Kuiken Group identity system" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kuiken Group | Premium Marketing & Web Design",
+    description: "Strategy, identity, and digital experiences for ambitious businesses ready to grow.",
+    images: ["/work/kuiken-identity-logo-v3.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
