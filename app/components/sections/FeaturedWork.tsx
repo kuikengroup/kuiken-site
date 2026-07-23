@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ParallaxMedia from "../animations/ParallaxMedia";
+import { getProject } from "../../data/projects";
 import Container from "../layout/Container";
 import Reveal from "../Reveal";
 
@@ -89,6 +90,10 @@ function KuikenIdentity() {
 }
 
 export default function FeaturedWork() {
+  const lawnFadez = getProject("lawn-fadez");
+  const kuikenGroup = getProject("kuiken-group");
+  const wirelessWorld = getProject("wireless-world");
+
   return (
     <section id="work" className="overflow-hidden border-b border-[#E7DCC1]/10 bg-[#0D0D0D] py-24 sm:py-28 lg:py-44">
       <Container>
@@ -109,14 +114,14 @@ export default function FeaturedWork() {
         <div className="mt-24 sm:mt-32 lg:mt-48">
           <Reveal>
             <article className="editorial-project">
-              <Link href="/work/lawn-fadez" className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-8 focus-visible:ring-offset-[#0D0D0D]">
+              <Link href={lawnFadez.caseStudyHref!} className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-8 focus-visible:ring-offset-[#0D0D0D]">
                 <LawnFadezLaptop />
                 <div className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-[1.12fr_0.88fr]">
                   <ProjectMeta
                     number="01"
-                    title="Lawn Fadez"
-                    category="Brand · Web · Growth"
-                    description="A neighborhood lawn-care business repositioned with a sharper identity, a clearer offer, and a digital experience built to turn local attention into booked work."
+                    title={lawnFadez.title}
+                    category={lawnFadez.services.slice(0, 3).join(" · ")}
+                    description={lawnFadez.shortDescription}
                   />
                   <div className="hidden items-start justify-end pt-2 lg:flex">
                     <span className="work-arrow flex h-16 w-16 items-center justify-center rounded-full border border-[#E7DCC1]/14 text-xl text-[#E7DCC1]/50">↗</span>
@@ -128,13 +133,13 @@ export default function FeaturedWork() {
 
           <Reveal delay={100}>
             <article className="editorial-project mt-32 ml-auto max-w-[72rem] sm:mt-40 lg:mt-56">
-              <Link href="/work/kuiken-group" className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-8 focus-visible:ring-offset-[#0D0D0D]">
+              <Link href={kuikenGroup.caseStudyHref!} className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-8 focus-visible:ring-offset-[#0D0D0D]">
                 <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
                   <ProjectMeta
                     number="02"
-                    title="Kuiken Group"
-                    category="Positioning · Identity · Digital"
-                    description="A premium brand system designed to establish credibility quickly and give the firm a clear, flexible foundation for its next stage of growth."
+                    title={kuikenGroup.title}
+                    category={kuikenGroup.services.slice(0, 3).join(" · ")}
+                    description={kuikenGroup.shortDescription}
                   />
                   <KuikenIdentity />
                 </div>
@@ -147,12 +152,21 @@ export default function FeaturedWork() {
               <div className="text-[10px] font-semibold tracking-[0.28em] text-[#C6A972]">03</div>
               <div className="mt-6 lg:mt-0">
                 <div className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/36">Retail growth system</div>
-                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-[#E7DCC1] sm:text-4xl">Wireless World</h3>
+                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-[#E7DCC1] sm:text-4xl">{wirelessWorld.title}</h3>
               </div>
               <div className="mt-8 flex items-center gap-4 lg:mt-0 lg:justify-self-end">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#C6A972]" />
                 <span className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/42">Case study in progress</span>
               </div>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <div className="mt-14 flex justify-end sm:mt-18">
+              <Link href="/work" className="premium-focus group inline-flex min-h-11 items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
+                View all work
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
             </div>
           </Reveal>
         </div>

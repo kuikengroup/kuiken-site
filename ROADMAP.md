@@ -27,13 +27,22 @@
 - Corrected navigation and non-functional link behavior
 - Permanent positioning and design documentation
 
+### Milestone 3.0 — Work and Services Expansion
+
+- Dedicated editorial Work index
+- Featured Lawn Fadez and Kuiken Group project narratives
+- Honest Wireless World in-progress entry
+- Dedicated Services page with six detailed capabilities
+- Service combinations, working model, process, FAQ, and conversion path
+- Typed shared project-data structure
+- Homepage portfolio and service links connected to complete routes
+- Data-driven next-project navigation
+
 ## Next
 
-### Milestone 3 — Website Expansion
+### Milestone 3.1 — Contact and Portfolio Growth
 
-- Dedicated Work index
 - Wireless World case-study framework and verified content
-- Dedicated Services page with deeper capability narratives
 - Refined Contact page with a useful qualification flow
 - Additional verified project imagery
 

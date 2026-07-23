@@ -4,6 +4,7 @@ import Link from "next/link";
 import AnimatedButton from "../../components/AnimatedButton";
 import Container from "../../components/layout/Container";
 import Reveal from "../../components/Reveal";
+import { getProject } from "../../data/projects";
 
 export const metadata: Metadata = {
   title: "Lawn Fadez Case Study",
@@ -41,13 +42,15 @@ function CaseSection({
 }
 
 export default function LawnFadezCaseStudy() {
+  const nextProject = getProject("kuiken-group");
+
   return (
     <article className="min-h-screen overflow-clip bg-[#0D0D0D] text-[#E7DCC1]">
       <header className="pt-36 sm:pt-44 lg:pt-52">
         <Container>
           <Reveal>
-            <Link href="/#work" className="premium-focus inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#C6A972]">
-              <span>←</span> Selected work
+            <Link href="/work" className="premium-focus inline-flex min-h-11 items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#C6A972]">
+              <span>←</span> All work
             </Link>
           </Reveal>
           <div className="mt-14 grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
@@ -193,9 +196,9 @@ export default function LawnFadezCaseStudy() {
 
       <nav aria-label="Next project" className="border-y border-[#E7DCC1]/10 bg-[#111211]">
         <Container className="py-16 sm:py-20">
-          <Link href="/work/kuiken-group" className="premium-focus group grid gap-6 rounded-[1.5rem] py-3 lg:grid-cols-[0.4fr_1.3fr_0.3fr] lg:items-center">
+          <Link href={nextProject.caseStudyHref!} className="premium-focus group grid gap-6 rounded-[1.5rem] py-3 lg:grid-cols-[0.4fr_1.3fr_0.3fr] lg:items-center">
             <span className="section-label">Next project</span>
-            <span className="text-4xl font-semibold tracking-[-0.05em] sm:text-6xl">Kuiken Group</span>
+            <span className="text-4xl font-semibold tracking-[-0.05em] sm:text-6xl">{nextProject.title}</span>
             <span className="text-2xl text-[#C6A972] transition-transform duration-300 group-hover:translate-x-2 lg:justify-self-end">→</span>
           </Link>
         </Container>

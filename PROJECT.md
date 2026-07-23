@@ -24,6 +24,7 @@ The website should create trust before the first conversation. It must feel quie
 - `app/components/layout/` contains shared layout primitives such as `Container`.
 - `app/components/sections/` contains reusable page sections.
 - `app/components/ui/` contains smaller presentational components.
+- `app/data/projects.ts` contains typed project facts shared across portfolio surfaces and case-study navigation.
 - `app/work/` contains case-study routes.
 - `public/work/` contains optimized portfolio imagery.
 
@@ -33,6 +34,8 @@ Pages and layouts remain Server Components unless browser APIs, state, or event 
 
 - `/` — flagship marketing homepage
 - `/about` — firm story, positioning, principal-led model, and working principles
+- `/services` — detailed capabilities, deliverables, working model, process, and FAQ
+- `/work` — editorial portfolio index
 - `/work/lawn-fadez` — Lawn Fadez case study
 - `/work/kuiken-group` — Kuiken Group case study
 - `/client-access` — client portal entry
@@ -43,6 +46,7 @@ Pages and layouts remain Server Components unless browser APIs, state, or event 
 - Milestone 1: homepage foundation, navigation, footer, and design system
 - Milestone 2.1: editorial Featured Work and responsive device presentation
 - Milestone 2.2: premium motion, realistic work imagery, cohesive About page, expanded case studies, accessibility polish, and brand-consistency documentation
+- Milestone 3.0: editorial Work index, detailed Services page, typed shared project data, and a complete portfolio-to-conversation path
 
 ## Development
 
