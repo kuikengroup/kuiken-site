@@ -1,62 +1,96 @@
 import Link from "next/link";
 import Container from "../layout/Container";
 import Reveal from "../Reveal";
-import SectionHeading from "../ui/SectionHeading";
 
-const projects = [
-  {
-    number: "01",
-    title: "Lawn Fadez",
-    category: "Brand identity · Web design · Lead generation",
-    description:
-      "A neighborhood lawn-care business repositioned with a sharper identity, a clearer offer, and a digital presence built to turn local attention into booked work.",
-    href: "/work/lawn-fadez",
-    visual: "lawn",
-  },
-  {
-    number: "02",
-    title: "Kuiken Group",
-    category: "Positioning · Identity system · Digital experience",
-    description:
-      "A complete premium brand system designed to establish credibility quickly and support the firm as its capabilities, portfolio, and client base grow.",
-    href: "/about",
-    visual: "kuiken",
-  },
-];
+function ProjectMeta({
+  number,
+  title,
+  category,
+  description,
+}: {
+  number: string;
+  title: string;
+  category: string;
+  description: string;
+}) {
+  return (
+    <div className="project-meta">
+      <div className="flex items-center gap-4">
+        <span className="text-[10px] font-semibold tracking-[0.28em] text-[#C6A972]">{number}</span>
+        <span className="h-px w-10 bg-[#E7DCC1]/16" />
+        <span className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/38">{category}</span>
+      </div>
+      <h3 className="mt-6 text-[clamp(2.75rem,5.5vw,5.75rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-[#E7DCC1]">
+        {title}
+      </h3>
+      <p className="mt-6 max-w-xl text-sm leading-7 text-[#E7DCC1]/54 sm:text-base sm:leading-8">
+        {description}
+      </p>
+      <div className="mt-8 inline-flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
+        Explore the work
+        <span className="project-link-line h-px w-10 bg-[#C6A972]" />
+      </div>
+    </div>
+  );
+}
 
-function ProjectVisual({ type, title }: { type: string; title: string }) {
-  if (type === "lawn") {
-    return (
-      <div className="project-visual lawn-visual" aria-label={`${title} website concept`}>
-        <div className="browser-chrome">
-          <span /><span /><span />
-          <small>lawnfadez.com</small>
-        </div>
-        <div className="lawn-site">
-          <div className="lawn-nav"><strong>LAWN FADEZ</strong><span>Services&nbsp;&nbsp; Work&nbsp;&nbsp; Contact</span></div>
-          <div className="lawn-copy">
-            <small>LE MARS, IOWA</small>
-            <h3>Clean lines.<br />Fresh lawns.</h3>
-            <p>Reliable lawn care with a sharper finish.</p>
-            <button type="button">REQUEST A QUOTE</button>
+function LawnFadezLaptop() {
+  return (
+    <div className="device-stage device-stage-lawn" aria-label="Lawn Fadez website shown on a MacBook">
+      <div className="stage-orbit stage-orbit-one" />
+      <div className="stage-orbit stage-orbit-two" />
+      <div className="macbook">
+        <div className="macbook-lid">
+          <div className="macbook-camera" />
+          <div className="macbook-screen">
+            <div className="lawn-site">
+              <div className="lawn-nav">
+                <strong>LAWN FADEZ</strong>
+                <span>Services&nbsp;&nbsp;&nbsp; Work&nbsp;&nbsp;&nbsp; Contact</span>
+              </div>
+              <div className="lawn-copy">
+                <small>LE MARS, IOWA</small>
+                <h4>Clean lines.<br />Fresh lawns.</h4>
+                <p>Reliable lawn care with a sharper finish.</p>
+                <span className="lawn-button">REQUEST A QUOTE</span>
+              </div>
+              <div className="lawn-stripes" />
+            </div>
           </div>
-          <div className="lawn-stripes" />
+        </div>
+        <div className="macbook-base"><span /></div>
+      </div>
+      <div className="device-caption">
+        <span>Digital experience</span>
+        <span>2025</span>
+      </div>
+    </div>
+  );
+}
+
+function KuikenPhone() {
+  return (
+    <div className="device-stage device-stage-kuiken" aria-label="Kuiken Group mobile experience and brand system">
+      <div className="brand-wordmark" aria-hidden="true">KUIKEN</div>
+      <div className="editorial-note">
+        <span>01 / POSITION</span>
+        <p>Strategy made visible.</p>
+      </div>
+      <div className="iphone">
+        <div className="iphone-screen">
+          <div className="iphone-island" />
+          <div className="phone-nav"><span>KG</span><i /></div>
+          <div className="phone-copy">
+            <small>INDEPENDENT CREATIVE PARTNER</small>
+            <h4>Quiet confidence.<br />Clear growth.</h4>
+            <span className="phone-cta">START A CONVERSATION</span>
+          </div>
+          <div className="phone-footer">STRATEGY · IDENTITY · DIGITAL</div>
         </div>
       </div>
-    );
-  }
-
-  return (
-    <div className="project-visual kuiken-visual" aria-label={`${title} brand system concept`}>
-      <div className="brand-board">
-        <div className="brand-mark">KG</div>
-        <div className="brand-copy">
-          <small>KUIKEN GROUP</small>
-          <h3>Quiet confidence,<br />built into every detail.</h3>
-        </div>
-        <div className="brand-swatches"><span /><span /><span /><span /></div>
-        <div className="brand-card brand-card-one">KUIKEN<br />GROUP</div>
-        <div className="brand-card brand-card-two">PREMIUM<br />MARKETING</div>
+      <div className="brand-specimen">
+        <span>COLOUR / 03</span>
+        <div><i /><i /><i /></div>
       </div>
     </div>
   );
@@ -64,43 +98,71 @@ function ProjectVisual({ type, title }: { type: string; title: string }) {
 
 export default function FeaturedWork() {
   return (
-    <section id="work" className="border-b border-[#E7DCC1]/10 bg-[#0D0D0D] py-20 lg:py-32">
+    <section id="work" className="overflow-hidden border-b border-[#E7DCC1]/10 bg-[#0D0D0D] py-24 sm:py-28 lg:py-44">
       <Container>
         <Reveal>
-          <SectionHeading
-            eyebrow="Selected work"
-            title="Brand systems designed to make ambitious businesses feel unmistakably credible."
-            copy="A growing collection of positioning, identity, and digital work—each shaped around a real business goal rather than a decorative trend."
-            align="split"
-          />
+          <div className="grid gap-10 lg:grid-cols-[0.58fr_1.42fr] lg:items-end">
+            <div>
+              <div className="section-label">Selected work · 2024—26</div>
+              <p className="mt-6 max-w-xs text-sm leading-7 text-[#E7DCC1]/46">
+                Identity and digital systems built around a sharper business position.
+              </p>
+            </div>
+            <h2 className="max-w-5xl text-balance text-[clamp(3.25rem,7.4vw,7.5rem)] font-semibold leading-[0.88] tracking-[-0.067em] text-[#E7DCC1]">
+              Work that makes the value feel obvious.
+            </h2>
+          </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 lg:mt-20 lg:gap-8">
-          {projects.map((project, index) => (
-            <Reveal key={project.title} delay={index * 100}>
-              <article className="work-card group overflow-hidden rounded-[2rem] border border-[#E7DCC1]/10 bg-[#151615]">
-                <Link href={project.href} className="grid lg:grid-cols-[0.72fr_1.28fr]">
-                  <div className="flex min-h-[23rem] flex-col p-7 sm:p-10 lg:min-h-[35rem] lg:p-12">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-semibold tracking-[0.25em] text-[#C6A972]">{project.number}</span>
-                      <span className="work-arrow flex h-11 w-11 items-center justify-center rounded-full border border-[#E7DCC1]/12 text-[#E7DCC1]/45">↗</span>
-                    </div>
-                    <div className="mt-auto pt-16">
-                      <div className="text-[10px] uppercase tracking-[0.24em] text-[#E7DCC1]/40">{project.category}</div>
-                      <h3 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-[#E7DCC1] sm:text-5xl">{project.title}</h3>
-                      <p className="mt-5 max-w-xl text-sm leading-7 text-[#E7DCC1]/56 sm:text-base sm:leading-8">{project.description}</p>
-                      <div className="mt-8 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
-                        View project <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                      </div>
-                    </div>
+        <div className="mt-24 sm:mt-32 lg:mt-48">
+          <Reveal>
+            <article className="editorial-project">
+              <Link href="/work/lawn-fadez" className="group block">
+                <LawnFadezLaptop />
+                <div className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-[1.12fr_0.88fr]">
+                  <ProjectMeta
+                    number="01"
+                    title="Lawn Fadez"
+                    category="Brand · Web · Growth"
+                    description="A neighborhood lawn-care business repositioned with a sharper identity, a clearer offer, and a digital experience built to turn local attention into booked work."
+                  />
+                  <div className="hidden items-start justify-end pt-2 lg:flex">
+                    <span className="work-arrow flex h-16 w-16 items-center justify-center rounded-full border border-[#E7DCC1]/14 text-xl text-[#E7DCC1]/50">↗</span>
                   </div>
-                  <div className="min-h-[25rem] overflow-hidden border-t border-[#E7DCC1]/10 p-4 sm:p-6 lg:min-h-[35rem] lg:border-l lg:border-t-0 lg:p-8">
-                    <ProjectVisual type={project.visual} title={project.title} />
-                  </div>
-                </Link>
-              </article>
-            </Reveal>
-          ))}
+                </div>
+              </Link>
+            </article>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <article className="editorial-project mt-32 ml-auto max-w-[72rem] sm:mt-40 lg:mt-56">
+              <Link href="/about" className="group block">
+                <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+                  <ProjectMeta
+                    number="02"
+                    title="Kuiken Group"
+                    category="Positioning · Identity · Digital"
+                    description="A premium brand system designed to establish credibility quickly and give the firm a clear, flexible foundation for its next stage of growth."
+                  />
+                  <KuikenPhone />
+                </div>
+              </Link>
+            </article>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="mt-32 grid border-y border-[#E7DCC1]/10 py-10 sm:mt-40 sm:py-12 lg:mt-56 lg:grid-cols-[0.7fr_1fr_0.7fr] lg:items-center">
+              <div className="text-[10px] font-semibold tracking-[0.28em] text-[#C6A972]">03</div>
+              <div className="mt-6 lg:mt-0">
+                <div className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/36">Retail growth system</div>
+                <h3 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-[#E7DCC1] sm:text-4xl">Wireless World</h3>
+              </div>
+              <div className="mt-8 flex items-center gap-4 lg:mt-0 lg:justify-self-end">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#C6A972]" />
+                <span className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/42">Case study in progress</span>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>
