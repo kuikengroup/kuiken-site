@@ -39,8 +39,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <div className="section-label">Navigate</div>
                 <div className="mt-5 grid gap-3 text-sm text-[#E7DCC1]/58">
                   <Link href="/#about" className="hover:text-[#C6A972]">About</Link>
+                  <Link href="/#work" className="hover:text-[#C6A972]">Work</Link>
                   <Link href="/#services" className="hover:text-[#C6A972]">Services</Link>
-                  <Link href="/#approach" className="hover:text-[#C6A972]">Approach</Link>
+                  <Link href="/#approach" className="hover:text-[#C6A972]">Process</Link>
                   <Link href="/client-access" className="hover:text-[#C6A972]">Client Access</Link>
                 </div>
               </div>
