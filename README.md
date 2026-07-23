@@ -75,7 +75,7 @@ npm run deploy
 
 The Worker configuration is in `wrangler.jsonc`. It uses:
 
-- Worker name: `kuiken-group`
+- Worker name: `kuiken-site`
 - Worker entry: `.open-next/worker.js`
 - Static assets: `.open-next/assets`
 - Compatibility date: `2026-07-23`
