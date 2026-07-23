@@ -72,9 +72,9 @@ export default function HomeShell() {
                   <div className="mt-36 lg:mt-52">
                     <h3 className="text-3xl font-semibold tracking-[-0.045em] text-[#E7DCC1]">{service.title}</h3>
                     <p className="mt-5 max-w-sm text-sm leading-7 text-[#E7DCC1]/50">{service.copy}</p>
-                    <div className="mt-8 flex items-center gap-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
-                      Explore capability
-                      <span className="block h-px w-8 bg-[#C6A972]/60 transition-all duration-500 group-hover:w-16" />
+                    <div className="mt-8 flex items-center gap-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#E7DCC1]/38">
+                      Strategy-led execution
+                      <span className="block h-px w-8 bg-[#C6A972]/45" />
                     </div>
                   </div>
                 </article>

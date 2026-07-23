@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const links = [
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
   { label: "Work", href: "/#work" },
   { label: "Services", href: "/#services" },
   { label: "Process", href: "/#approach" },
@@ -50,7 +50,7 @@ export default function Navigation() {
           scrolled ? "py-2.5" : "py-5"
         }`}
       >
-        <Link href="/" className="group flex items-center gap-3" aria-label="Kuiken Group home">
+        <Link href="/" onClick={() => setOpen(false)} className="group flex items-center gap-3" aria-label="Kuiken Group home">
           <Image
             src="/kuiken-logo-white.png"
             alt=""
@@ -139,6 +139,7 @@ export default function Navigation() {
             href="https://cal.com/kuikengroup/initial-conversation"
             target="_blank"
             rel="noreferrer"
+            onClick={() => setOpen(false)}
             className="rounded-full bg-[#C6A972] px-5 py-4 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0D0D0D]"
           >
             Start a Conversation

@@ -35,12 +35,42 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
 a {
   transition: color 220ms ease, border-color 220ms ease, background-color 220ms ease, opacity 220ms ease, transform 220ms ease;
 }
 
 .text-balance {
   text-wrap: balance;
+}
+
+.premium-focus:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 8px;
+}
+
+.case-copy-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.case-prose {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.case-meta-label {
+  display: block;
+  margin-bottom: .65rem;
+  color: var(--gold);
+  font-size: .56rem;
+  font-weight: 600;
+  letter-spacing: .24em;
+  text-transform: uppercase;
 }
 
 .section-label {
@@ -225,6 +255,13 @@ a {
 @media (max-width: 640px) {
   .hero-grid::before {
     background-size: 46px 46px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .case-copy-grid {
+    grid-template-columns: .58fr 1.42fr;
+    gap: 5rem;
   }
 }
 

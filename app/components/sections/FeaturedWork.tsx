@@ -109,7 +109,7 @@ export default function FeaturedWork() {
         <div className="mt-24 sm:mt-32 lg:mt-48">
           <Reveal>
             <article className="editorial-project">
-              <Link href="/work/lawn-fadez" className="group block">
+              <Link href="/work/lawn-fadez" className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-8 focus-visible:ring-offset-[#0D0D0D]">
                 <LawnFadezLaptop />
                 <div className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-[1.12fr_0.88fr]">
                   <ProjectMeta
@@ -128,7 +128,7 @@ export default function FeaturedWork() {
 
           <Reveal delay={100}>
             <article className="editorial-project mt-32 ml-auto max-w-[72rem] sm:mt-40 lg:mt-56">
-              <Link href="/about" className="group block">
+              <Link href="/work/kuiken-group" className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-8 focus-visible:ring-offset-[#0D0D0D]">
                 <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
                   <ProjectMeta
                     number="02"

@@ -6,8 +6,7 @@ export default function PrivatePage() {
       description:
         "Current website files, brand resources, and design materials.",
       status: "Active",
-      href: "#",
-      action: "Open Assets",
+      action: "Available on request",
       preview:
         "Brand guidelines, logos, graphics, and website deliverables.",
     },
@@ -17,8 +16,7 @@ export default function PrivatePage() {
       description:
         "Current advertising, social media, and campaign performance updates.",
       status: "Current",
-      href: "#",
-      action: "View Campaigns",
+      action: "Available on request",
       preview:
         "Campaign summaries, analytics, creative assets, and performance reports.",
     },
@@ -28,8 +26,7 @@ export default function PrivatePage() {
       description:
         "Meeting notes, project plans, proposals, and shared files.",
       status: "Available",
-      href: "#",
-      action: "Open Documents",
+      action: "Available on request",
       preview:
         "Project timelines, deliverables, approvals, and supporting resources.",
     },
@@ -37,7 +34,7 @@ export default function PrivatePage() {
 
   return (
     <div className="min-h-screen bg-[#0D0D0D] text-[#E7DCC1]">
-      <main className="mx-auto max-w-7xl px-8 py-14 lg:px-12 lg:py-16">
+      <div className="mx-auto max-w-7xl px-8 py-14 lg:px-12 lg:py-16">
         <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="max-w-3xl">
             <div className="text-[11px] uppercase tracking-[0.34em] text-[#C6A972]">
@@ -195,19 +192,14 @@ export default function PrivatePage() {
                   </p>
                 </div>
 
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-6 inline-block rounded-full border border-[#C6A972]/35 bg-transparent px-5 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#E7DCC1] transition duration-200 hover:-translate-y-0.5 hover:border-[#C6A972] hover:text-[#C6A972]"
-                >
+                <div className="mt-6 inline-block rounded-full border border-[#E7DCC1]/10 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.18em] text-[#E7DCC1]/42">
                   {item.action}
-                </a>
+                </div>
               </div>
             ))}
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }
