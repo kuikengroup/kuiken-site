@@ -143,7 +143,7 @@ export default function AboutPage() {
                     <div className="text-lg font-semibold">Brady Kuiken</div>
                     <div className="mt-1 text-[9px] uppercase tracking-[0.22em] text-[#C6A972]">Founder · President / CEO</div>
                   </div>
-                  <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external variant="secondary">
+                  <AnimatedButton href="/contact" variant="secondary">
                     Start a Conversation
                   </AnimatedButton>
                 </div>

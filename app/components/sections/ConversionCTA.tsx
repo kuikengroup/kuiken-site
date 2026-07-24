@@ -47,7 +47,7 @@ export default function ConversionCTA({
                 <p className="mb-7 max-w-sm text-sm leading-7 text-[#E7DCC1]/68">
                   {copy}
                 </p>
-                <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external>
+                <AnimatedButton href="/contact">
                   Start a Conversation
                 </AnimatedButton>
               </div>

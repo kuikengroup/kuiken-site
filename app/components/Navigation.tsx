@@ -9,7 +9,7 @@ const links = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "Process", href: "/#approach" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navigation() {
@@ -100,14 +100,12 @@ export default function Navigation() {
           >
             Client Access
           </Link>
-          <a
-            href="https://cal.com/kuikengroup/initial-conversation"
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            href="/contact"
             className="gold-button motion-ui rounded-full bg-[#C6A972] px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0D0D0D] hover:-translate-y-0.5 hover:bg-[#D3B987]"
           >
             Start a Conversation
-          </a>
+          </Link>
         </div>
 
         <button
@@ -155,15 +153,13 @@ export default function Navigation() {
           >
             Client Access
           </Link>
-          <a
-            href="https://cal.com/kuikengroup/initial-conversation"
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            href="/contact"
             onClick={() => setOpen(false)}
             className="rounded-full bg-[#C6A972] px-5 py-4 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0D0D0D]"
           >
             Start a Conversation
-          </a>
+          </Link>
         </div>
       </div>
     </header>

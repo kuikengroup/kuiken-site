@@ -35,7 +35,7 @@ export default function Hero() {
 
           <Reveal stagger={3}>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external>
+              <AnimatedButton href="/contact">
                 Start a Conversation
               </AnimatedButton>
               <AnimatedButton href="#services" variant="secondary">
