@@ -22,7 +22,7 @@ function ProjectMeta({
         <span className="h-px w-10 bg-[#E7DCC1]/16" />
         <div className="flex flex-wrap gap-2">
           {category.split(" · ").map((tag) => (
-            <span key={tag} className="rounded-full border border-[#E7DCC1]/10 px-3 py-1.5 text-[8px] uppercase tracking-[0.2em] text-[#E7DCC1]/46">
+            <span key={tag} className="rounded-full border border-[#E7DCC1]/10 px-3 py-1.5 text-[8px] uppercase tracking-[0.2em] text-[#E7DCC1]/64">
               {tag}
             </span>
           ))}
@@ -31,7 +31,7 @@ function ProjectMeta({
       <h3 className="mt-6 text-[clamp(2.75rem,5.5vw,5.75rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-[#E7DCC1]">
         {title}
       </h3>
-      <p className="mt-6 max-w-xl text-sm leading-7 text-[#E7DCC1]/54 sm:text-base sm:leading-8">
+      <p className="mt-6 max-w-xl text-sm leading-7 text-[#E7DCC1]/64 sm:text-base sm:leading-8">
         {description}
       </p>
       <div className="mt-8 inline-flex items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
@@ -55,7 +55,6 @@ function LawnFadezLaptop() {
               src="/work/lawn-fadez-homepage-v2.jpg"
               alt="Lawn Fadez website featuring a premium striped lawn"
               sizes="(max-width: 768px) 75vw, 62vw"
-              priority
               strength={10}
               className="lawn-site"
             />
@@ -101,7 +100,7 @@ export default function FeaturedWork() {
           <div className="grid gap-10 lg:grid-cols-[0.58fr_1.42fr] lg:items-end">
             <div>
               <div className="section-label">Selected work · 2024—26</div>
-              <p className="mt-6 max-w-xs text-sm leading-7 text-[#E7DCC1]/46">
+              <p className="mt-6 max-w-xs text-sm leading-7 text-[#E7DCC1]/64">
                 Identity and digital systems built around a sharper business position.
               </p>
             </div>
@@ -151,12 +150,12 @@ export default function FeaturedWork() {
             <div className="mt-32 grid border-y border-[#E7DCC1]/10 py-10 sm:mt-40 sm:py-12 lg:mt-56 lg:grid-cols-[0.7fr_1fr_0.7fr] lg:items-center">
               <div className="text-[10px] font-semibold tracking-[0.28em] text-[#C6A972]">03</div>
               <div className="mt-6 lg:mt-0">
-                <div className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/36">Retail growth system</div>
+                <div className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/60">Retail growth system</div>
                 <h3 className="mt-3 text-3xl font-semibold tracking-[-0.045em] text-[#E7DCC1] sm:text-4xl">{wirelessWorld.title}</h3>
               </div>
               <div className="mt-8 flex items-center gap-4 lg:mt-0 lg:justify-self-end">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#C6A972]" />
-                <span className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/42">Case study in progress</span>
+                <span className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/60">Case study in progress</span>
               </div>
             </div>
           </Reveal>
@@ -164,7 +163,7 @@ export default function FeaturedWork() {
           <Reveal>
             <div className="mt-14 flex justify-end sm:mt-18">
               <Link href="/work" className="premium-focus group inline-flex min-h-11 items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
-                View all work
+                View Work
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
             </div>

@@ -5,12 +5,14 @@ import CTA from "../components/sections/CTA";
 import Container from "../components/layout/Container";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/ui/SectionHeading";
+import { createMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "About",
   description:
     "Meet Kuiken Group, a principal-led marketing firm helping ambitious businesses build sharper brands, websites, and growth systems.",
-};
+  path: "/about",
+});
 
 const capabilities = [
   ["01", "Position", "Brand strategy and messaging that clarify what makes the business valuable and why the right audience should care."],
@@ -42,7 +44,7 @@ export default function AboutPage() {
           </Reveal>
           <div className="mt-14 grid gap-10 border-t border-[#E7DCC1]/10 pt-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
             <Reveal delay={140}>
-              <p className="text-[10px] uppercase tracking-[0.24em] text-[#E7DCC1]/36">
+              <p className="text-[10px] uppercase tracking-[0.24em] text-[#E7DCC1]/60">
                 Independent · Principal-led · Midwest based
               </p>
             </Reveal>
@@ -71,7 +73,7 @@ export default function AboutPage() {
                 <article className="grid gap-6 border-b border-[#E7DCC1]/10 py-10 sm:py-12 lg:grid-cols-[0.22fr_0.58fr_1.2fr] lg:items-center">
                   <span className="text-[10px] tracking-[0.25em] text-[#C6A972]">{number}</span>
                   <h2 className="text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">{title}</h2>
-                  <p className="max-w-xl text-sm leading-7 text-[#E7DCC1]/50 lg:justify-self-end">{copy}</p>
+                  <p className="max-w-xl text-sm leading-7 text-[#E7DCC1]/64 lg:justify-self-end">{copy}</p>
                 </article>
               </Reveal>
             ))}
@@ -104,10 +106,10 @@ export default function AboutPage() {
                   Good businesses are often better than their brands make them appear.
                 </h2>
                 <div className="mt-10 grid gap-8 border-t border-[#E7DCC1]/10 pt-8 sm:grid-cols-2">
-                  <p className="text-sm leading-8 text-[#E7DCC1]/52">
+                  <p className="text-sm leading-8 text-[#E7DCC1]/64">
                     Kuiken Group exists to close that gap. Clearer positioning and considered design help the right people recognize a business&apos;s value before the first conversation.
                   </p>
-                  <p className="text-sm leading-8 text-[#E7DCC1]/52">
+                  <p className="text-sm leading-8 text-[#E7DCC1]/64">
                     The goal is not to make a business look fashionable. It is to build a credible, useful system that supports where the business is going next.
                   </p>
                 </div>
@@ -123,7 +125,7 @@ export default function AboutPage() {
             <Reveal>
               <div>
                 <div className="section-label">Principal-led</div>
-                <p className="mt-7 max-w-sm text-sm leading-7 text-[#E7DCC1]/48">
+                <p className="mt-7 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">
                   One point of contact, direct accountability, and senior attention throughout the work.
                 </p>
               </div>
@@ -142,7 +144,7 @@ export default function AboutPage() {
                     <div className="mt-1 text-[9px] uppercase tracking-[0.22em] text-[#C6A972]">Founder · President / CEO</div>
                   </div>
                   <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external variant="secondary">
-                    Start a conversation
+                    Start a Conversation
                   </AnimatedButton>
                 </div>
               </div>
@@ -162,7 +164,7 @@ export default function AboutPage() {
                 <article className="h-full min-h-72 bg-[#151615] p-8 sm:p-10">
                   <span className="text-[10px] tracking-[0.25em] text-[#C6A972]">0{index + 1}</span>
                   <h3 className="mt-20 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{title}</h3>
-                  <p className="mt-4 max-w-md text-sm leading-7 text-[#E7DCC1]/48">{copy}</p>
+                  <p className="mt-4 max-w-md text-sm leading-7 text-[#E7DCC1]/64">{copy}</p>
                 </article>
               </Reveal>
             ))}
@@ -184,7 +186,7 @@ export default function AboutPage() {
               ].map(([title, copy]) => (
                 <article key={title} className="rounded-[1.5rem] border border-[#E7DCC1]/10 bg-[#171817] p-7 sm:p-8">
                   <h3 className="text-xl font-semibold tracking-[-0.03em]">{title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-[#E7DCC1]/48">{copy}</p>
+                  <p className="mt-3 text-sm leading-7 text-[#E7DCC1]/64">{copy}</p>
                 </article>
               ))}
             </div>

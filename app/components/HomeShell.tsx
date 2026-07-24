@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 import FeaturedWork from "./sections/FeaturedWork";
-import Stats from "./sections/Stats";
+import WhyKuiken from "./sections/WhyKuiken";
 import Process from "./sections/Process";
 import CTA from "./sections/CTA";
 import Container from "./layout/Container";
@@ -52,7 +52,7 @@ export default function HomeShell() {
       </section>
 
       <FeaturedWork />
-      <Stats />
+      <WhyKuiken />
 
       <section id="services" className="relative overflow-hidden border-b border-[#E7DCC1]/10 bg-[#0D0D0D] py-28 sm:py-36 lg:py-48">
         <Container>
@@ -75,7 +75,7 @@ export default function HomeShell() {
                   </div>
                   <div className="mt-36 lg:mt-52">
                     <h3 className="text-3xl font-semibold tracking-[-0.045em] text-[#E7DCC1]">{service.title}</h3>
-                    <p className="mt-5 max-w-sm text-sm leading-7 text-[#E7DCC1]/50">{service.copy}</p>
+                    <p className="mt-5 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">{service.copy}</p>
                     <div className="mt-8 flex items-center gap-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
                       Explore capability
                       <span className="block h-px w-8 bg-[#C6A972]/60 transition-all duration-500 group-hover:w-16" />

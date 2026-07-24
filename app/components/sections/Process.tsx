@@ -18,7 +18,7 @@ export default function Process() {
               <h2 className="max-w-5xl text-balance text-[clamp(3.25rem,6.7vw,7rem)] font-semibold leading-[0.9] tracking-[-0.065em] text-[#E7DCC1]">
                 Clarity first.<br />Then everything else.
               </h2>
-              <p className="mt-8 max-w-xl text-sm leading-7 text-[#E7DCC1]/48 sm:text-base sm:leading-8">
+              <p className="mt-8 max-w-xl text-sm leading-7 text-[#E7DCC1]/64 sm:text-base sm:leading-8">
                 A deliberately lean process that turns ambition into a focused brand system people can understand and trust.
               </p>
             </div>
@@ -31,8 +31,8 @@ export default function Process() {
               <article className="process-story group grid gap-8 border-b border-[#E7DCC1]/12 py-12 sm:py-16 lg:grid-cols-[0.25fr_0.75fr_0.75fr_0.25fr] lg:items-center">
                 <span className="text-[10px] font-semibold tracking-[0.28em] text-[#C6A972]">{number}</span>
                 <h3 className="text-[clamp(3rem,6vw,6.5rem)] font-semibold leading-[0.85] tracking-[-0.065em] text-[#E7DCC1]">{title}</h3>
-                <p className="max-w-md text-sm leading-7 text-[#E7DCC1]/48 lg:justify-self-end">{copy}</p>
-                <div className="process-verb hidden text-right text-[9px] uppercase tracking-[0.25em] text-[#E7DCC1]/30 lg:block">
+                <p className="max-w-md text-sm leading-7 text-[#E7DCC1]/64 lg:justify-self-end">{copy}</p>
+                <div className="process-verb hidden text-right text-[9px] uppercase tracking-[0.25em] text-[#E7DCC1]/60 lg:block">
                   {verb}
                 </div>
               </article>

@@ -39,7 +39,7 @@ export default function Hero() {
                 Start a Conversation
               </AnimatedButton>
               <AnimatedButton href="#services" variant="secondary">
-                Explore Capabilities
+                Explore Services
               </AnimatedButton>
             </div>
           </Reveal>
@@ -47,7 +47,7 @@ export default function Hero() {
           <Reveal delay={340}>
             <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#E7DCC1]/10 pt-6">
               {capabilities.map((capability) => (
-                <div key={capability} className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-[#E7DCC1]/48">
+                <div key={capability} className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-[#E7DCC1]/64">
                   <span className="h-1 w-1 rounded-full bg-[#C6A972]" />
                   {capability}
                 </div>
@@ -68,7 +68,7 @@ export default function Hero() {
                     <span className="h-2 w-2 rounded-full bg-[#E7DCC1]/20" />
                     <span className="h-2 w-2 rounded-full bg-[#C6A972]/70" />
                   </div>
-                  <span className="text-[9px] uppercase tracking-[0.23em] text-[#E7DCC1]/35">kuikengroup.com</span>
+                  <span className="text-[9px] uppercase tracking-[0.23em] text-[#E7DCC1]/60">kuikengroup.com</span>
                 </div>
 
                 <div className="relative min-h-[29rem] overflow-hidden p-6 sm:p-8">
@@ -105,7 +105,7 @@ export default function Hero() {
 
                     <div className="mt-auto flex items-end justify-between gap-4 pt-10">
                       <div>
-                        <div className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/35">Built with restraint</div>
+                        <div className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/60">Built with restraint</div>
                         <div className="mt-2 text-sm text-[#E7DCC1]/72">Strategy · Identity · Digital</div>
                       </div>
                       <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#C6A972]/30 text-[#C6A972]">↗</div>
@@ -123,7 +123,7 @@ export default function Hero() {
         </Reveal>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 items-center gap-3 text-[9px] uppercase tracking-[0.26em] text-[#E7DCC1]/35 lg:flex">
+      <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 items-center gap-3 text-[9px] uppercase tracking-[0.26em] text-[#E7DCC1]/60 lg:flex">
         <span className="scroll-line h-10 w-px bg-gradient-to-b from-[#C6A972] to-transparent" />
         Scroll to explore
       </div>

@@ -1,3 +1,5 @@
+import AnimatedButton from "../components/AnimatedButton";
+
 export default function PrivatePage() {
   const resources = [
     {
@@ -47,7 +49,7 @@ export default function PrivatePage() {
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[#E7DCC1]/70 md:text-xl">
               Access project resources, marketing assets, website materials,
-              campaign updates, and shared documents in one secure location.
+              campaign updates, and shared documents in one organized location.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -99,13 +101,13 @@ export default function PrivatePage() {
                   <div className="text-[11px] uppercase tracking-[0.3em] text-[#C6A972]">
                     Workspace Status
                   </div>
-                  <div className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#E7DCC1]">
-                    Secure marketing resource center.
-                  </div>
+                  <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#E7DCC1]">
+                    Private marketing resource center.
+                  </h2>
                 </div>
 
                 <div className="rounded-full border border-[#C6A972]/35 bg-[#252625] px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-[#C6A972]">
-                  Secure
+                  Client only
                 </div>
               </div>
 
@@ -135,10 +137,10 @@ export default function PrivatePage() {
                 <div className="mt-1 text-sm text-[#E7DCC1]/65">
                   President / CEO
                 </div>
-                <div className="mt-4 text-sm text-[#E7DCC1]/75">
+                <a href="mailto:brady@kuikengroup.com" className="mt-4 block text-sm text-[#E7DCC1]/75 hover:text-[#C6A972]">
                   brady@kuikengroup.com
-                </div>
-                <div className="text-sm text-[#E7DCC1]/75">712-541-7694</div>
+                </a>
+                <a href="tel:+17125417694" className="text-sm text-[#E7DCC1]/75 hover:text-[#C6A972]">712-541-7694</a>
               </div>
             </div>
           </div>
@@ -192,12 +194,27 @@ export default function PrivatePage() {
                   </p>
                 </div>
 
-                <div className="mt-6 inline-block rounded-full border border-[#E7DCC1]/10 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.18em] text-[#E7DCC1]/42">
+                <div className="mt-6 inline-block rounded-full border border-[#E7DCC1]/10 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.18em] text-[#E7DCC1]/60">
                   {item.action}
                 </div>
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="mt-20 border-t border-[#E7DCC1]/10 py-16 text-center">
+          <h2 className="text-balance text-3xl font-semibold tracking-[-0.04em] md:text-5xl">
+            Need a file, update, or approval?
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#E7DCC1]/68">
+            Contact Brady directly and include the project or resource you need.
+          </p>
+          <AnimatedButton
+            href="mailto:brady@kuikengroup.com"
+            className="mt-8"
+          >
+            Contact Brady
+          </AnimatedButton>
         </section>
       </div>
     </div>

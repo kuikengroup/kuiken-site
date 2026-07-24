@@ -19,11 +19,11 @@ export default function CTA() {
                 </h2>
               </div>
               <div className="lg:justify-self-end">
-                <p className="mb-7 max-w-sm text-sm leading-7 text-[#E7DCC1]/56">
+                <p className="mb-7 max-w-sm text-sm leading-7 text-[#E7DCC1]/68">
                   Tell us what you&apos;re building, what feels stuck, and where you want the business to go next.
                 </p>
                 <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external>
-                  Schedule a Conversation
+                  Start a Conversation
                 </AnimatedButton>
               </div>
             </div>

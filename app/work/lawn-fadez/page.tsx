@@ -4,18 +4,22 @@ import Link from "next/link";
 import AnimatedButton from "../../components/AnimatedButton";
 import Container from "../../components/layout/Container";
 import Reveal from "../../components/Reveal";
+import CaseStudySummary from "../../components/sections/CaseStudySummary";
 import { getProject } from "../../data/projects";
+import { createMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Lawn Fadez Case Study",
   description:
     "How Kuiken Group developed a sharper brand identity and digital experience for Lawn Fadez.",
-  openGraph: {
-    images: [{ url: "/work/lawn-fadez-homepage-v2.jpg", width: 1586, height: 992, alt: "Lawn Fadez website design" }],
+  path: "/work/lawn-fadez",
+  image: {
+    url: "/work/lawn-fadez-homepage-v2.jpg",
+    width: 1586,
+    height: 992,
+    alt: "Lawn Fadez website design",
   },
-};
-
-const services = ["Brand strategy", "Visual identity", "Website design", "Website development", "Lead-generation direction"];
+});
 
 function CaseSection({
   eyebrow,
@@ -34,7 +38,7 @@ function CaseSection({
       <Reveal delay={80}>
         <div>
           <h2 className="max-w-4xl text-balance text-[clamp(2.75rem,5.5vw,5.75rem)] font-semibold leading-[0.92] tracking-[-0.06em]">{title}</h2>
-          <div className="case-prose mt-8 max-w-2xl text-base leading-8 text-[#E7DCC1]/56">{children}</div>
+          <div className="case-prose mt-8 max-w-2xl text-base leading-8 text-[#E7DCC1]/64">{children}</div>
         </div>
       </Reveal>
     </section>
@@ -42,6 +46,7 @@ function CaseSection({
 }
 
 export default function LawnFadezCaseStudy() {
+  const project = getProject("lawn-fadez");
   const nextProject = getProject("kuiken-group");
 
   return (
@@ -92,29 +97,7 @@ export default function LawnFadezCaseStudy() {
       </Reveal>
 
       <Container>
-        <section className="case-copy-grid py-24 sm:py-32 lg:py-44">
-          <Reveal><div className="section-label">Project overview</div></Reveal>
-          <Reveal delay={80}>
-            <div>
-              <p className="max-w-4xl text-balance text-[clamp(2.25rem,4.6vw,4.75rem)] font-medium leading-[1.04] tracking-[-0.052em]">
-                Lawn Fadez needed a presence that felt as considered as the work its customers see from the curb.
-              </p>
-              <div className="mt-12 grid gap-10 sm:grid-cols-2">
-                <p className="text-sm leading-8 text-[#E7DCC1]/52">
-                  The business already had a memorable name and a direct local personality. The opportunity was to turn those strengths into a more coherent system—one that could build trust quickly and make requesting service straightforward.
-                </p>
-                <div>
-                  <div className="case-meta-label">Services provided</div>
-                  <ul className="mt-5 grid gap-3">
-                    {services.map((service) => (
-                      <li key={service} className="border-b border-[#E7DCC1]/10 pb-3 text-sm text-[#E7DCC1]/64">{service}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </section>
+        <CaseStudySummary project={project} />
 
         <CaseSection eyebrow="The challenge" title="Professional without losing the local character.">
           <p>
@@ -209,7 +192,7 @@ export default function LawnFadezCaseStudy() {
           <Reveal>
             <div className="section-label">Have a similar challenge?</div>
             <h2 className="mx-auto mt-7 max-w-5xl text-balance text-[clamp(3.25rem,7vw,7.25rem)] font-semibold leading-[0.88] tracking-[-0.067em]">Let&apos;s make the value easier to see.</h2>
-            <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external className="mt-10">Start a conversation</AnimatedButton>
+            <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external className="mt-10">Start a Conversation</AnimatedButton>
           </Reveal>
         </Container>
       </section>

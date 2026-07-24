@@ -17,6 +17,7 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const previousScroll = useRef(0);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -37,8 +38,23 @@ export default function Navigation() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
+
   return (
     <header
+      onFocus={() => setHidden(false)}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${hidden ? "-translate-y-full" : "translate-y-0"} ${
         scrolled
           ? "border-b border-[#E7DCC1]/7 bg-[#0D0D0D]/72 backdrop-blur-2xl"
@@ -69,7 +85,7 @@ export default function Navigation() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-9 text-[10px] uppercase tracking-[0.22em] text-[#E7DCC1]/52 lg:flex">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-9 text-[10px] uppercase tracking-[0.22em] text-[#E7DCC1]/68 lg:flex">
           {links.map((link) => (
             <Link key={link.href} href={link.href} className="nav-link py-2 hover:text-[#C6A972]">
               {link.label}
@@ -77,10 +93,10 @@ export default function Navigation() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/client-access"
-            className="px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#E7DCC1]/52 transition hover:text-[#C6A972]"
+            className="px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#E7DCC1]/68 transition hover:text-[#C6A972]"
           >
             Client Access
           </Link>
@@ -95,9 +111,11 @@ export default function Navigation() {
         </div>
 
         <button
+          ref={menuButtonRef}
           type="button"
-          className="relative z-50 flex h-11 w-11 items-center justify-center rounded-full border border-[#E7DCC1]/15 bg-[#151515]/70 md:hidden"
+          className="relative z-50 flex h-11 w-11 items-center justify-center rounded-full border border-[#E7DCC1]/15 bg-[#151515]/70 lg:hidden"
           aria-expanded={open}
+          aria-controls="mobile-navigation"
           aria-label={open ? "Close navigation" : "Open navigation"}
           onClick={() => setOpen((value) => !value)}
         >
@@ -110,11 +128,13 @@ export default function Navigation() {
       </div>
 
       <div
-        className={`fixed inset-0 z-40 bg-[#0D0D0D] px-8 pt-28 transition duration-500 md:hidden ${
+        id="mobile-navigation"
+        aria-hidden={!open}
+        className={`fixed inset-0 z-40 bg-[#0D0D0D] px-8 pt-28 transition duration-500 lg:hidden ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
-        <nav className="flex flex-col border-t border-[#E7DCC1]/10">
+        <nav aria-label="Mobile navigation" className="flex flex-col border-t border-[#E7DCC1]/10">
           {links.map((link, index) => (
             <Link
               key={link.href}

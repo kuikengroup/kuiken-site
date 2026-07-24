@@ -3,25 +3,14 @@ import Link from "next/link";
 import AnimatedButton from "../components/AnimatedButton";
 import Container from "../components/layout/Container";
 import Reveal from "../components/Reveal";
+import { createMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Services",
   description:
     "Explore Kuiken Group capabilities across brand strategy, identity, website design and development, digital marketing, lead generation, and creative direction.",
-  openGraph: {
-    title: "Services | Kuiken Group",
-    description:
-      "Principal-led strategy, identity, website, and marketing services for ambitious businesses.",
-    images: [
-      {
-        url: "/work/kuiken-identity-logo-v3.jpg",
-        width: 1448,
-        height: 1086,
-        alt: "Kuiken Group identity system",
-      },
-    ],
-  },
-};
+  path: "/services",
+});
 
 const services = [
   {
@@ -88,12 +77,12 @@ const combinations = [
 ];
 
 const faqs = [
-  ["Do we need to hire Kuiken Group for every service?", "No. Engagements are shaped around the actual constraint. Some businesses need positioning before anything else; others already have a sound identity and need a better website or acquisition path."],
-  ["Can Kuiken Group work with an existing internal team or specialist?", "Yes. Kuiken Group can lead strategy and creative direction while collaborating with internal marketers, developers, photographers, media partners, or other specialists."],
-  ["What does principal-led mean in practice?", "Brady Kuiken remains directly involved in discovery, strategy, creative direction, communication, and key reviews. Specialized support may be brought in when the scope requires it, without adding unnecessary account layers."],
-  ["How does an engagement begin?", "It begins with a focused conversation about the business goal, what is currently getting in the way, and what would need to be true for the work to be valuable."],
-  ["Can services be phased?", "Yes. Strategy, identity, website, and marketing can be sequenced into practical phases when that creates better decisions, cleaner implementation, or a more responsible investment."],
-  ["Do you guarantee specific marketing results?", "No credible partner can guarantee outcomes without context. Kuiken Group builds clearer systems, defines what should be measured, and refines the work using available evidence."],
+  ["Who does Kuiken Group work with?", "Kuiken Group is best suited to growing service businesses, founder-led companies, and established organizations at a point of change. The strongest fit is a business with something real to build on and leadership ready to participate in clear decisions."],
+  ["What types of projects do you take on?", "Common engagements include brand positioning, identity systems, website design and development, digital campaigns, lead-generation systems, and creative direction. Services can stand alone or combine around one business constraint."],
+  ["What does the website process look like?", "Website work moves through discovery, content architecture, interface direction, responsive development, review, and launch. Strategy and hierarchy are resolved before production so the finished experience has a clear job to do."],
+  ["What does the branding process look like?", "Branding begins by clarifying the audience, position, offer, and message. That foundation then guides identity concepts, refinement, core applications, and practical usage direction."],
+  ["How do ongoing marketing engagements work?", "Ongoing work is shaped around defined priorities such as campaign direction, content systems, landing experiences, or lead generation. Scope, review cadence, and useful measures are agreed before execution begins."],
+  ["How do we get started?", "Start with a conversation about the business goal, what currently feels unclear or underperforming, and what a valuable outcome would look like. Kuiken Group will recommend the most useful next step from there."],
 ];
 
 export default function ServicesPage() {
@@ -110,7 +99,7 @@ export default function ServicesPage() {
           </Reveal>
           <div className="mt-16 grid gap-10 border-t border-[#E7DCC1]/10 pt-8 lg:grid-cols-[0.65fr_1.35fr]">
             <Reveal delay={120}>
-              <p className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/34">Position · Express · Build · Grow</p>
+              <p className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/60">Position · Express · Build · Grow</p>
             </Reveal>
             <Reveal delay={160}>
               <p className="max-w-3xl text-balance text-xl leading-[1.45] tracking-[-0.02em] text-[#E7DCC1]/64 sm:text-2xl lg:text-3xl">
@@ -129,7 +118,7 @@ export default function ServicesPage() {
                 <Link
                   key={service.id}
                   href={`#${service.id}`}
-                  className="premium-focus group flex min-h-14 items-center justify-between border-b border-[#E7DCC1]/10 py-4 text-[10px] uppercase tracking-[0.18em] text-[#E7DCC1]/56"
+                  className="premium-focus group flex min-h-14 items-center justify-between border-b border-[#E7DCC1]/10 py-4 text-[10px] uppercase tracking-[0.18em] text-[#E7DCC1]/68"
                 >
                   <span>{service.title}</span>
                   <span className="text-[#C6A972] transition-transform duration-300 group-hover:translate-x-1">↓</span>
@@ -167,11 +156,11 @@ export default function ServicesPage() {
                   <div className="mt-14 grid gap-10 sm:grid-cols-2">
                     <div>
                       <div className="case-meta-label">What Kuiken Group does</div>
-                      <p className="text-sm leading-8 text-[#E7DCC1]/52">{service.approach}</p>
+                      <p className="text-sm leading-8 text-[#E7DCC1]/64">{service.approach}</p>
                     </div>
                     <div>
                       <div className="case-meta-label">Intended outcome</div>
-                      <p className="text-sm leading-8 text-[#E7DCC1]/52">{service.outcome}</p>
+                      <p className="text-sm leading-8 text-[#E7DCC1]/64">{service.outcome}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -200,7 +189,7 @@ export default function ServicesPage() {
             <div className="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] lg:items-end">
               <div>
                 <div className="section-label">How services combine</div>
-                <p className="mt-6 max-w-sm text-sm leading-7 text-[#E7DCC1]/46">The scope follows the business constraint. These are common combinations, not fixed packages.</p>
+                <p className="mt-6 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">The scope follows the business constraint. These are common combinations, not fixed packages.</p>
               </div>
               <h2 className="text-balance text-[clamp(3rem,6.5vw,6.75rem)] font-semibold leading-[0.9] tracking-[-0.065em]">One problem may cross several disciplines.</h2>
             </div>
@@ -212,7 +201,7 @@ export default function ServicesPage() {
                   <span className="text-[9px] uppercase tracking-[0.24em] text-[#C6A972]">{label}</span>
                   <div className="mt-auto pt-20">
                     <h3 className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{title}</h3>
-                    <p className="mt-4 max-w-md text-sm leading-7 text-[#E7DCC1]/48">{copy}</p>
+                    <p className="mt-4 max-w-md text-sm leading-7 text-[#E7DCC1]/64">{copy}</p>
                   </div>
                 </article>
               </Reveal>
@@ -240,7 +229,7 @@ export default function ServicesPage() {
                 <div key={title} className="grid gap-5 border-b border-[#E7DCC1]/10 py-8 sm:grid-cols-[0.16fr_0.6fr_1fr] sm:items-start">
                   <span className="text-[9px] text-[#C6A972]">0{index + 1}</span>
                   <h3 className="text-xl font-semibold tracking-[-0.035em]">{title}</h3>
-                  <p className="text-sm leading-7 text-[#E7DCC1]/48">{copy}</p>
+                  <p className="text-sm leading-7 text-[#E7DCC1]/64">{copy}</p>
                 </div>
               ))}
             </div>
@@ -253,16 +242,16 @@ export default function ServicesPage() {
           <Reveal>
             <div>
               <div className="section-label">Working model</div>
-              <p className="mt-6 max-w-sm text-sm leading-7 text-[#E7DCC1]/46">Direct access, clear accountability, and specialist support only when the work calls for it.</p>
+              <p className="mt-6 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">Direct access, clear accountability, and specialist support only when the work calls for it.</p>
             </div>
           </Reveal>
           <Reveal delay={80}>
             <div>
               <h2 className="max-w-5xl text-balance text-[clamp(3.25rem,6.4vw,6.75rem)] font-semibold leading-[0.89] tracking-[-0.067em]">Principal-led from the first question to the final review.</h2>
-              <p className="mt-9 max-w-2xl text-base leading-8 text-[#E7DCC1]/54">
+              <p className="mt-9 max-w-2xl text-base leading-8 text-[#E7DCC1]/64">
                 Clients work directly with Brady Kuiken throughout the engagement. Strategy, creative direction, and communication stay close to the person accountable for the result. When specialized production support is useful, it is brought into a clear system rather than added as unnecessary agency overhead.
               </p>
-              <AnimatedButton href="/about" variant="secondary" className="mt-10">About the firm</AnimatedButton>
+              <AnimatedButton href="/work" variant="secondary" className="mt-10">View Work</AnimatedButton>
             </div>
           </Reveal>
         </Container>
@@ -287,7 +276,7 @@ export default function ServicesPage() {
                 <article className="grid gap-6 border-b border-[#E7DCC1]/10 py-9 sm:py-11 lg:grid-cols-[0.2fr_0.7fr_1.1fr] lg:items-center">
                   <span className="text-[10px] tracking-[0.25em] text-[#C6A972]">{number}</span>
                   <h3 className="text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">{title}</h3>
-                  <p className="max-w-xl text-sm leading-7 text-[#E7DCC1]/48 lg:justify-self-end">{copy}</p>
+                  <p className="max-w-xl text-sm leading-7 text-[#E7DCC1]/64 lg:justify-self-end">{copy}</p>
                 </article>
               </Reveal>
             ))}
@@ -300,7 +289,10 @@ export default function ServicesPage() {
           <Reveal>
             <div>
               <div className="section-label">Frequently asked</div>
-              <p className="mt-6 max-w-sm text-sm leading-7 text-[#E7DCC1]/46">Useful answers before the first conversation.</p>
+              <h2 className="mt-7 max-w-md text-balance text-4xl font-semibold leading-[0.95] tracking-[-0.05em]">
+                Questions before we begin.
+              </h2>
+              <p className="mt-6 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">Useful answers before the first conversation.</p>
             </div>
           </Reveal>
           <Reveal delay={80}>
@@ -311,7 +303,7 @@ export default function ServicesPage() {
                     {question}
                     <span aria-hidden="true" className="text-[#C6A972] transition-transform duration-300 group-open:rotate-45">+</span>
                   </summary>
-                  <p className="max-w-2xl pb-7 pr-10 text-sm leading-8 text-[#E7DCC1]/52">{answer}</p>
+                  <p className="max-w-2xl pb-7 pr-10 text-sm leading-8 text-[#E7DCC1]/64">{answer}</p>
                 </details>
               ))}
             </div>
@@ -329,8 +321,8 @@ export default function ServicesPage() {
                   <h2 className="mt-7 max-w-5xl text-balance text-[clamp(3.25rem,6.7vw,7rem)] font-semibold leading-[0.88] tracking-[-0.067em]">You do not need to know which service to ask for.</h2>
                 </div>
                 <div className="lg:justify-self-end">
-                  <p className="mb-7 max-w-sm text-sm leading-7 text-[#E7DCC1]/52">Describe what feels unclear, outdated, disconnected, or harder to grow than it should be. The right scope can follow from there.</p>
-                  <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external>Start a conversation</AnimatedButton>
+                  <p className="mb-7 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">Describe what feels unclear, outdated, disconnected, or harder to grow than it should be. The right scope can follow from there.</p>
+                  <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external>Start a Conversation</AnimatedButton>
                 </div>
               </div>
             </div>

@@ -4,15 +4,15 @@ import Link from "next/link";
 import AnimatedButton from "../../components/AnimatedButton";
 import Container from "../../components/layout/Container";
 import Reveal from "../../components/Reveal";
+import CaseStudySummary from "../../components/sections/CaseStudySummary";
 import { getProject } from "../../data/projects";
+import { createMetadata } from "../../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Kuiken Group Case Study",
   description: "The strategy, identity, and digital system behind the Kuiken Group brand.",
-  openGraph: {
-    images: [{ url: "/work/kuiken-identity-logo-v3.jpg", width: 1448, height: 1086, alt: "Kuiken Group identity system" }],
-  },
-};
+  path: "/work/kuiken-group",
+});
 
 const chapters = [
   {
@@ -38,6 +38,7 @@ const chapters = [
 ];
 
 export default function KuikenGroupCaseStudy() {
+  const project = getProject("kuiken-group");
   const nextProject = getProject("lawn-fadez");
 
   return (
@@ -81,26 +82,7 @@ export default function KuikenGroupCaseStudy() {
       </Reveal>
 
       <Container>
-        <section className="case-copy-grid py-24 sm:py-32 lg:py-44">
-          <Reveal><div className="section-label">Project overview</div></Reveal>
-          <Reveal delay={80}>
-            <div>
-              <p className="max-w-4xl text-balance text-[clamp(2.35rem,4.8vw,5rem)] font-medium leading-[1.02] tracking-[-0.055em]">
-                The brand had to demonstrate the same clarity and care Kuiken Group promises its clients.
-              </p>
-              <div className="mt-12 grid gap-8 sm:grid-cols-2">
-                <p className="text-sm leading-8 text-[#E7DCC1]/52">
-                  This was not a cosmetic redesign. It was an opportunity to define what the firm stands for, who it is built to serve, and how every digital touchpoint should communicate that position.
-                </p>
-                <ul className="grid gap-3">
-                  {["Brand positioning", "Messaging system", "Visual identity", "Website design and development", "Creative direction"].map((service) => (
-                    <li key={service} className="border-b border-[#E7DCC1]/10 pb-3 text-sm text-[#E7DCC1]/64">{service}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </Reveal>
-        </section>
+        <CaseStudySummary project={project} />
 
         {chapters.map((chapter, index) => (
           <section key={chapter.title} className="case-copy-grid border-t border-[#E7DCC1]/10 py-20 sm:py-28 lg:py-36">
@@ -108,7 +90,7 @@ export default function KuikenGroupCaseStudy() {
             <Reveal delay={70}>
               <div>
                 <h2 className="max-w-4xl text-balance text-[clamp(2.75rem,5.5vw,5.75rem)] font-semibold leading-[0.92] tracking-[-0.06em]">{chapter.title}</h2>
-                <p className="mt-8 max-w-2xl text-base leading-8 text-[#E7DCC1]/56">{chapter.copy}</p>
+                <p className="mt-8 max-w-2xl text-base leading-8 text-[#E7DCC1]/64">{chapter.copy}</p>
                 <span className="mt-12 block text-[10px] tracking-[0.25em] text-[#C6A972]">0{index + 1} / 04</span>
               </div>
             </Reveal>
@@ -153,7 +135,7 @@ export default function KuikenGroupCaseStudy() {
           <Reveal>
             <div className="section-label">Build what comes next</div>
             <h2 className="mx-auto mt-7 max-w-5xl text-balance text-[clamp(3.25rem,7vw,7.25rem)] font-semibold leading-[0.88] tracking-[-0.067em]">A clearer brand starts with a clear conversation.</h2>
-            <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external className="mt-10">Start a conversation</AnimatedButton>
+            <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external className="mt-10">Start a Conversation</AnimatedButton>
           </Reveal>
         </Container>
       </section>

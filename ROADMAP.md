@@ -38,6 +38,19 @@
 - Homepage portfolio and service links connected to complete routes
 - Data-driven next-project navigation
 
+### Milestone 3.2 — Conversion and Trust
+
+- Conversion-focused homepage content hierarchy
+- Editorial “Why Kuiken Group” trust section
+- Standardized primary and secondary calls to action
+- Verified project summaries with explicit undisclosed details
+- Services FAQs covering fit, process, engagements, and next steps
+- Canonical, Open Graph, and Twitter metadata across every route
+- Generated robots and sitemap routes
+- Private-route no-index controls
+- Keyboard navigation, focus, heading, contrast, and reduced-motion review
+- Leaner homepage motion and corrected responsive navigation behavior
+
 ## Next
 
 ### Milestone 3.1 — Contact and Portfolio Growth

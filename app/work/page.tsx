@@ -5,25 +5,20 @@ import AnimatedButton from "../components/AnimatedButton";
 import Container from "../components/layout/Container";
 import Reveal from "../components/Reveal";
 import { getProject, projects, type Project } from "../data/projects";
+import { createMetadata } from "../lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title: "Work",
   description:
     "Explore selected brand strategy, identity, website, and marketing work by Kuiken Group.",
-  openGraph: {
-    title: "Selected Work | Kuiken Group",
-    description:
-      "A curated body of strategy, identity, website, and marketing work built around clear business goals.",
-    images: [
-      {
-        url: "/work/lawn-fadez-homepage-v2.jpg",
-        width: 1586,
-        height: 992,
-        alt: "Lawn Fadez website design",
-      },
-    ],
+  path: "/work",
+  image: {
+    url: "/work/lawn-fadez-homepage-v2.jpg",
+    width: 1586,
+    height: 992,
+    alt: "Lawn Fadez website design",
   },
-};
+});
 
 function ProjectTags({ project }: { project: Project }) {
   return (
@@ -31,7 +26,7 @@ function ProjectTags({ project }: { project: Project }) {
       {project.services.map((service) => (
         <span
           key={service}
-          className="rounded-full border border-[#E7DCC1]/10 px-3 py-1.5 text-[8px] uppercase tracking-[0.18em] text-[#E7DCC1]/46"
+          className="rounded-full border border-[#E7DCC1]/10 px-3 py-1.5 text-[8px] uppercase tracking-[0.18em] text-[#E7DCC1]/64"
         >
           {service}
         </span>
@@ -78,12 +73,12 @@ function FeaturedProject({
               <div className="flex items-center gap-4">
                 <span className="text-[10px] font-semibold tracking-[0.28em] text-[#C6A972]">{index}</span>
                 <span className="h-px w-10 bg-[#E7DCC1]/15" />
-                {project.year ? <span className="text-[9px] tracking-[0.2em] text-[#E7DCC1]/36">{project.year}</span> : null}
+                {project.year ? <span className="text-[9px] tracking-[0.2em] text-[#E7DCC1]/60">{project.year}</span> : null}
               </div>
               <h2 className="mt-7 text-[clamp(3.5rem,6.5vw,7.5rem)] font-semibold leading-[0.85] tracking-[-0.07em]">
                 {project.title}
               </h2>
-              <p className="mt-7 max-w-xl text-sm leading-8 text-[#E7DCC1]/52">{project.shortDescription}</p>
+              <p className="mt-7 max-w-xl text-sm leading-8 text-[#E7DCC1]/64">{project.shortDescription}</p>
               <div className="mt-8"><ProjectTags project={project} /></div>
               <div className="mt-10 inline-flex min-h-11 items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
                 View case study
@@ -116,7 +111,7 @@ export default function WorkPage() {
           </Reveal>
           <div className="mt-16 grid gap-10 border-t border-[#E7DCC1]/10 pt-8 lg:grid-cols-[0.66fr_1.34fr]">
             <Reveal delay={120}>
-              <span className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/34">Strategy · Identity · Digital</span>
+              <span className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/60">Strategy · Identity · Digital</span>
             </Reveal>
             <Reveal delay={160}>
               <p className="max-w-3xl text-balance text-xl leading-[1.45] tracking-[-0.02em] text-[#E7DCC1]/64 sm:text-2xl lg:text-3xl">
@@ -138,7 +133,7 @@ export default function WorkPage() {
             <div className="grid gap-10 lg:grid-cols-[0.6fr_1.4fr] lg:items-end">
               <div>
                 <div className="section-label">Selected work list</div>
-                <p className="mt-6 max-w-sm text-sm leading-7 text-[#E7DCC1]/46">A growing portfolio, published when the work and its story are ready.</p>
+                <p className="mt-6 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">A growing portfolio, published when the work and its story are ready.</p>
               </div>
               <h2 className="text-balance text-[clamp(3rem,6.5vw,6.75rem)] font-semibold leading-[0.9] tracking-[-0.065em]">Current and forthcoming.</h2>
             </div>
@@ -151,7 +146,7 @@ export default function WorkPage() {
                   <span className="text-[10px] tracking-[0.25em] text-[#C6A972]">0{index + 1}</span>
                   <h3 className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{project.title}</h3>
                   <div><ProjectTags project={project} /></div>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#E7DCC1]/40 lg:justify-self-end">
+                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#E7DCC1]/60 lg:justify-self-end">
                     {project.status === "published" ? "View case study →" : "Case study in progress"}
                   </span>
                 </div>
@@ -206,8 +201,8 @@ export default function WorkPage() {
                 Your business may be the next story worth telling.
               </h2>
               <div className="lg:justify-self-end">
-                <p className="mb-7 max-w-sm text-sm leading-7 text-[#E7DCC1]/50">Start with what feels unclear, outdated, or harder to communicate than it should be.</p>
-                <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external>Start a conversation</AnimatedButton>
+                <p className="mb-7 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">Start with what feels unclear, outdated, or harder to communicate than it should be.</p>
+                <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external>Start a Conversation</AnimatedButton>
               </div>
             </div>
           </Reveal>

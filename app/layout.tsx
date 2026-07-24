@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   },
   description:
     "Kuiken Group helps growing businesses sharpen their brand, strengthen their digital presence, and turn attention into measurable growth.",
+  alternates: { canonical: "/" },
   keywords: ["brand strategy", "website design", "digital marketing", "lead generation", "creative agency"],
   openGraph: {
     title: "Kuiken Group | Premium Marketing & Web Design",
@@ -34,8 +35,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className="bg-[#0D0D0D] text-[#E7DCC1] antialiased">
+        <a
+          href="#main-content"
+          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-[#C6A972] px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#0D0D0D] transition focus:translate-y-0"
+        >
+          Skip to content
+        </a>
         <Navigation />
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>{children}</main>
         <footer className="border-t border-[#E7DCC1]/10 bg-[#111211]">
           <div className="mx-auto max-w-[90rem] px-6 py-14 sm:px-8 lg:px-12 lg:py-18">
             <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr_0.75fr]">
@@ -47,7 +54,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     <div className="mt-1 text-xs font-semibold tracking-[0.22em]">KUIKEN GROUP</div>
                   </div>
                 </Link>
-                <p className="mt-6 max-w-md text-sm leading-7 text-[#E7DCC1]/52">
+                <p className="mt-6 max-w-md text-sm leading-7 text-[#E7DCC1]/64">
                   Strategy, design, and digital execution for businesses ready to look sharper and grow with confidence.
                 </p>
               </div>
@@ -73,7 +80,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               </div>
             </div>
 
-            <div className="mt-12 flex flex-col gap-3 border-t border-[#E7DCC1]/10 pt-6 text-[10px] uppercase tracking-[0.18em] text-[#E7DCC1]/32 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-12 flex flex-col gap-3 border-t border-[#E7DCC1]/10 pt-6 text-[10px] uppercase tracking-[0.18em] text-[#E7DCC1]/60 sm:flex-row sm:items-center sm:justify-between">
               <span>© {new Date().getFullYear()} Kuiken Group. All rights reserved.</span>
               <span>Brand Strategy · Digital Marketing · Web Design</span>
             </div>

@@ -31,7 +31,7 @@ export default function ClientAccessPage() {
             </div>
 
             <h1 className="mt-5 text-5xl font-semibold leading-[1.03] tracking-[-0.04em] text-[#E7DCC1] md:text-7xl">
-              Secure client portal access.
+              Client portal access.
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-[#E7DCC1]/70 md:text-xl">
@@ -73,13 +73,13 @@ export default function ClientAccessPage() {
                   <div className="text-[11px] uppercase tracking-[0.3em] text-[#C6A972]">
                     Access Required
                   </div>
-                  <div className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.03em] text-[#E7DCC1]">
+                  <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.03em] text-[#E7DCC1]">
                     Enter password to continue.
-                  </div>
+                  </h2>
                 </div>
 
                 <div className="rounded-full border border-[#C6A972]/35 bg-[#252625] px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#C6A972]">
-                  Secure
+                  Private
                 </div>
               </div>
 
@@ -97,14 +97,14 @@ export default function ClientAccessPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter access password"
-                    className="mt-3 w-full rounded-xl border border-[#E7DCC1]/10 bg-[#252625] px-4 py-3 text-sm text-[#E7DCC1] placeholder-[#E7DCC1]/45 outline-none transition focus:border-[#C6A972]/60"
+                    className="mt-3 w-full rounded-xl border border-[#E7DCC1]/10 bg-[#252625] px-4 py-3 text-sm text-[#E7DCC1] placeholder-[#E7DCC1]/60 outline-none transition focus:border-[#C6A972]/60 focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0D0D]"
                     autoComplete="current-password"
                     required
                   />
                 </div>
 
                 {error ? (
-                  <div className="rounded-xl border border-[#C6A972]/25 bg-[#252625] px-4 py-3 text-sm text-[#C6A972]">
+                  <div role="alert" aria-live="polite" className="rounded-xl border border-[#C6A972]/25 bg-[#252625] px-4 py-3 text-sm text-[#C6A972]">
                     {error}
                   </div>
                 ) : null}
@@ -125,10 +125,10 @@ export default function ClientAccessPage() {
                   Brady Kuiken
                 </div>
                 <div className="mt-1 text-sm text-[#E7DCC1]/65">President / CEO</div>
-                <div className="mt-4 text-sm text-[#E7DCC1]/75">
+                <a href="mailto:brady@kuikengroup.com" className="mt-4 block text-sm text-[#E7DCC1]/75 hover:text-[#C6A972]">
                   brady@kuikengroup.com
-                </div>
-                <div className="text-sm text-[#E7DCC1]/75">712-541-7694</div>
+                </a>
+                <a href="tel:+17125417694" className="text-sm text-[#E7DCC1]/75 hover:text-[#C6A972]">712-541-7694</a>
               </div>
             </div>
           </div>
