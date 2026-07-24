@@ -56,7 +56,7 @@ export default function WhyKuiken() {
 
         <ol className="mt-20 border-t border-[#E7DCC1]/12 lg:mt-28">
           {reasons.map((reason, index) => (
-            <Reveal key={reason.title} delay={index * 45}>
+            <Reveal key={reason.title} stagger={index}>
               <li className="grid gap-5 border-b border-[#E7DCC1]/12 py-9 sm:py-11 lg:grid-cols-[0.2fr_0.72fr_1.08fr] lg:items-center">
                 <span className="text-[10px] font-semibold tracking-[0.28em] text-[#C6A972]">
                   {reason.number}

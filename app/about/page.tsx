@@ -22,10 +22,10 @@ const capabilities = [
 ];
 
 const principles = [
-  ["Clarity over noise", "The strongest work begins with a clear position, not a layer of decoration."],
-  ["Purpose in every detail", "Every message, interaction, and visual choice should support the same business idea."],
-  ["Direct collaboration", "Clients work with Brady throughout the engagement—from early decisions to final delivery."],
-  ["Built beyond launch", "The finished system should stay useful as the business, audience, and opportunities evolve."],
+  ["Design through reduction", "The visual system should remove doubt, strengthen hierarchy, and make the central idea easier to recognize—not decorate around it."],
+  ["Marketing that earns attention", "The strongest marketing connects a useful message, a credible experience, and a clear next step instead of relying on more noise."],
+  ["Direct collaboration", "Brady stays close to the work throughout the engagement, from the first strategic question to the final review."],
+  ["Built beyond launch", "A finished system should remain useful as the business, audience, channels, and opportunities continue to evolve."],
 ];
 
 export default function AboutPage() {
@@ -37,18 +37,18 @@ export default function AboutPage() {
           <Reveal>
             <div className="section-label">About Kuiken Group</div>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal stagger={1}>
             <h1 className="mt-8 max-w-[82rem] text-balance text-[clamp(4rem,9vw,9.5rem)] font-semibold leading-[0.83] tracking-[-0.075em]">
               A sharper point of view for brands ready to grow.
             </h1>
           </Reveal>
           <div className="mt-14 grid gap-10 border-t border-[#E7DCC1]/10 pt-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
-            <Reveal delay={140}>
+            <Reveal stagger={2}>
               <p className="text-[10px] uppercase tracking-[0.24em] text-[#E7DCC1]/60">
                 Independent · Principal-led · Midwest based
               </p>
             </Reveal>
-            <Reveal delay={180}>
+            <Reveal stagger={3}>
               <p className="max-w-3xl text-balance text-xl leading-[1.45] tracking-[-0.02em] text-[#E7DCC1]/68 sm:text-2xl lg:text-3xl">
                 Kuiken Group brings strategy, identity, web, and marketing into one focused partnership—helping ambitious businesses communicate their value with more confidence.
               </p>
@@ -69,7 +69,7 @@ export default function AboutPage() {
           </Reveal>
           <div className="mt-20 border-t border-[#E7DCC1]/10 lg:mt-28">
             {capabilities.map(([number, title, copy], index) => (
-              <Reveal key={title} delay={index * 55}>
+              <Reveal key={title} stagger={index}>
                 <article className="grid gap-6 border-b border-[#E7DCC1]/10 py-10 sm:py-12 lg:grid-cols-[0.22fr_0.58fr_1.2fr] lg:items-center">
                   <span className="text-[10px] tracking-[0.25em] text-[#C6A972]">{number}</span>
                   <h2 className="text-3xl font-semibold tracking-[-0.045em] sm:text-4xl">{title}</h2>
@@ -85,7 +85,7 @@ export default function AboutPage() {
         <Container>
           <div className="grid gap-20 lg:grid-cols-[0.76fr_1.24fr] lg:items-center">
             <Reveal>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-[#E7DCC1]/10 bg-[#171817]">
+              <div className="image-reveal relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-[#E7DCC1]/10 bg-[#171817]">
                 <Image
                   src="/work/kuiken-identity-logo-v3.jpg"
                   alt="Kuiken Group identity materials with the KG logo"
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </Reveal>
-            <Reveal delay={90}>
+            <Reveal stagger={1}>
               <div>
                 <div className="section-label">Why the firm exists</div>
                 <h2 className="mt-7 max-w-4xl text-balance text-[clamp(3.25rem,6vw,6.75rem)] font-semibold leading-[0.89] tracking-[-0.065em]">
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </Reveal>
-            <Reveal delay={90}>
+            <Reveal stagger={1}>
               <div>
                 <h2 className="text-balance text-[clamp(3.25rem,6.2vw,6.75rem)] font-semibold leading-[0.9] tracking-[-0.065em]">
                   Clients work directly with Brady Kuiken.
@@ -160,7 +160,7 @@ export default function AboutPage() {
           </Reveal>
           <div className="mt-20 grid gap-px overflow-hidden rounded-[2rem] border border-[#E7DCC1]/10 bg-[#E7DCC1]/10 md:grid-cols-2">
             {principles.map(([title, copy], index) => (
-              <Reveal key={title} delay={index * 60} className="h-full">
+              <Reveal key={title} stagger={index} className="h-full">
                 <article className="h-full min-h-72 bg-[#151615] p-8 sm:p-10">
                   <span className="text-[10px] tracking-[0.25em] text-[#C6A972]">0{index + 1}</span>
                   <h3 className="mt-20 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">{title}</h3>
@@ -177,7 +177,7 @@ export default function AboutPage() {
           <Reveal>
             <SectionHeading eyebrow="Who we work with" title="Ambitious businesses at a point of change." />
           </Reveal>
-          <Reveal delay={90}>
+          <Reveal stagger={1}>
             <div className="grid gap-4">
               {[
                 ["Growing service businesses", "Ready to move beyond an improvised identity and compete with more established brands."],

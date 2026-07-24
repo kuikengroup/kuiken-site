@@ -130,7 +130,7 @@ export default function FeaturedWork() {
             </article>
           </Reveal>
 
-          <Reveal delay={100}>
+          <Reveal stagger={1}>
             <article className="editorial-project mt-32 ml-auto max-w-[72rem] sm:mt-40 lg:mt-56">
               <Link href={kuikenGroup.caseStudyHref!} className="group block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-8 focus-visible:ring-offset-[#0D0D0D]">
                 <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
@@ -146,7 +146,7 @@ export default function FeaturedWork() {
             </article>
           </Reveal>
 
-          <Reveal delay={120}>
+          <Reveal stagger={1}>
             <div className="mt-32 grid border-y border-[#E7DCC1]/10 py-10 sm:mt-40 sm:py-12 lg:mt-56 lg:grid-cols-[0.7fr_1fr_0.7fr] lg:items-center">
               <div className="text-[10px] font-semibold tracking-[0.28em] text-[#C6A972]">03</div>
               <div className="mt-6 lg:mt-0">
@@ -164,7 +164,7 @@ export default function FeaturedWork() {
             <div className="mt-14 flex justify-end sm:mt-18">
               <Link href="/work" className="premium-focus group inline-flex min-h-11 items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
                 View Work
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span className="motion-ui group-hover:translate-x-1">→</span>
               </Link>
             </div>
           </Reveal>

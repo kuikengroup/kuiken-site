@@ -13,10 +13,20 @@ export default function CaseStudySummary({ project }: { project: Project }) {
       aria-labelledby={`${project.slug}-overview`}
       className="case-copy-grid py-24 sm:py-32 lg:py-44"
     >
-      <Reveal>
-        <div className="section-label">Project summary</div>
+      <Reveal className="lg:sticky lg:top-32 lg:self-start">
+        <aside aria-label="Project details">
+          <div className="section-label">Project summary</div>
+          <dl className="mt-8 grid gap-7 border-t border-[#E7DCC1]/10 pt-7">
+            {facts.map(([label, value]) => (
+              <div key={label}>
+                <dt className="case-meta-label">{label}</dt>
+                <dd className="max-w-sm text-sm leading-7 text-[#E7DCC1]/68">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </aside>
       </Reveal>
-      <Reveal delay={80}>
+      <Reveal stagger={1}>
         <div>
           <h2
             id={`${project.slug}-overview`}
@@ -24,15 +34,6 @@ export default function CaseStudySummary({ project }: { project: Project }) {
           >
             {project.overview}
           </h2>
-
-          <dl className="mt-12 grid gap-x-8 gap-y-8 border-t border-[#E7DCC1]/10 pt-8 sm:grid-cols-3">
-            {facts.map(([label, value]) => (
-              <div key={label}>
-                <dt className="case-meta-label">{label}</dt>
-                <dd className="text-sm leading-7 text-[#E7DCC1]/68">{value}</dd>
-              </div>
-            ))}
-          </dl>
 
           <div className="mt-12 grid gap-10 border-t border-[#E7DCC1]/10 pt-8 sm:grid-cols-[0.8fr_1.2fr]">
             <div>

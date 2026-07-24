@@ -6,6 +6,11 @@
   --surface: #171817;
   --surface-raised: #252625;
   --gold: #c6a972;
+  --motion-fast: 240ms;
+  --motion-medium: 480ms;
+  --motion-slow: 800ms;
+  --motion-stagger: 70ms;
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * {
@@ -42,7 +47,33 @@ a {
 }
 
 a {
-  transition: color 220ms ease, border-color 220ms ease, background-color 220ms ease, opacity 220ms ease, transform 220ms ease;
+  transition:
+    color var(--motion-fast) ease,
+    border-color var(--motion-fast) ease,
+    background-color var(--motion-fast) ease,
+    opacity var(--motion-fast) ease,
+    transform var(--motion-fast) var(--ease-premium);
+}
+
+.motion-ui {
+  transition:
+    color var(--motion-fast) ease,
+    border-color var(--motion-fast) ease,
+    background-color var(--motion-fast) ease,
+    opacity var(--motion-fast) ease,
+    transform var(--motion-medium) var(--ease-premium);
+}
+
+.motion-layout {
+  transition: all var(--motion-medium) var(--ease-premium);
+}
+
+.motion-image {
+  transition: transform var(--motion-slow) var(--ease-premium);
+}
+
+.page-transition {
+  animation: pageEnter var(--motion-slow) var(--ease-premium) both;
 }
 
 .text-balance {
@@ -113,9 +144,9 @@ a {
   transform: translateY(26px);
   filter: blur(5px);
   transition:
-    opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 700ms ease;
+    opacity var(--motion-slow) var(--ease-premium),
+    transform var(--motion-slow) var(--ease-premium),
+    filter var(--motion-medium) ease;
   will-change: opacity, transform, filter;
 }
 
@@ -133,8 +164,27 @@ a {
 
 .parallax-media img {
   transform: translate3d(0, var(--parallax-y, 0), 0) scale(1.07);
-  transition: transform 120ms linear;
+  transition: transform var(--motion-fast) linear;
   will-change: transform;
+}
+
+.image-reveal::after,
+.parallax-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: #171817;
+  transform: translateX(0);
+  transform-origin: right;
+  transition: transform var(--motion-slow) var(--ease-premium);
+}
+
+.reveal-visible .image-reveal::after,
+.reveal-visible .parallax-media::after,
+.image-reveal.reveal-visible::after {
+  transform: translateX(101%);
 }
 
 .nav-link {
@@ -151,7 +201,7 @@ a {
   background: var(--gold);
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform var(--motion-fast) var(--ease-premium);
 }
 
 .nav-link:hover::after {
@@ -175,7 +225,7 @@ a {
   width: 38%;
   transform: skewX(-18deg);
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
-  transition: left 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: left var(--motion-slow) var(--ease-premium);
 }
 
 .gold-button:hover::after {
@@ -195,7 +245,7 @@ a {
   position: relative;
   overflow: hidden;
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0);
-  transition: background-color 500ms ease, border-color 500ms ease, transform 500ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 500ms ease;
+  transition: background-color var(--motion-medium) ease, border-color var(--motion-medium) ease, transform var(--motion-medium) var(--ease-premium), box-shadow var(--motion-medium) ease;
 }
 
 .premium-panel::before {
@@ -205,7 +255,7 @@ a {
   pointer-events: none;
   background: radial-gradient(circle at 78% 8%, rgba(198, 169, 114, 0.16), transparent 42%);
   opacity: 0;
-  transition: opacity 350ms ease;
+  transition: opacity var(--motion-fast) ease;
 }
 
 .premium-panel:hover {
@@ -227,7 +277,7 @@ a {
   height: 3.25rem;
   border: 1px solid rgba(231, 220, 193, .1);
   border-radius: 50%;
-  transition: border-color 450ms ease, transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: border-color var(--motion-medium) ease, transform var(--motion-slow) var(--ease-premium);
 }
 .premium-panel:hover .service-mark { border-color: rgba(198,169,114,.38); transform: rotate(45deg); }
 .service-mark i { position:absolute; display:block; background:#c6a972; opacity:.65; }
@@ -252,6 +302,17 @@ a {
 @keyframes scrollPulse {
   0%, 100% { opacity: 0.25; transform: scaleY(0.45); }
   50% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 640px) {
@@ -290,6 +351,15 @@ a {
   .parallax-media img {
     transform: scale(1.03);
   }
+
+  .page-transition {
+    animation: none;
+  }
+
+  .image-reveal::after,
+  .parallax-media::after {
+    display: none;
+  }
 }
 
 /* Editorial project showcase */
@@ -298,7 +368,7 @@ a {
 }
 
 .work-arrow {
-  transition: transform 350ms ease, border-color 350ms ease, color 350ms ease, background-color 350ms ease;
+  transition: transform var(--motion-medium) var(--ease-premium), border-color var(--motion-fast) ease, color var(--motion-fast) ease, background-color var(--motion-fast) ease;
 }
 
 .editorial-project:hover .work-arrow {
@@ -310,7 +380,7 @@ a {
 
 .project-link-line {
   transform-origin: left;
-  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform var(--motion-medium) var(--ease-premium);
 }
 
 .editorial-project:hover .project-link-line {
@@ -337,7 +407,7 @@ a {
   position: absolute;
   border: 1px solid rgba(216, 239, 174, 0.14);
   border-radius: 999px;
-  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform var(--motion-slow) var(--ease-premium);
 }
 
 .stage-orbit-one { width: 72%; aspect-ratio: 1; }
@@ -350,7 +420,7 @@ a {
   z-index: 2;
   width: min(78%, 62rem);
   transform: perspective(1400px) rotateX(1deg) rotateY(-4deg);
-  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform var(--motion-slow) var(--ease-premium);
 }
 
 .editorial-project:hover .macbook {
@@ -500,7 +570,7 @@ a {
   padding: .5rem;
   box-shadow: 0 42px 90px rgba(0,0,0,.52);
   transform: rotate(5deg);
-  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform var(--motion-slow) var(--ease-premium);
 }
 .editorial-project:hover .iphone { transform: rotate(2deg) translateY(-10px); }
 .iphone-screen {
@@ -531,10 +601,10 @@ a {
 .brand-specimen i:nth-child(3) { background:#e7dcc1; }
 
 .process-story {
-  transition: padding-left 550ms cubic-bezier(0.22, 1, 0.36, 1), background-color 450ms ease;
+  transition: padding-left var(--motion-medium) var(--ease-premium), background-color var(--motion-medium) ease;
 }
 .process-story:hover { padding-left: 1.25rem; background: rgba(231, 220, 193, .018); }
-.process-verb { transition: color 350ms ease, transform 500ms cubic-bezier(0.22, 1, 0.36, 1); }
+.process-verb { transition: color var(--motion-fast) ease, transform var(--motion-medium) var(--ease-premium); }
 .process-story:hover .process-verb { color: #c6a972; transform: translateX(-.5rem); }
 
 .cta-panel {

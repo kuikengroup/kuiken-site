@@ -55,14 +55,14 @@ export default function Navigation() {
   return (
     <header
       onFocus={() => setHidden(false)}
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${hidden ? "-translate-y-full" : "translate-y-0"} ${
+      className={`motion-layout fixed inset-x-0 top-0 z-50 ${hidden ? "-translate-y-full" : "translate-y-0"} ${
         scrolled
           ? "border-b border-[#E7DCC1]/7 bg-[#0D0D0D]/72 backdrop-blur-2xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
       <div
-        className={`mx-auto flex max-w-[90rem] items-center justify-between px-6 transition-all duration-500 sm:px-8 lg:px-12 ${
+        className={`motion-layout mx-auto flex max-w-[90rem] items-center justify-between px-6 sm:px-8 lg:px-12 ${
           scrolled ? "py-2.5" : "py-5"
         }`}
       >
@@ -73,13 +73,13 @@ export default function Navigation() {
             width={75}
             height={63}
             priority
-            className={`w-auto transition-all duration-500 ${scrolled ? "h-8 opacity-80" : "h-11"}`}
+            className={`motion-layout w-auto ${scrolled ? "h-8 opacity-80" : "h-11"}`}
           />
           <div>
-            <div className={`text-[9px] uppercase tracking-[0.34em] text-[#C6A972] transition-all duration-500 sm:text-[10px] ${scrolled ? "h-0 -translate-y-1 overflow-hidden opacity-0" : "h-3 opacity-100"}`}>
+            <div className={`motion-layout text-[9px] uppercase tracking-[0.34em] text-[#C6A972] sm:text-[10px] ${scrolled ? "h-0 -translate-y-1 overflow-hidden opacity-0" : "h-3 opacity-100"}`}>
               Marketing Firm
             </div>
-            <div className={`text-xs font-semibold tracking-[0.23em] text-[#E7DCC1] transition-all duration-500 sm:text-sm ${scrolled ? "mt-0 opacity-75" : "mt-0.5"}`}>
+            <div className={`motion-layout text-xs font-semibold tracking-[0.23em] text-[#E7DCC1] sm:text-sm ${scrolled ? "mt-0 opacity-75" : "mt-0.5"}`}>
               KUIKEN GROUP
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function Navigation() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/client-access"
-            className="px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#E7DCC1]/68 transition hover:text-[#C6A972]"
+            className="motion-ui px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#E7DCC1]/68 hover:text-[#C6A972]"
           >
             Client Access
           </Link>
@@ -104,7 +104,7 @@ export default function Navigation() {
             href="https://cal.com/kuikengroup/initial-conversation"
             target="_blank"
             rel="noreferrer"
-            className="gold-button rounded-full bg-[#C6A972] px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0D0D0D] transition hover:-translate-y-0.5 hover:bg-[#D3B987]"
+            className="gold-button motion-ui rounded-full bg-[#C6A972] px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0D0D0D] hover:-translate-y-0.5 hover:bg-[#D3B987]"
           >
             Start a Conversation
           </a>
@@ -121,8 +121,8 @@ export default function Navigation() {
         >
           <span className="sr-only">Menu</span>
           <span className="relative h-4 w-5">
-            <span className={`absolute left-0 top-1 h-px w-5 bg-[#E7DCC1] transition ${open ? "translate-y-1 rotate-45" : ""}`} />
-            <span className={`absolute bottom-1 left-0 h-px w-5 bg-[#E7DCC1] transition ${open ? "-translate-y-1 -rotate-45" : ""}`} />
+            <span className={`motion-ui absolute left-0 top-1 h-px w-5 bg-[#E7DCC1] ${open ? "translate-y-1 rotate-45" : ""}`} />
+            <span className={`motion-ui absolute bottom-1 left-0 h-px w-5 bg-[#E7DCC1] ${open ? "-translate-y-1 -rotate-45" : ""}`} />
           </span>
         </button>
       </div>
@@ -130,7 +130,7 @@ export default function Navigation() {
       <div
         id="mobile-navigation"
         aria-hidden={!open}
-        className={`fixed inset-0 z-40 bg-[#0D0D0D] px-8 pt-28 transition duration-500 lg:hidden ${
+        className={`motion-layout fixed inset-0 z-40 bg-[#0D0D0D] px-8 pt-28 lg:hidden ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >

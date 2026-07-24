@@ -43,7 +43,7 @@ export default function HomeShell() {
               <div className="mt-7 hidden h-24 w-px bg-gradient-to-b from-[#C6A972]/60 to-transparent lg:block" />
             </div>
           </Reveal>
-          <Reveal delay={90}>
+          <Reveal stagger={1}>
             <p className="max-w-6xl text-balance text-[clamp(2.55rem,5.25vw,5.75rem)] font-medium leading-[0.98] tracking-[-0.058em] text-[#E7DCC1]">
               We make growing businesses feel established—through clear positioning, considered design, and digital experiences that earn trust before the first conversation.
             </p>
@@ -67,7 +67,7 @@ export default function HomeShell() {
 
           <div className="mt-20 grid gap-4 lg:mt-28 lg:grid-cols-3">
             {services.map((service, index) => (
-              <Reveal key={service.title} delay={index * 90} className="h-full">
+              <Reveal key={service.title} stagger={index} className="h-full">
                 <Link href={service.href} className={`premium-panel premium-panel-${service.mark} premium-focus group block h-full min-h-[27rem] rounded-[1.75rem] border border-[#E7DCC1]/10 bg-[#151615] p-7 sm:p-9 lg:min-h-[32rem]`}>
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-semibold tracking-[0.24em] text-[#C6A972]">{service.number}</span>
@@ -78,7 +78,7 @@ export default function HomeShell() {
                     <p className="mt-5 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">{service.copy}</p>
                     <div className="mt-8 flex items-center gap-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#C6A972]">
                       Explore capability
-                      <span className="block h-px w-8 bg-[#C6A972]/60 transition-all duration-500 group-hover:w-16" />
+                      <span className="motion-layout block h-px w-8 bg-[#C6A972]/60 group-hover:w-16" />
                     </div>
                   </div>
                 </Link>

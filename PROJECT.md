@@ -48,6 +48,7 @@ Pages and layouts remain Server Components unless browser APIs, state, or event 
 - Milestone 2.2: premium motion, realistic work imagery, cohesive About page, expanded case studies, accessibility polish, and brand-consistency documentation
 - Milestone 3.0: editorial Work index, detailed Services page, typed shared project data, and a complete portfolio-to-conversation path
 - Milestone 3.2: conversion-focused homepage trust narrative, standardized calls to action, verified project summaries, service FAQs, route-level SEO, sitemap and robots controls, accessibility improvements, and performance cleanup
+- Milestone 4.0: shared premium motion system, reusable editorial case-study patterns, refined route transitions, richer galleries, sticky project context, and site-wide interaction consistency
 
 ## Development
 

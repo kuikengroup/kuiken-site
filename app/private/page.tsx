@@ -55,13 +55,13 @@ export default function PrivatePage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="#resources"
-                className="rounded-full bg-[#C6A972] px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#0D0D0D] shadow-sm transition duration-200 hover:-translate-y-0.5 hover:opacity-90 inline-block"
+                className="motion-ui inline-block rounded-full bg-[#C6A972] px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#0D0D0D] shadow-sm hover:-translate-y-0.5 hover:opacity-90"
               >
                 Enter Workspace
               </a>
               <a
                 href="mailto:brady@kuikengroup.com"
-                className="rounded-full border border-[#C6A972]/35 bg-transparent px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#E7DCC1] transition duration-200 hover:-translate-y-0.5 hover:border-[#C6A972] hover:text-[#C6A972] inline-block"
+                className="motion-ui inline-block rounded-full border border-[#C6A972]/35 bg-transparent px-7 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#E7DCC1] hover:-translate-y-0.5 hover:border-[#C6A972] hover:text-[#C6A972]"
               >
                 Contact Brady
               </a>

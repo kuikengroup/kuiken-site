@@ -21,19 +21,19 @@ export default function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={90}>
+          <Reveal stagger={1}>
             <h1 className="text-balance text-[clamp(3.75rem,7.75vw,8.25rem)] font-semibold leading-[0.84] tracking-[-0.072em] text-[#E7DCC1]">
               Premium marketing for brands built to grow.
             </h1>
           </Reveal>
 
-          <Reveal delay={180}>
+          <Reveal stagger={2}>
             <p className="mt-9 max-w-xl text-sm leading-7 text-[#E7DCC1]/58 sm:text-base sm:leading-8 lg:text-lg">
               Kuiken Group combines strategy, design, and digital execution to help ambitious businesses look sharper, communicate clearly, and turn attention into measurable growth.
             </p>
           </Reveal>
 
-          <Reveal delay={260}>
+          <Reveal stagger={3}>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external>
                 Start a Conversation
@@ -44,7 +44,7 @@ export default function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={340}>
+          <Reveal stagger={4}>
             <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#E7DCC1]/10 pt-6">
               {capabilities.map((capability) => (
                 <div key={capability} className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-[#E7DCC1]/64">
@@ -56,7 +56,7 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        <Reveal delay={220} className="relative lg:pl-4">
+        <Reveal stagger={3} className="relative lg:pl-4">
           <div className="hero-visual relative mx-auto max-w-[42rem]">
             <div className="absolute -inset-8 rounded-full bg-[#C6A972]/8 blur-3xl" />
 
@@ -96,7 +96,7 @@ export default function Hero() {
                         ["02", "Design a credible digital presence"],
                         ["03", "Build systems that create action"],
                       ].map(([number, item]) => (
-                        <div key={number} className="group flex items-center gap-4 rounded-2xl border border-[#E7DCC1]/10 bg-[#252625]/65 px-4 py-4 transition duration-300 hover:border-[#C6A972]/35 hover:bg-[#2B2C2B]">
+                        <div key={number} className="motion-ui group flex items-center gap-4 rounded-2xl border border-[#E7DCC1]/10 bg-[#252625]/65 px-4 py-4 hover:border-[#C6A972]/35 hover:bg-[#2B2C2B]">
                           <span className="text-[9px] font-semibold tracking-[0.2em] text-[#C6A972]">{number}</span>
                           <span className="text-sm text-[#E7DCC1]/72">{item}</span>
                         </div>

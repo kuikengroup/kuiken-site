@@ -6,17 +6,18 @@ import {
   useRef,
   useState,
 } from "react";
+import { staggerDelay } from "../lib/motion";
 
 type RevealProps = {
   children: ReactNode;
   className?: string;
-  delay?: number;
+  stagger?: number;
 };
 
 export default function Reveal({
   children,
   className = "",
-  delay = 0,
+  stagger = 0,
 }: RevealProps) {
   const elementRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -48,7 +49,7 @@ export default function Reveal({
     <div
       ref={elementRef}
       className={`reveal ${isVisible ? "reveal-visible" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ transitionDelay: `${staggerDelay(stagger)}ms` }}
     >
       {children}
     </div>

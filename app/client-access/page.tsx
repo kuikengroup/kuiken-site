@@ -97,7 +97,7 @@ export default function ClientAccessPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter access password"
-                    className="mt-3 w-full rounded-xl border border-[#E7DCC1]/10 bg-[#252625] px-4 py-3 text-sm text-[#E7DCC1] placeholder-[#E7DCC1]/60 outline-none transition focus:border-[#C6A972]/60 focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0D0D]"
+                    className="motion-ui mt-3 w-full rounded-xl border border-[#E7DCC1]/10 bg-[#252625] px-4 py-3 text-sm text-[#E7DCC1] placeholder-[#E7DCC1]/60 outline-none focus:border-[#C6A972]/60 focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0D0D]"
                     autoComplete="current-password"
                     required
                   />
@@ -111,7 +111,7 @@ export default function ClientAccessPage() {
 
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-[#C6A972] px-6 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#0D0D0D] transition duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                  className="motion-ui w-full rounded-full bg-[#C6A972] px-6 py-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#0D0D0D] hover:-translate-y-0.5 hover:opacity-90"
                 >
                   Enter Portal
                 </button>

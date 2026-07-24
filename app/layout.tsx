@@ -37,7 +37,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="bg-[#0D0D0D] text-[#E7DCC1] antialiased">
         <a
           href="#main-content"
-          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-[#C6A972] px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#0D0D0D] transition focus:translate-y-0"
+          className="motion-ui fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-[#C6A972] px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#0D0D0D] focus:translate-y-0"
         >
           Skip to content
         </a>

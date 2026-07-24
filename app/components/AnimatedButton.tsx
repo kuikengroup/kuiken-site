@@ -17,7 +17,7 @@ export default function AnimatedButton({
   className = "",
 }: AnimatedButtonProps) {
   const base =
-    "group relative inline-flex items-center justify-center overflow-hidden rounded-full px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-4 focus-visible:ring-offset-[#0D0D0D]";
+    "motion-ui group relative inline-flex items-center justify-center overflow-hidden rounded-full px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A972] focus-visible:ring-offset-4 focus-visible:ring-offset-[#0D0D0D]";
 
   const styles = {
     primary:
@@ -32,7 +32,7 @@ export default function AnimatedButton({
       <span className="relative z-10">{children}</span>
       <span
         aria-hidden="true"
-        className="relative z-10 ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1"
+        className="motion-ui relative z-10 ml-2 inline-block group-hover:translate-x-1"
       >
         →
       </span>

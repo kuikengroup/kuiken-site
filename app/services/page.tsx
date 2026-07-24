@@ -3,6 +3,7 @@ import Link from "next/link";
 import AnimatedButton from "../components/AnimatedButton";
 import Container from "../components/layout/Container";
 import Reveal from "../components/Reveal";
+import ConversionCTA from "../components/sections/ConversionCTA";
 import { createMetadata } from "../lib/metadata";
 
 export const metadata: Metadata = createMetadata({
@@ -92,16 +93,16 @@ export default function ServicesPage() {
         <div className="absolute -right-40 top-28 h-[34rem] w-[34rem] rounded-full bg-[#C6A972]/8 blur-[120px]" />
         <Container className="relative pb-28 sm:pb-36 lg:pb-48">
           <Reveal><div className="section-label">Capabilities</div></Reveal>
-          <Reveal delay={70}>
+          <Reveal stagger={1}>
             <h1 className="mt-8 max-w-[86rem] text-balance text-[clamp(4rem,9.5vw,10rem)] font-semibold leading-[0.81] tracking-[-0.08em]">
               The right expertise, connected around one goal.
             </h1>
           </Reveal>
           <div className="mt-16 grid gap-10 border-t border-[#E7DCC1]/10 pt-8 lg:grid-cols-[0.65fr_1.35fr]">
-            <Reveal delay={120}>
+            <Reveal stagger={2}>
               <p className="text-[9px] uppercase tracking-[0.24em] text-[#E7DCC1]/60">Position · Express · Build · Grow</p>
             </Reveal>
-            <Reveal delay={160}>
+            <Reveal stagger={3}>
               <p className="max-w-3xl text-balance text-xl leading-[1.45] tracking-[-0.02em] text-[#E7DCC1]/64 sm:text-2xl lg:text-3xl">
                 Kuiken Group combines strategy, design, development, and marketing when the work benefits from one clear point of view.
               </p>
@@ -121,7 +122,7 @@ export default function ServicesPage() {
                   className="premium-focus group flex min-h-14 items-center justify-between border-b border-[#E7DCC1]/10 py-4 text-[10px] uppercase tracking-[0.18em] text-[#E7DCC1]/68"
                 >
                   <span>{service.title}</span>
-                  <span className="text-[#C6A972] transition-transform duration-300 group-hover:translate-x-1">↓</span>
+                  <span className="motion-ui text-[#C6A972] group-hover:translate-x-1">↓</span>
                 </Link>
               ))}
             </nav>
@@ -146,13 +147,13 @@ export default function ServicesPage() {
               </Reveal>
 
               <div>
-                <Reveal delay={60}>
+                <Reveal stagger={1}>
                   <div className="border-t border-[#E7DCC1]/10 pt-7">
                     <div className="case-meta-label">The business problem</div>
                     <p className="max-w-3xl text-balance text-2xl leading-[1.3] tracking-[-0.03em] text-[#E7DCC1]/76 sm:text-3xl">{service.problem}</p>
                   </div>
                 </Reveal>
-                <Reveal delay={90}>
+                <Reveal stagger={2}>
                   <div className="mt-14 grid gap-10 sm:grid-cols-2">
                     <div>
                       <div className="case-meta-label">What Kuiken Group does</div>
@@ -164,7 +165,7 @@ export default function ServicesPage() {
                     </div>
                   </div>
                 </Reveal>
-                <Reveal delay={120}>
+                <Reveal stagger={3}>
                   <div className="mt-14">
                     <div className="case-meta-label">Typical deliverables</div>
                     <ul className="mt-5 grid sm:grid-cols-2">
@@ -196,7 +197,7 @@ export default function ServicesPage() {
           </Reveal>
           <div className="mt-20 grid gap-px overflow-hidden rounded-[2rem] border border-[#E7DCC1]/10 bg-[#E7DCC1]/10 md:grid-cols-2 lg:mt-28">
             {combinations.map(([label, title, copy], index) => (
-              <Reveal key={label} delay={index * 55} className="h-full">
+              <Reveal key={label} stagger={index} className="h-full">
                 <article className="flex h-full min-h-80 flex-col bg-[#151615] p-8 sm:p-10">
                   <span className="text-[9px] uppercase tracking-[0.24em] text-[#C6A972]">{label}</span>
                   <div className="mt-auto pt-20">
@@ -218,7 +219,7 @@ export default function ServicesPage() {
               <h2 className="mt-7 max-w-3xl text-balance text-[clamp(3rem,5.6vw,5.75rem)] font-semibold leading-[0.91] tracking-[-0.063em]">Businesses with something real to build on.</h2>
             </div>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal stagger={1}>
             <div className="border-t border-[#E7DCC1]/10">
               {[
                 ["A point of change", "The business is launching, repositioning, expanding, or outgrowing an improvised brand."],
@@ -245,7 +246,7 @@ export default function ServicesPage() {
               <p className="mt-6 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">Direct access, clear accountability, and specialist support only when the work calls for it.</p>
             </div>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal stagger={1}>
             <div>
               <h2 className="max-w-5xl text-balance text-[clamp(3.25rem,6.4vw,6.75rem)] font-semibold leading-[0.89] tracking-[-0.067em]">Principal-led from the first question to the final review.</h2>
               <p className="mt-9 max-w-2xl text-base leading-8 text-[#E7DCC1]/64">
@@ -295,13 +296,13 @@ export default function ServicesPage() {
               <p className="mt-6 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">Useful answers before the first conversation.</p>
             </div>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal stagger={1}>
             <div className="border-t border-[#E7DCC1]/10">
               {faqs.map(([question, answer]) => (
                 <details key={question} className="group border-b border-[#E7DCC1]/10">
                   <summary className="premium-focus flex min-h-20 cursor-pointer list-none items-center justify-between gap-8 py-6 text-lg font-semibold tracking-[-0.025em] marker:content-none">
                     {question}
-                    <span aria-hidden="true" className="text-[#C6A972] transition-transform duration-300 group-open:rotate-45">+</span>
+                    <span aria-hidden="true" className="motion-ui text-[#C6A972] group-open:rotate-45">+</span>
                   </summary>
                   <p className="max-w-2xl pb-7 pr-10 text-sm leading-8 text-[#E7DCC1]/64">{answer}</p>
                 </details>
@@ -311,24 +312,11 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      <section className="py-28 sm:py-36 lg:py-44">
-        <Container>
-          <Reveal>
-            <div className="rounded-[2rem] border border-[#C6A972]/20 bg-[linear-gradient(135deg,#171817,#242116)] p-8 sm:p-12 lg:p-16">
-              <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-                <div>
-                  <div className="section-label">Start with the constraint</div>
-                  <h2 className="mt-7 max-w-5xl text-balance text-[clamp(3.25rem,6.7vw,7rem)] font-semibold leading-[0.88] tracking-[-0.067em]">You do not need to know which service to ask for.</h2>
-                </div>
-                <div className="lg:justify-self-end">
-                  <p className="mb-7 max-w-sm text-sm leading-7 text-[#E7DCC1]/64">Describe what feels unclear, outdated, disconnected, or harder to grow than it should be. The right scope can follow from there.</p>
-                  <AnimatedButton href="https://cal.com/kuikengroup/initial-conversation" external>Start a Conversation</AnimatedButton>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
+      <ConversionCTA
+        eyebrow="Start with the constraint"
+        title="You do not need to know which service to ask for."
+        copy="Describe what feels unclear, outdated, disconnected, or harder to grow than it should be. The right scope can follow from there."
+      />
     </div>
   );
 }

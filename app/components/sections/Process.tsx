@@ -27,7 +27,7 @@ export default function Process() {
 
         <div className="mt-24 border-t border-[#E7DCC1]/12 lg:mt-36">
           {steps.map(([number, title, copy, verb], index) => (
-            <Reveal key={title} delay={index * 60}>
+            <Reveal key={title} stagger={index}>
               <article className="process-story group grid gap-8 border-b border-[#E7DCC1]/12 py-12 sm:py-16 lg:grid-cols-[0.25fr_0.75fr_0.75fr_0.25fr] lg:items-center">
                 <span className="text-[10px] font-semibold tracking-[0.28em] text-[#C6A972]">{number}</span>
                 <h3 className="text-[clamp(3rem,6vw,6.5rem)] font-semibold leading-[0.85] tracking-[-0.065em] text-[#E7DCC1]">{title}</h3>

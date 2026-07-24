@@ -51,6 +51,16 @@
 - Keyboard navigation, focus, heading, contrast, and reduced-motion review
 - Leaner homepage motion and corrected responsive navigation behavior
 
+### Milestone 4.0 — Premium Experience
+
+- Shared fast, medium, slow, and stagger motion system
+- Route-entry, section, image-reveal, and interaction standards
+- Reusable conversion, editorial chapter, gallery, and next-project patterns
+- Sticky project context and richer case-study compositions
+- Refined About philosophy and editorial typography
+- Consistent responsive behavior from mobile through ultra-wide displays
+- Reduced duplicated markup without adding client-side dependencies
+
 ## Next
 
 ### Milestone 3.1 — Contact and Portfolio Growth
@@ -59,7 +69,7 @@
 - Refined Contact page with a useful qualification flow
 - Additional verified project imagery
 
-### Milestone 4 — Scalable Agency Platform
+### Milestone 4.1 — Scalable Agency Platform
 
 - CMS-ready project and article content model
 - Insights and resources
