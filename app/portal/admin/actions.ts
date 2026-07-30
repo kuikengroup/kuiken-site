@@ -22,5 +22,5 @@ export async function toggleClient(formData:FormData){
  await supabase.from("profiles").update({disabled:!disabled}).eq("id",id); revalidatePath("/portal/admin");
 }
 export async function resetClientPassword(formData:FormData){
- const {supabase}=await requireAdmin(); const email=String(formData.get("email")??""); const baseUrl=process.env.PORTAL_SITE_URL??"https://kuikengroup.com"; await supabase.auth.resetPasswordForEmail(email,{redirectTo:`${baseUrl}/auth/callback?next=/login/update-password`});
+ const {supabase}=await requireAdmin(); const email=String(formData.get("email")??""); const baseUrl=process.env.PORTAL_SITE_URL??"https://kuikengroup.com"; await supabase.auth.resetPasswordForEmail(email,{redirectTo:`${baseUrl}/auth/recovery`});
 }

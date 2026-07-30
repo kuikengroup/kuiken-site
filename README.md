@@ -200,7 +200,8 @@ Setup:
 1. Create a Supabase project and run the migration.
 2. In Auth URL Configuration, set the production site URL to
    `https://kuikengroup.com` and allow
-   `https://kuikengroup.com/auth/callback`.
+   `https://kuikengroup.com/auth/callback` and
+   `https://kuikengroup.com/auth/recovery`.
 3. Configure SMTP and update the invitation/recovery templates to return to the
    callback URL. Enable email/password authentication.
 4. Create Brady's Auth user, then set the corresponding `profiles.role` to

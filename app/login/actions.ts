@@ -28,7 +28,9 @@ export async function requestReset(_: AuthState, formData: FormData): Promise<Au
   if (!email.includes("@")) return { error: "Enter a valid email address." };
   const origin = process.env.PORTAL_SITE_URL ?? (await headers()).get("origin") ?? "https://kuikengroup.com";
   const supabase = await createClient();
-  await supabase.auth.resetPasswordForEmail(email, { redirectTo: `${origin}/auth/callback?next=/login/update-password` });
+  await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${origin}/auth/recovery`,
+  });
   return { message: "If an account exists, a secure reset link has been sent." };
 }
 export async function updatePassword(_: AuthState, formData: FormData): Promise<AuthState> {
