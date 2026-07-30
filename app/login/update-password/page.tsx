@@ -1,0 +1,2 @@
+import AuthForm from "../AuthForm";
+export default function UpdatePage(){return <div id="login-shell" className="min-h-screen bg-[#0D0D0D] px-6 pb-24 pt-44 text-[#E7DCC1]"><section className="mx-auto max-w-xl rounded-[2rem] border border-[#E7DCC1]/10 bg-[#111211] p-8 sm:p-11"><div className="section-label">Secure account</div><h1 className="mt-5 text-4xl font-semibold tracking-[-.05em]">Choose a new password.</h1><AuthForm mode="update"/></section></div>}

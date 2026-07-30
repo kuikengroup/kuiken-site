@@ -61,6 +61,15 @@
 - Consistent responsive behavior from mobile through ultra-wide displays
 - Reduced duplicated markup without adding client-side dependencies
 
+### Milestone 5 — Premium Client Portal
+
+- Cookie-based Supabase authentication and password recovery
+- ADMIN and CLIENT authorization with server checks and Row Level Security
+- Project dashboards, deliverables, notes, activity, and storage reporting
+- Private project storage schema and per-project access policies
+- Client invitation, disabling, password reset, project creation, and assignment
+- Adapter-compatible session middleware and authenticated route protection
+
 ## Next
 
 ### Milestone 3.1 — Contact and Portfolio Growth

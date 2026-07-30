@@ -43,7 +43,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </a>
         <Navigation />
         <main id="main-content" tabIndex={-1}>{children}</main>
-        <footer className="border-t border-[#E7DCC1]/10 bg-[#111211]">
+        <footer className="site-footer border-t border-[#E7DCC1]/10 bg-[#111211]">
           <div className="mx-auto max-w-[90rem] px-6 py-14 sm:px-8 lg:px-12 lg:py-18">
             <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr_0.75fr]">
               <div>
@@ -67,7 +67,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   <Link href="/services" className="hover:text-[#C6A972]">Services</Link>
                   <Link href="/#approach" className="hover:text-[#C6A972]">Process</Link>
                   <Link href="/contact" className="hover:text-[#C6A972]">Contact</Link>
-                  <Link href="/client-access" className="hover:text-[#C6A972]">Client Access</Link>
+                  <Link href="/login" className="hover:text-[#C6A972]">Portal</Link>
                 </div>
               </div>
 

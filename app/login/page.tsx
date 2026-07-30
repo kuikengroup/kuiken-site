@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import AuthForm from "./AuthForm";
+export const metadata: Metadata = { title: "Portal Login", robots: { index: false, follow: false } };
+export default function LoginPage() { return <div id="login-shell" className="min-h-screen bg-[#0D0D0D] px-6 pb-24 pt-40 text-[#E7DCC1]"><div className="mx-auto grid max-w-6xl gap-16 lg:grid-cols-2 lg:items-center"><section><Image src="/kuiken-logo-white.png" alt="" width={75} height={63} className="h-14 w-auto"/><div className="section-label mt-10">Private client portal</div><h1 className="mt-6 text-[clamp(3.5rem,7vw,7rem)] font-semibold leading-[.86] tracking-[-.07em]">Your work, in one considered place.</h1><p className="mt-8 max-w-xl leading-8 text-[#E7DCC1]/60">Secure access to projects, deliverables, shared files, and the decisions moving the work forward.</p></section><section className="rounded-[2rem] border border-[#E7DCC1]/10 bg-[#111211] p-7 sm:p-10"><div className="section-label">Welcome back</div><h2 className="mt-4 text-3xl font-semibold tracking-[-.04em]">Sign in to continue.</h2><AuthForm mode="login"/></section></div></div>; }

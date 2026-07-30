@@ -31,6 +31,13 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+body:has(#portal-shell) .site-navigation,
+body:has(#portal-shell) .site-footer,
+body:has(#login-shell) .site-navigation,
+body:has(#login-shell) .site-footer {
+  display: none;
+}
+
 ::selection {
   background: rgba(198, 169, 114, 0.34);
   color: #fff8e7;

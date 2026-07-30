@@ -55,7 +55,7 @@ export default function Navigation() {
   return (
     <header
       onFocus={() => setHidden(false)}
-      className={`motion-layout fixed inset-x-0 top-0 z-50 ${hidden ? "-translate-y-full" : "translate-y-0"} ${
+      className={`site-navigation motion-layout fixed inset-x-0 top-0 z-50 ${hidden ? "-translate-y-full" : "translate-y-0"} ${
         scrolled
           ? "border-b border-[#E7DCC1]/7 bg-[#0D0D0D]/72 backdrop-blur-2xl"
           : "border-b border-transparent bg-transparent"
@@ -95,10 +95,10 @@ export default function Navigation() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Link
-            href="/client-access"
+            href="/login"
             className="motion-ui px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#E7DCC1]/68 hover:text-[#C6A972]"
           >
-            Client Access
+            Portal
           </Link>
           <Link
             href="/contact"
@@ -147,11 +147,11 @@ export default function Navigation() {
         </nav>
         <div className="mt-8 grid gap-3">
           <Link
-            href="/client-access"
+            href="/login"
             onClick={() => setOpen(false)}
             className="rounded-full border border-[#C6A972]/35 px-5 py-4 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E7DCC1]"
           >
-            Client Access
+            Portal
           </Link>
           <Link
             href="/contact"

@@ -38,8 +38,10 @@ Pages and layouts remain Server Components unless browser APIs, state, or event 
 - `/work` — editorial portfolio index
 - `/work/lawn-fadez` — Lawn Fadez case study
 - `/work/kuiken-group` — Kuiken Group case study
-- `/client-access` — client portal entry
-- `/private` — client resource interface
+- `/login` — Supabase-authenticated portal entry and password recovery
+- `/portal` — authenticated client dashboard
+- `/portal/projects/[id]` — RLS-scoped project workspace
+- `/portal/admin` — server-authorized administration
 
 ## Completed Milestones
 
@@ -49,6 +51,7 @@ Pages and layouts remain Server Components unless browser APIs, state, or event 
 - Milestone 3.0: editorial Work index, detailed Services page, typed shared project data, and a complete portfolio-to-conversation path
 - Milestone 3.2: conversion-focused homepage trust narrative, standardized calls to action, verified project summaries, service FAQs, route-level SEO, sitemap and robots controls, accessibility improvements, and performance cleanup
 - Milestone 4.0: shared premium motion system, reusable editorial case-study patterns, refined route transitions, richer galleries, sticky project context, and site-wide interaction consistency
+- Milestone 5: Supabase-authenticated client portal, role-based access, normalized project data, private storage policies, admin controls, and secure legacy-route migration
 
 ## Development
 

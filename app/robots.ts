@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/client-access/", "/contact/success/", "/private/"],
+      disallow: ["/client-access/", "/contact/success/", "/login/", "/portal/", "/private/"],
     },
     sitemap: "https://kuikengroup.com/sitemap.xml",
     host: "https://kuikengroup.com",

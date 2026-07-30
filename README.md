@@ -172,3 +172,56 @@ new deployment with a cleared build cache. `npm run deploy` is intentionally
 self-contained and rebuilds the OpenNext output before deploying it.
 
 Generated `.next`, `.open-next`, `.wrangler`, and `node_modules` directories are intentionally ignored and must not be committed.
+
+## Supabase client portal
+
+The `/portal` application uses Supabase Auth, Postgres, and a private Storage
+bucket. Apply `supabase/migrations/20260730000000_client_portal.sql` in the
+Supabase SQL editor or with the Supabase CLI before enabling portal access.
+The migration creates the normalized schema, indexes, trigger, RLS policies,
+private helper functions, and `project-files` bucket.
+
+Required variables:
+
+```text
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+SUPABASE_SERVICE_ROLE_KEY
+PORTAL_MAX_UPLOAD_BYTES
+PORTAL_SITE_URL
+```
+
+The URL and publishable key are intentionally browser-readable and are secured
+by RLS. `SUPABASE_SERVICE_ROLE_KEY` is server-only and is used exclusively for
+Supabase Auth administration; never prefix it with `NEXT_PUBLIC_`.
+
+Setup:
+
+1. Create a Supabase project and run the migration.
+2. In Auth URL Configuration, set the production site URL to
+   `https://kuikengroup.com` and allow
+   `https://kuikengroup.com/auth/callback`.
+3. Configure SMTP and update the invitation/recovery templates to return to the
+   callback URL. Enable email/password authentication.
+4. Create Brady's Auth user, then set the corresponding `profiles.role` to
+   `ADMIN` in the SQL editor. All later clients can be invited from
+   `/portal/admin`.
+5. Add the four variables above to `.env.local` for development. In Cloudflare,
+   add all four under **Worker → Settings → Variables and Secrets**; store the
+   service-role key as an encrypted secret.
+6. Keep `project-files` private. Its 50 MB migration default must not exceed the
+   Supabase global Storage limit. Keep `PORTAL_MAX_UPLOAD_BYTES` aligned with
+   the bucket limit.
+
+Security verification should use two client accounts assigned to different
+projects. Confirm each account can see only its assigned rows and Storage
+paths, cannot open `/portal/admin`, and receives a redirect when signed out.
+Also verify admin invitation, disable/enable, password recovery, project
+assignment, and logout before production launch.
+
+The portal currently uses `middleware.ts` only for Supabase cookie refresh and
+early redirects. Next.js 16 labels that filename deprecated in favor of
+`proxy.ts`, but OpenNext does not yet support Node middleware. The
+adapter-compatible middleware is therefore intentional; every protected page
+and mutation also performs server-side authorization, and RLS remains the
+authoritative data boundary.
