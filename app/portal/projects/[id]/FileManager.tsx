@@ -87,7 +87,7 @@ export default function FileManager({
     <section>
       <div className="flex flex-wrap items-end justify-between gap-5">
         <div><div className="case-meta-label">File manager</div><h2 className="text-3xl font-semibold tracking-[-.04em]">Shared files</h2></div>
-        <label className="cursor-pointer rounded-full bg-[#C6A972] px-5 py-3 text-xs font-semibold uppercase tracking-[.16em] text-[#0D0D0D]">
+        <label className="cursor-pointer rounded-full bg-[#C6A972] px-5 py-3 text-xs font-semibold uppercase tracking-[.16em] text-[#12140F]">
           Upload file<input type="file" className="sr-only" onChange={(event) => event.target.files?.[0] && upload(event.target.files[0])} />
         </label>
       </div>
@@ -100,23 +100,23 @@ export default function FileManager({
       <div onDragOver={(event) => event.preventDefault()} onDrop={(event) => { event.preventDefault(); const file = event.dataTransfer.files[0]; if (file) upload(file); }} className="mt-6 rounded-2xl border border-dashed border-[#E7DCC1]/15 p-6 text-center text-xs text-[#E7DCC1]/40">
         Drag and drop a supported file here
       </div>
-      {progress !== null && <div aria-label={`Upload ${progress}% complete`} className="mt-4 h-1 overflow-hidden rounded bg-[#252625]"><div className="h-full bg-[#C6A972] transition-[width]" style={{ width: `${progress}%` }} /></div>}
+      {progress !== null && <div aria-label={`Upload ${progress}% complete`} className="mt-4 h-1 overflow-hidden rounded bg-[#30332A]"><div className="h-full bg-[#C6A972] transition-[width]" style={{ width: `${progress}%` }} /></div>}
       {error && <p role="alert" className="mt-4 text-sm text-red-200">{error}</p>}
 
       <div className="mt-6 flex flex-wrap gap-3">
-        <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search files" aria-label="Search files" className="rounded-xl border border-[#E7DCC1]/10 bg-[#171817] px-4 py-3 text-sm" />
-        <select value={sort} onChange={(event) => setSort(event.target.value as "new" | "name")} aria-label="Sort files" className="rounded-xl border border-[#E7DCC1]/10 bg-[#171817] px-4"><option value="new">Newest</option><option value="name">Name</option></select>
+        <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search files" aria-label="Search files" className="rounded-xl border border-[#E7DCC1]/10 bg-[#24271F] px-4 py-3 text-sm" />
+        <select value={sort} onChange={(event) => setSort(event.target.value as "new" | "name")} aria-label="Sort files" className="rounded-xl border border-[#E7DCC1]/10 bg-[#24271F] px-4"><option value="new">Newest</option><option value="name">Name</option></select>
         <button onClick={() => setView(view === "grid" ? "list" : "grid")} className="rounded-xl border border-[#E7DCC1]/10 px-4 text-xs">{view === "grid" ? "List" : "Grid"} view</button>
         <form action={createFolder} className="flex gap-2">
           <input type="hidden" name="projectId" value={projectId} />
-          <input name="name" required maxLength={80} placeholder="Folder name" aria-label="New folder name" className="w-32 rounded-xl bg-[#171817] px-3 text-sm" />
+          <input name="name" required maxLength={80} placeholder="Folder name" aria-label="New folder name" className="w-32 rounded-xl bg-[#24271F] px-3 text-sm" />
           <button className="rounded-xl border border-[#E7DCC1]/10 px-3 text-xs">New folder</button>
         </form>
       </div>
 
       <div className={`mt-6 grid gap-3 ${view === "grid" ? "sm:grid-cols-2" : ""}`}>
         {visibleFiles.map((file) => (
-          <article key={file.id} className="rounded-2xl border border-[#E7DCC1]/10 bg-[#151615] p-5">
+          <article key={file.id} className="rounded-2xl border border-[#E7DCC1]/10 bg-[#22251E] p-5">
             <div className="text-[10px] uppercase tracking-[.2em] text-[#C6A972]">{file.mime_type.split("/").pop()}</div>
             <div className="mt-3 break-words font-medium">{file.display_name}</div>
             <div className="mt-2 text-xs text-[#E7DCC1]/40">{(file.size_bytes / 1_048_576).toFixed(1)} MB · v1</div>
@@ -125,7 +125,7 @@ export default function FileManager({
               <a href={`/portal/files/${file.id}?download=1`}>Download</a>
               <form action={renameFile} className="flex gap-2">
                 <input type="hidden" name="id" value={file.id} /><input type="hidden" name="projectId" value={projectId} />
-                <input name="name" aria-label={`Rename ${file.display_name}`} required placeholder="New name" className="w-24 bg-[#252625] px-2" /><button>Rename</button>
+                <input name="name" aria-label={`Rename ${file.display_name}`} required placeholder="New name" className="w-24 bg-[#30332A] px-2" /><button>Rename</button>
               </form>
               <form action={deleteFile}><input type="hidden" name="id" value={file.id} /><input type="hidden" name="projectId" value={projectId} /><button className="text-red-200">Delete</button></form>
             </div>

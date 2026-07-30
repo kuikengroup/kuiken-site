@@ -38,6 +38,86 @@ body:has(#login-shell) .site-footer {
   display: none;
 }
 
+.portal-atmosphere,
+.portal-auth-atmosphere {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 12% 4%, rgba(198, 169, 114, 0.2), transparent 25rem),
+    radial-gradient(circle at 88% 28%, rgba(111, 119, 87, 0.18), transparent 32rem),
+    linear-gradient(145deg, #171a14 0%, #11130f 48%, #1a1c16 100%);
+}
+
+.portal-atmosphere::before,
+.portal-auth-atmosphere::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.3;
+  background-image:
+    linear-gradient(rgba(231, 220, 193, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(231, 220, 193, 0.035) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.portal-header {
+  background: rgba(22, 24, 19, 0.78);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.14);
+}
+
+.portal-auth-story {
+  background:
+    linear-gradient(155deg, rgba(198, 169, 114, 0.17), transparent 48%),
+    linear-gradient(140deg, #25271f, #181a15);
+}
+
+.portal-auth-story::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 45%, rgba(231, 220, 193, 0.035));
+}
+
+.portal-auth-orbit {
+  position: absolute;
+  top: -12rem;
+  right: -12rem;
+  width: 34rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(198, 169, 114, 0.2);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 5rem rgba(198, 169, 114, 0.025),
+    0 0 0 10rem rgba(198, 169, 114, 0.018);
+}
+
+.portal-auth-card {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(198, 169, 114, 0.11), transparent 18rem),
+    rgba(31, 34, 27, 0.94);
+}
+
+#portal-shell :where(section, article, aside)[class*="rounded-"] {
+  box-shadow: 0 22px 65px rgba(0, 0, 0, 0.12);
+}
+
+#portal-shell input,
+#portal-shell textarea,
+#portal-shell select,
+#login-shell input {
+  box-shadow: inset 0 1px 0 rgba(231, 220, 193, 0.035);
+}
+
+#portal-shell input::placeholder,
+#portal-shell textarea::placeholder,
+#login-shell input::placeholder {
+  color: rgba(231, 220, 193, 0.38);
+}
+
 ::selection {
   background: rgba(198, 169, 114, 0.34);
   color: #fff8e7;
