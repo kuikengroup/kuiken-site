@@ -56,7 +56,9 @@ export default function Navigation() {
     <header
       onFocus={() => setHidden(false)}
       className={`site-navigation motion-layout fixed inset-x-0 top-0 z-50 ${hidden ? "-translate-y-full" : "translate-y-0"} ${
-        scrolled
+        open
+          ? "h-dvh border-b border-transparent bg-[#0D0D0D]/94 backdrop-blur-xl"
+          : scrolled
           ? "border-b border-[#E7DCC1]/7 bg-[#0D0D0D]/72 backdrop-blur-2xl"
           : "border-b border-transparent bg-transparent"
       }`}
@@ -128,7 +130,7 @@ export default function Navigation() {
       <div
         id="mobile-navigation"
         aria-hidden={!open}
-        className={`motion-layout fixed inset-0 z-40 bg-[#0D0D0D] px-8 pt-28 lg:hidden ${
+        className={`motion-layout absolute inset-0 z-40 min-h-dvh overflow-y-auto bg-[#0D0D0D]/94 px-8 pb-10 pt-28 backdrop-blur-xl lg:hidden ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >

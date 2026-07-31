@@ -44,8 +44,8 @@ body:has(#login-shell) .site-footer {
   isolation: isolate;
   background:
     radial-gradient(circle at 12% 4%, rgba(198, 169, 114, 0.2), transparent 25rem),
-    radial-gradient(circle at 88% 28%, rgba(111, 119, 87, 0.18), transparent 32rem),
-    linear-gradient(145deg, #171a14 0%, #11130f 48%, #1a1c16 100%);
+    radial-gradient(circle at 88% 28%, rgba(198, 169, 114, 0.13), transparent 32rem),
+    linear-gradient(145deg, #1d1812 0%, #12100d 48%, #201a13 100%);
 }
 
 .portal-atmosphere::before,
@@ -64,14 +64,14 @@ body:has(#login-shell) .site-footer {
 }
 
 .portal-header {
-  background: rgba(22, 24, 19, 0.78);
+  background: rgba(27, 22, 17, 0.82);
   box-shadow: 0 16px 50px rgba(0, 0, 0, 0.14);
 }
 
 .portal-auth-story {
   background:
     linear-gradient(155deg, rgba(198, 169, 114, 0.17), transparent 48%),
-    linear-gradient(140deg, #25271f, #181a15);
+    linear-gradient(140deg, #2c241a, #191510);
 }
 
 .portal-auth-story::after {
@@ -98,7 +98,7 @@ body:has(#login-shell) .site-footer {
 .portal-auth-card {
   background:
     radial-gradient(circle at 100% 0%, rgba(198, 169, 114, 0.11), transparent 18rem),
-    rgba(31, 34, 27, 0.94);
+    rgba(34, 28, 21, 0.95);
 }
 
 #portal-shell :where(section, article, aside)[class*="rounded-"] {
