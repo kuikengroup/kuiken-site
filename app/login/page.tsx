@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function LoginPage() {
+export default async function LoginPage({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
+  const { next } = await searchParams;
   return (
     <div id="login-shell" className="portal-auth-atmosphere min-h-screen px-6 py-16 text-[#F2E9D3] sm:py-20 lg:flex lg:items-center">
       <div className="mx-auto grid w-full max-w-6xl overflow-hidden rounded-[2.25rem] border border-[#E7DCC1]/14 bg-[#211B14]/90 shadow-[0_45px_140px_rgba(0,0,0,.35)] backdrop-blur-xl lg:grid-cols-[1.08fr_.92fr]">
@@ -54,7 +55,7 @@ export default function LoginPage() {
           </div>
           <h2 className="mt-5 text-4xl font-semibold tracking-[-.05em]">Welcome back.</h2>
           <p className="mt-4 max-w-sm text-sm leading-7 text-[#E7DCC1]/55">Sign in with the email connected to your Kuiken Group client account.</p>
-          <AuthForm mode="login" />
+          <AuthForm mode="login" next={next} />
         </section>
       </div>
     </div>

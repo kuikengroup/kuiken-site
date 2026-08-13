@@ -21,15 +21,16 @@ export async function login(_: AuthState, formData: FormData): Promise<AuthState
       });
     });
   }
-  redirect("/portal");
+  const requested = String(formData.get("next") ?? "");
+  redirect(requested.startsWith("/portal") && !requested.startsWith("//") ? requested : "/portal");
 }
 export async function requestReset(_: AuthState, formData: FormData): Promise<AuthState> {
   const email = String(formData.get("email") ?? "").trim();
   if (!email.includes("@")) return { error: "Enter a valid email address." };
-  const origin = process.env.PORTAL_SITE_URL ?? (await headers()).get("origin") ?? "https://kuikengroup.com";
+  const origin = (await headers()).get("origin") ?? "https://kuikengroup.com";
   const supabase = await createClient();
   await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${origin}/auth/recovery`,
+    redirectTo: `${origin}/portal/auth/callback?next=/portal/reset-password`,
   });
   return { message: "If an account exists, a secure reset link has been sent." };
 }
@@ -39,7 +40,7 @@ export async function updatePassword(_: AuthState, formData: FormData): Promise<
   const supabase = await createClient();
   const { error } = await supabase.auth.updateUser({ password });
   if (error) return { error: "The password could not be updated. Request a new reset link." };
-  redirect("/portal");
+  redirect("/portal/account?password=updated");
 }
 export async function logout() {
   const supabase = await createClient();

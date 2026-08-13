@@ -21,7 +21,8 @@ export async function updateSession(request: NextRequest) {
   });
   const { data } = await supabase.auth.getClaims();
   const path = request.nextUrl.pathname;
-  if (!data?.claims && path.startsWith("/portal")) return NextResponse.redirect(new URL(`/login?next=${encodeURIComponent(path)}`, request.url));
+  const publicPortalRoute = path === "/portal/auth/callback" || path === "/portal/reset-password";
+  if (!data?.claims && path.startsWith("/portal") && !publicPortalRoute) return NextResponse.redirect(new URL(`/login?next=${encodeURIComponent(path)}`, request.url));
   if (data?.claims && path === "/login") return NextResponse.redirect(new URL("/portal", request.url));
   return response;
 }

@@ -15,7 +15,8 @@ export default async function PortalLayout({
   children: React.ReactNode;
 }) {
   const { profile } = await requirePortalUser();
-  const initials = profile.full_name
+  const displayName = String(profile.full_name || profile.email || "Kuiken Group");
+  const initials = displayName
     .split(" ")
     .map((part: string) => part[0])
     .join("")
@@ -39,7 +40,11 @@ export default async function PortalLayout({
           <div className="flex items-center gap-3">
             <nav aria-label="Portal navigation" className="hidden items-center gap-1 rounded-full border border-[#E7DCC1]/10 bg-[#E7DCC1]/5 p-1 text-xs text-[#E7DCC1]/70 sm:flex">
               <Link href="/portal" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Dashboard</Link>
-              {profile.role === "ADMIN" && (
+              <Link href="/portal/projects" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Projects</Link>
+              <Link href="/portal/files" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Files</Link>
+              <Link href="/portal/requests" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Requests</Link>
+              <Link href="/portal/account" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Account</Link>
+              {String(profile.role).toLowerCase() === "admin" && (
                 <Link href="/portal/admin" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Admin</Link>
               )}
             </nav>

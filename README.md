@@ -175,44 +175,38 @@ Generated `.next`, `.open-next`, `.wrangler`, and `node_modules` directories are
 
 ## Supabase client portal
 
-The `/portal` application uses Supabase Auth, Postgres, and a private Storage
-bucket. Apply `supabase/migrations/20260730000000_client_portal.sql` in the
-Supabase SQL editor or with the Supabase CLI before enabling portal access.
-The migration creates the normalized schema, indexes, trigger, RLS policies,
-private helper functions, and `project-files` bucket.
+The existing `/portal` uses the same Supabase Auth users, database contract,
+RLS policies, private Storage buckets, and Edge Functions as the Kuiken Group
+Expo app. The mobile app migrations are the source of truth. This website does
+not carry or require a separate migration.
 
 Required variables:
 
 ```text
 NEXT_PUBLIC_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
-SUPABASE_SERVICE_ROLE_KEY
-PORTAL_MAX_UPLOAD_BYTES
-PORTAL_SITE_URL
 ```
 
 The URL and publishable key are intentionally browser-readable and are secured
-by RLS. `SUPABASE_SERVICE_ROLE_KEY` is server-only and is used exclusively for
-Supabase Auth administration; never prefix it with `NEXT_PUBLIC_`.
+by the shared RLS policies. Do not add a service-role key to this website.
 
 Setup:
 
-1. Create a Supabase project and run the migration.
+1. Copy the Expo app's Supabase URL and anon/publishable key into the two
+   `NEXT_PUBLIC_` variables. Do not create another project.
 2. In Auth URL Configuration, set the production site URL to
    `https://kuikengroup.com` and allow
-   `https://kuikengroup.com/auth/callback` and
-   `https://kuikengroup.com/auth/recovery`.
-3. Configure SMTP and update the invitation/recovery templates to return to the
-   callback URL. Enable email/password authentication.
-4. Create Brady's Auth user, then set the corresponding `profiles.role` to
-   `ADMIN` in the SQL editor. All later clients can be invited from
-   `/portal/admin`.
-5. Add the four variables above to `.env.local` for development. In Cloudflare,
-   add all four under **Worker → Settings → Variables and Secrets**; store the
-   service-role key as an encrypted secret.
-6. Keep `project-files` private. Its 50 MB migration default must not exceed the
-   Supabase global Storage limit. Keep `PORTAL_MAX_UPLOAD_BYTES` aligned with
-   the bucket limit.
+   `https://kuikengroup.com/portal/auth/callback`,
+   `https://kuikengroup.com/portal/reset-password`, and
+   `https://kuikengroup.com/portal`.
+3. Preserve the Expo redirects `kuikengroupapp://` and
+   `kuikengroupapp://reset-password`.
+4. Keep `client-files` and `request-attachments` private.
+5. Deploy the existing `invite-client-user` Edge Function and set its
+   `INVITE_REDIRECT_URL` secret to
+   `https://kuikengroup.com/portal/auth/callback?next=/portal` for web invites.
+6. Add the two public Supabase variables to Cloudflare Worker variables. No
+   Supabase secret is required by the website Worker.
 
 Security verification should use two client accounts assigned to different
 projects. Confirm each account can see only its assigned rows and Storage
@@ -220,9 +214,8 @@ paths, cannot open `/portal/admin`, and receives a redirect when signed out.
 Also verify admin invitation, disable/enable, password recovery, project
 assignment, and logout before production launch.
 
-The portal currently uses `middleware.ts` only for Supabase cookie refresh and
-early redirects. Next.js 16 labels that filename deprecated in favor of
-`proxy.ts`, but OpenNext does not yet support Node middleware. The
-adapter-compatible middleware is therefore intentional; every protected page
-and mutation also performs server-side authorization, and RLS remains the
-authoritative data boundary.
+The portal uses `middleware.ts` only for Supabase cookie refresh and early
+redirects. Next.js 16 deprecates that filename, but its Node-runtime `proxy.ts`
+output is not yet supported by the current OpenNext Cloudflare adapter. Every
+protected page and mutation also performs server-side authorization, and RLS
+remains the authoritative data boundary.

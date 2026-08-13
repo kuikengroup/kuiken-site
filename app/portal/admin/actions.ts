@@ -1,26 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "../../lib/portal-auth";
-import { createAdminClient } from "../../lib/supabase/admin";
 
-export async function inviteClient(formData:FormData){
- const {supabase,profile}=await requireAdmin(); const email=String(formData.get("email")??"").trim(); const name=String(formData.get("name")??"").trim(); const company=String(formData.get("company")??"").trim();
- if(!email.includes("@")||name.length<2) return;
- const admin=createAdminClient(); const baseUrl=process.env.PORTAL_SITE_URL??"https://kuikengroup.com"; const {data,error}=await admin.auth.admin.inviteUserByEmail(email,{data:{full_name:name,company},redirectTo:`${baseUrl}/auth/callback?next=/login/update-password`});
- if(!error&&data.user) await supabase.from("activity_log").insert({actor_id:profile.id,action:"Client invited",details:{client_id:data.user.id}});
- revalidatePath("/portal/admin");
-}
-export async function createProject(formData:FormData){
- const {supabase,profile}=await requireAdmin(); const name=String(formData.get("name")??"").trim(); const description=String(formData.get("description")??"").trim(); const client=String(formData.get("client")??"");
- if(name.length<2)return; const {data}=await supabase.from("projects").insert({name,description,created_by:profile.id,status:"PLANNING"}).select("id").single();
- if(data&&client) await supabase.from("project_members").insert({project_id:data.id,profile_id:client});
- revalidatePath("/portal/admin"); revalidatePath("/portal");
-}
-export async function toggleClient(formData:FormData){
- const {supabase}=await requireAdmin(); const id=String(formData.get("id")); const disabled=formData.get("disabled")==="true";
- const admin=createAdminClient(); await admin.auth.admin.updateUserById(id,{ban_duration:disabled?"none":"876000h"});
- await supabase.from("profiles").update({disabled:!disabled}).eq("id",id); revalidatePath("/portal/admin");
-}
-export async function resetClientPassword(formData:FormData){
- const {supabase}=await requireAdmin(); const email=String(formData.get("email")??""); const baseUrl=process.env.PORTAL_SITE_URL??"https://kuikengroup.com"; await supabase.auth.resetPasswordForEmail(email,{redirectTo:`${baseUrl}/auth/recovery`});
-}
+export type AdminState={error?:string;message?:string};
+export async function inviteClient(_:AdminState,formData:FormData):Promise<AdminState>{const {supabase}=await requireAdmin();const email=String(formData.get("email")??"").trim();const fullName=String(formData.get("fullName")??"").trim();const clientId=String(formData.get("clientId")??"");if(!email.includes("@")||fullName.length<2||!clientId)return{error:"Choose a client and enter a valid name and email."};const {error}=await supabase.functions.invoke("invite-client-user",{body:{action:"invite",email,full_name:fullName,client_id:clientId}});if(error){console.error("Invitation function failed",{message:error.message,name:error.name});return{error:"The invitation could not be sent."}}revalidatePath("/portal/admin");return{message:"Invitation sent through the shared mobile-app workflow."}}
+export async function createProject(_:AdminState,formData:FormData):Promise<AdminState>{const {supabase}=await requireAdmin();const name=String(formData.get("name")??"").trim();const clientId=String(formData.get("clientId")??"");const description=String(formData.get("description")??"").trim();if(name.length<2||!clientId)return{error:"Add a project name and client."};const {error}=await supabase.from("projects").insert({client_id:clientId,name,description:description||null,status:"active",progress:0});if(error){console.error("Admin project creation failed",{message:error.message,code:error.code,details:error.details,hint:error.hint});return{error:"The project could not be created."}}revalidatePath("/portal/admin");revalidatePath("/portal");return{message:"Project created."}}

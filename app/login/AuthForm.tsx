@@ -3,10 +3,11 @@ import Link from "next/link";
 import { useActionState } from "react";
 import { login, requestReset, updatePassword, type AuthState } from "./actions";
 
-export default function AuthForm({ mode }: { mode: "login" | "reset" | "update" }) {
+export default function AuthForm({ mode, next }: { mode: "login" | "reset" | "update"; next?: string }) {
   const action = mode === "login" ? login : mode === "reset" ? requestReset : updatePassword;
   const [state, formAction, pending] = useActionState(action, {} as AuthState);
   return <form action={formAction} className="mt-9 grid gap-5">
+    {mode === "login" && next && <input type="hidden" name="next" value={next} />}
     {mode !== "update" && <label className="grid gap-2 text-[10px] uppercase tracking-[.2em] text-[#C6A972]">Email<input name="email" type="email" autoComplete="email" required className="rounded-xl border border-[#E7DCC1]/15 bg-[#2B241B] px-4 py-3 text-base normal-case tracking-normal text-[#E7DCC1]" /></label>}
     {mode !== "reset" && <label className="grid gap-2 text-[10px] uppercase tracking-[.2em] text-[#C6A972]">{mode === "update" ? "New password" : "Password"}<input name="password" type="password" autoComplete={mode === "update" ? "new-password" : "current-password"} minLength={mode === "update" ? 12 : 8} required className="rounded-xl border border-[#E7DCC1]/15 bg-[#2B241B] px-4 py-3 text-base normal-case tracking-normal text-[#E7DCC1]" /></label>}
     {state.error && <p role="alert" className="rounded-xl border border-red-300/20 bg-red-300/5 p-4 text-sm text-red-200">{state.error}</p>}
