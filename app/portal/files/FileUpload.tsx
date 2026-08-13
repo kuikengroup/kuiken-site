@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { createClient } from "../../lib/supabase/client";
-import { registerFile } from "./actions";
+import { createFileUploadUrl, registerFile } from "./actions";
 
 const field = "rounded-xl bg-[#382F24] p-3";
 const categories = ["brand_asset", "website", "document", "report", "invoice", "contract", "photo", "video", "other"];
@@ -48,19 +48,24 @@ export default function FileUpload({ clients, projects }: { clients: { id: strin
     if (file.size <= 0) return fail("The selected file is empty.");
     if (file.size > maxBytes) return fail(`The selected file is ${(file.size / 1_048_576).toFixed(1)} MB. The current upload limit is 10 MB.`);
 
-    const supabase = createClient();
     let storagePath = "";
     try {
-      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "-");
-      const folder = projectId ? `projects/${projectId}` : "general";
-      storagePath = `clients/${clientId}/${folder}/${crypto.randomUUID()}-${safeName}`;
+      if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY) {
+        return fail("Supabase is not configured in this website build. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY, then restart the development server.");
+      }
+      const supabase = createClient();
       setProgress(15);
+      setMessage("Authorizing secure upload…");
+
+      const authorization = await withTimeout(createFileUploadUrl({ clientId, projectId: projectId || null, originalName: file.name }), 20_000, "Upload authorization");
+      if (authorization.error || !authorization.path || !authorization.token) return fail(authorization.error ?? "Supabase did not return upload authorization.");
+      storagePath = authorization.path;
+      setProgress(30);
       setMessage("Uploading to secure storage…");
 
       const { error: storageError } = await withTimeout(
-        supabase.storage.from("client-files").upload(storagePath, file, {
+        supabase.storage.from("client-files").uploadToSignedUrl(storagePath, authorization.token, file, {
           contentType: file.type || "application/octet-stream",
-          upsert: false,
         }),
         20_000,
         "Supabase Storage upload",
@@ -90,7 +95,13 @@ export default function FileUpload({ clients, projects }: { clients: { id: strin
       window.setTimeout(() => window.location.reload(), 700);
     } catch (error) {
       console.error("Unexpected file upload failure", error);
-      if (storagePath) await supabase.storage.from("client-files").remove([storagePath]);
+      if (storagePath) {
+        try {
+          await createClient().storage.from("client-files").remove([storagePath]);
+        } catch (cleanupError) {
+          console.error("Upload cleanup failed", cleanupError);
+        }
+      }
       fail(error instanceof Error ? `Upload failed: ${error.message}` : "A network error interrupted the upload. Try again.");
     }
   }
