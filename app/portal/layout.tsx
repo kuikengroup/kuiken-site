@@ -45,7 +45,7 @@ export default async function PortalLayout({
               <Link href="/portal/requests" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Requests</Link>
               <Link href="/portal/account" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Account</Link>
               {String(profile.role).toLowerCase() === "admin" && (
-                <Link href="/portal/admin" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Admin</Link>
+                <><Link href="/portal/clients" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Clients</Link><Link href="/portal/admin" className="rounded-full px-4 py-2 hover:bg-[#E7DCC1]/7 hover:text-[#E7DCC1]">Admin</Link></>
               )}
             </nav>
             <div className="flex items-center gap-3 border-l border-[#E7DCC1]/12 pl-3">
