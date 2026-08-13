@@ -28,10 +28,9 @@ export default function FileUpload({ clients, projects }: { clients: { id: strin
     setMessage(message);
   }
 
-  async function submit(event: React.FormEvent) {
-    event.preventDefault();
+  async function upload() {
     if (busy) return;
-    setMessage("");
+    setMessage("Checking file…");
     setIsError(false);
 
     if (!clientId) return fail("Choose the client that should receive this file.");
@@ -82,7 +81,7 @@ export default function FileUpload({ clients, projects }: { clients: { id: strin
     }
   }
 
-  return <form noValidate onSubmit={submit} className="grid gap-4 rounded-[2rem] border border-[#E7DCC1]/10 bg-[#211C16] p-7">
+  return <section className="grid gap-4 rounded-[2rem] border border-[#E7DCC1]/10 bg-[#211C16] p-7">
     <h2 className="text-2xl font-semibold">Upload file</h2>
     {!clients.length && <p role="alert" className="text-sm text-red-200">Create a client before uploading a file.</p>}
     <label className="grid gap-2 text-sm">Client<select value={clientId} onChange={(event) => { setClientId(event.target.value); setProjectId(""); }} className={field}><option value="">Choose client</option>{clients.map((client) => <option key={client.id} value={client.id}>{client.name}</option>)}</select></label>
@@ -93,6 +92,6 @@ export default function FileUpload({ clients, projects }: { clients: { id: strin
     <label className="grid gap-2 text-sm">Local file<input ref={fileInput} type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.png,.jpg,.jpeg,.zip,.txt" onChange={(event) => { const selected = event.target.files?.[0] ?? null; setFile(selected); if (selected && !name) setName(selected.name); }} /></label>
     {busy && <><div className="h-1 bg-[#382F24]"><div className="h-full bg-[#C6A972] transition-[width]" style={{ width: `${progress}%` }} /></div><p className="text-xs text-[#E7DCC1]/50">{progress! < 75 ? "Uploading to secure storage…" : "Saving file details…"}</p></>}
     {message && <p role={isError ? "alert" : "status"} className={`text-sm ${isError ? "text-red-200" : "text-[#C6A972]"}`}>{message}</p>}
-    <button type="submit" disabled={busy} className="relative z-10 cursor-pointer rounded-full bg-[#C6A972] px-5 py-3 text-xs font-semibold text-[#17130E] disabled:cursor-wait disabled:opacity-50">{busy ? "Uploading…" : "Upload file"}</button>
-  </form>;
+    <button type="button" onClick={() => void upload()} disabled={busy} className="relative z-10 cursor-pointer rounded-full bg-[#C6A972] px-5 py-3 text-xs font-semibold text-[#17130E] disabled:cursor-wait disabled:opacity-50">{busy ? "Uploading…" : "Upload file"}</button>
+  </section>;
 }
