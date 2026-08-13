@@ -9,6 +9,13 @@ const categories = ["brand_asset", "website", "document", "report", "invoice", "
 const allowed = ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "png", "jpg", "jpeg", "zip", "txt"];
 const maxBytes = 10 * 1024 * 1024;
 
+function withTimeout<T>(operation: PromiseLike<T>, milliseconds: number, label: string): Promise<T> {
+  return Promise.race([
+    Promise.resolve(operation),
+    new Promise<never>((_, reject) => window.setTimeout(() => reject(new Error(`${label} timed out after ${milliseconds / 1000} seconds.`)), milliseconds)),
+  ]);
+}
+
 export default function FileUpload({ clients, projects }: { clients: { id: string; name: string }[]; projects: { id: string; client_id: string; name: string }[] }) {
   const fileInput = useRef<HTMLInputElement>(null);
   const [clientId, setClientId] = useState("");
@@ -44,18 +51,20 @@ export default function FileUpload({ clients, projects }: { clients: { id: strin
     const supabase = createClient();
     let storagePath = "";
     try {
-      const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
-      if (sessionError || !sessionData.session) return fail("Your portal session expired. Sign in again before uploading.");
-
       const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "-");
       const folder = projectId ? `projects/${projectId}` : "general";
       storagePath = `clients/${clientId}/${folder}/${crypto.randomUUID()}-${safeName}`;
       setProgress(15);
+      setMessage("Uploading to secure storage…");
 
-      const { error: storageError } = await supabase.storage.from("client-files").upload(storagePath, file, {
-        contentType: file.type || "application/octet-stream",
-        upsert: false,
-      });
+      const { error: storageError } = await withTimeout(
+        supabase.storage.from("client-files").upload(storagePath, file, {
+          contentType: file.type || "application/octet-stream",
+          upsert: false,
+        }),
+        20_000,
+        "Supabase Storage upload",
+      );
       if (storageError) {
         console.error("Storage upload failed", { message: storageError.message, name: storageError.name, status: "status" in storageError ? storageError.status : undefined });
         return fail(storageError.message.includes("row-level security")
@@ -64,7 +73,12 @@ export default function FileUpload({ clients, projects }: { clients: { id: strin
       }
 
       setProgress(75);
-      const result = await registerFile({ clientId, projectId: projectId || null, fileName: name, storagePath, fileSize: file.size, mimeType: file.type || null, category, description });
+      setMessage("Storage upload complete. Saving file details…");
+      const result = await withTimeout(
+        registerFile({ clientId, projectId: projectId || null, fileName: name, storagePath, fileSize: file.size, mimeType: file.type || null, category, description }),
+        20_000,
+        "File metadata registration",
+      );
       if (result.error) return fail(result.error);
 
       setProgress(null);
