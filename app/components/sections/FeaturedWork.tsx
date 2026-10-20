@@ -3,6 +3,7 @@ import ParallaxMedia from "../animations/ParallaxMedia";
 import { getProject } from "../../data/projects";
 import Container from "../layout/Container";
 import Reveal from "../Reveal";
+import GoldBorder from "../ui/GoldBorder";
 
 function ProjectMeta({
   number,
@@ -45,6 +46,7 @@ function ProjectMeta({
 function LawnFadezLaptop() {
   return (
     <div className="device-stage device-stage-lawn" aria-label="Lawn Fadez website shown on a MacBook">
+      <GoldBorder strong />
       <div className="stage-orbit stage-orbit-one" />
       <div className="stage-orbit stage-orbit-two" />
       <div className="macbook">
@@ -73,6 +75,7 @@ function LawnFadezLaptop() {
 function KuikenIdentity() {
   return (
     <div className="device-stage device-stage-kuiken" aria-label="Kuiken Group identity and digital system">
+      <GoldBorder strong />
       <ParallaxMedia
         src="/work/kuiken-identity-logo-v3.jpg"
         alt="Kuiken Group identity system with embossed stationery, tablet, and brand materials"

@@ -328,6 +328,65 @@ a {
   transform-origin: top;
 }
 
+/* Animate the light source, keeping the rounded 1px border stationary. */
+@property --gold-border-angle {
+  syntax: "<angle>";
+  initial-value: 45deg;
+  inherits: false;
+}
+
+.gold-border {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: .65;
+}
+
+.gold-border-strong {
+  opacity: 1;
+}
+
+.gold-border::before,
+.gold-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--gold-border-angle),
+    rgba(198, 169, 114, .12) 0deg,
+    rgba(198, 169, 114, .12) 265deg,
+    rgba(198, 169, 114, .35) 300deg,
+    #f3d89c 330deg,
+    rgba(198, 169, 114, .12) 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: goldBorderOrbit 10s linear infinite;
+}
+
+.gold-border::before {
+  padding: 3px;
+  filter: blur(5px);
+  opacity: .55;
+}
+
+@keyframes goldBorderOrbit {
+  to { --gold-border-angle: 405deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-border::before,
+  .gold-border::after {
+    animation: none;
+  }
+}
+
 .premium-panel {
   position: relative;
   overflow: hidden;

@@ -6,6 +6,7 @@ import CTA from "./sections/CTA";
 import Container from "./layout/Container";
 import SectionHeading from "./ui/SectionHeading";
 import Link from "next/link";
+import GoldBorder from "./ui/GoldBorder";
 
 const services = [
   {
@@ -69,6 +70,7 @@ export default function HomeShell() {
             {services.map((service, index) => (
               <Reveal key={service.title} stagger={index} className="h-full">
                 <Link href={service.href} className={`premium-panel premium-panel-${service.mark} premium-focus group block h-full min-h-[27rem] rounded-[1.75rem] border border-[#E7DCC1]/10 bg-[#151615] p-7 sm:p-9 lg:min-h-[32rem]`}>
+                  <GoldBorder />
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-semibold tracking-[0.24em] text-[#C6A972]">{service.number}</span>
                     <span className="service-mark" aria-hidden="true"><i /><i /><i /></span>

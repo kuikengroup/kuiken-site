@@ -4,6 +4,7 @@ import Container from "../components/layout/Container";
 import Reveal from "../components/Reveal";
 import { createMetadata } from "../lib/metadata";
 import InquiryForm from "./InquiryForm";
+import GoldBorder from "../components/ui/GoldBorder";
 
 export const metadata: Metadata = createMetadata({
   title: "Contact",
@@ -111,7 +112,8 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal stagger={1}>
-              <div className="rounded-[2rem] border border-[#E7DCC1]/10 bg-[#111211] p-6 sm:p-9 lg:p-12">
+              <div className="relative isolate rounded-[2rem] border border-[#E7DCC1]/10 bg-[#111211] p-6 sm:p-9 lg:p-12">
+                <GoldBorder strong />
                 <InquiryForm />
               </div>
             </Reveal>

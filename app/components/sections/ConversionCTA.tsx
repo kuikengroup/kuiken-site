@@ -1,6 +1,7 @@
 import AnimatedButton from "../AnimatedButton";
 import Container from "../layout/Container";
 import Reveal from "../Reveal";
+import GoldBorder from "../ui/GoldBorder";
 
 type ConversionCTAProps = {
   eyebrow: string;
@@ -24,6 +25,7 @@ export default function ConversionCTA({
       <Container>
         <Reveal>
           <div className="cta-panel relative isolate overflow-hidden rounded-[2rem] border border-[#C6A972]/20 px-7 py-14 sm:px-10 lg:px-14 lg:py-20">
+            <GoldBorder strong />
             <div className="grain-overlay absolute inset-0 opacity-[0.12]" />
             <div className="absolute -right-20 -top-24 h-96 w-96 rounded-full bg-[#C6A972]/14 blur-[100px]" />
             <div
